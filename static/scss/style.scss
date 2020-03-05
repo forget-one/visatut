@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap&subset=cyrillic');
+@import 'normalize';
+@import 'slick';
+@import 'formInp';
+@import 'slick-theme';
+@import 'select';
+
+@media (min-width: 996px) {
+    @import 'fullpage.min';
+    body, html {
+        overflow: hidden;
+    }
+   
+}
+
+@import 'header';
+@import 'sect2';
+@import 'fran';
+
+
+@import 'services2';
+
+body {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	// font-family: 'OpenSans-Regular', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background-color: #fff;
+	
+}
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+.container {
+    width: 85%;
+    margin: 0 auto;
+
+}
+
+
+
+.slick-dots {
+    bottom: 30px;
+}
+.slick-dots li {
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 50%; 
+    background-color: #fff;
+}
+.slick-dots li.slick-active {
+    border: 1px solid #e35c72;
+    background-color: #e35c72;
+    transition: all .4s;
+}
+.slick-dots li.slick-active:before {
+    position: absolute;
+    top: -5.4px;
+    left: -6px;
+    width: 30px;
+    height: 30px;
+    content: '';
+    border: 2px solid #e35c72;
+    border-radius: 50%;
+    transition: all .4s;
+}
+.slick-slide img {
+    // height: 100vh;
+    // width: 100vw;
+}
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: transparent;
+}
+
+
+
+
+
+
+.normalScroll {
+    
+
+    overflow: auto;
+    
+}

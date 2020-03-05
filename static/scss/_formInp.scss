@@ -1,0 +1,126 @@
+.post_forms {
+    width: 500px;
+
+    .inp-vak-wrap {
+        margin-top: 10px;
+        position: relative;
+        height: 55px;    
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .label__style {
+        transition: all .2s;
+        bottom: 25px;
+        position: absolute;
+        font-size: 16px;
+        padding: 5px;
+    }
+    .inp-vak-wrap input {
+        padding: 5px;
+        outline: none;
+    }
+    .input_focus {
+        position: relative;
+        z-index: 1;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        color: #00000096 !important;
+    }
+    .inp-vak-wrap {
+        position: relative;
+        height: 55px;
+    
+      }
+    .label__style {
+      transition: all .2s;
+      bottom: 25px;
+      position: absolute;
+      font-size: 16px;
+      z-index: 0;
+    }
+    .label__style_active {
+      transition: all .2s;
+      bottom: 50px;
+      font-size: 14px;
+      color: #de4166;
+    
+    }
+    .input_focus {
+      position: relative;
+      z-index: 1;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid #de4166 !important;
+      color: #00000096 !important;
+    }
+    .input_focus_active {
+        border-bottom: 2px solid #de4166 !important;
+    }
+    
+    
+    .inp-cons-wrap {
+      input {
+        color: #00000096 !important;
+        border-bottom: 1px solid #de4166;
+      }
+    }
+    .submit_cons {
+        outline: none;
+    background: transparent;
+    border: 2px solid #de4166;
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin: 0 auto;
+    display: block;
+    color: #de4166;
+    font-weight: 700;
+    font-size: 13px;
+    }
+    .true_form {
+      min-height: 260px;
+    }
+    
+    #modal-form_settings {
+    
+    }
+    .input_focuss {
+      background-color: #fff;
+      border-bottom: 2px solid #de4166 !important;
+    }
+    .cons_text {
+        text-align: center;
+        color: #de4166;
+        line-height: 1;
+        font-weight: 700;
+        font-size: 15px;
+        margin-bottom: 15px;
+    
+    }
+}
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+@media (max-width: 641px) {
+    .post_forms {
+        width: 85%;
+    }
+    .post_forms .cons_text {
+        font-size: 10px;
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 433px) {
+    .fancybox-content {
+    padding: 20px;
+    }
+    
+}
