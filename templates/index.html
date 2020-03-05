@@ -604,17 +604,21 @@
 						</h1>
 					</div>
 					<div class="blog-block normalScroll">
+						{% for item in posts %}
 						<div class="blog-prof">
 							<div class="blog-img">
-								<img src="/static/img/blog.jpg" alt="">
+								<img src="{{ item.image.url }}" alt="">
 							</div>
 							<div class="blog-text">
 								<div class="blog__title">
-									Лайфхаки
+									{{ item.title }}
 								</div>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa labore quo tenetur quia, nulla similique recusandae dicta numquam soluta iusto quasi deleniti est ipsam sapiente quis, aliquid consequuntur. Sint, perspiciatis.
+								{{ item.text|safe }}
 							</div>
 						</div>
+						{% endfor %}
+							
+						
 						<div class="blog-prof">
 							<div class="blog-img">
 								<img src="/static/img/blog.jpg" alt="">

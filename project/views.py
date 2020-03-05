@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from project.services.models import *
+from project.blog.models import *
 # Create your views here.
 
 
@@ -7,6 +8,7 @@ def index(request):
     category_country    = CategoryCountry.objects.all()
     countries           = Country.objects.all()
     categoryservices    = CategoryServices.objects.all()
+    posts               = Post.objects.all()
     # countries           = category_country.country
     return render(request, 'index.html', locals())
 
