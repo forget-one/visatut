@@ -21,8 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'project',
-    'blog',
-    'services',
+    'project.blog',
+    'project.services',
     'tinymce',
 
 ]
