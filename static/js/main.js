@@ -409,28 +409,29 @@ $(document).mouseup(function(e) {
       
         if (form_input1[0].outerText == '') {
           console.log(form_input1[0].outerText);
-          $('.services_form').find('.select__input1').removeClass('visual_label_active');
+        
+          $('.services_form').find('.select__input1').find('.visual_label').removeClass('visual_label_active');
           $('.select__input1').removeClass('select__input_activate');
           } else if (form_input1[0].outerText != '') {
             $('.services_form').find('.select__input1').addClass('visual_label_active');
             $('.select__input1').addClass('select__input_activate');
           }
         if (form_input2[0].outerText == '') {
-          $('.services_form').find('.select__input2').removeClass('visual_label_active');
+          $('.services_form').find('.select__input2').find('.visual_label').removeClass('visual_label_active');
           $('.select__input2').removeClass('select__input_activate');
           } else if (form_input2[0].outerText != '') {
             $('.services_form').find('.select__input2').addClass('visual_label_active');
             $('.select__input2').addClass('select__input_activate');
           }
         if (form_input3[0].outerText == '') {
-          $('.services_form').find('.select__input3').removeClass('visual_label_active');
+          $('.services_form').find('.select__input3').find('.visual_label').removeClass('visual_label_active');
           $('.select__input3').removeClass('select__input_activate');
           } else if (form_input3[0].outerText != '') {
             $('.services_form').find('.select__input3').addClass('visual_label_active');
             $('.select__input3').addClass('select__input_activate');
           }
         if (form_input4[0].outerText == '') {
-          $('.services_form').find('.select__input4').removeClass('visual_label_active');
+          $('.services_form').find('.select__input4').find('.visual_label').removeClass('visual_label_active');
           $('.select__input4').removeClass('select__input_activate');
           } else if (form_input4[0].outerText != '') {
             $('.services_form').find('.select__input4').addClass('visual_label_active');
@@ -465,6 +466,7 @@ $('.select__wrap_item').on('click', function() {
 
     let engineYear = $(this).parents('.select__wrap').parents('.select').find(".field_text");
     engineYear.attr('data-year', id)
+
     
     $('.select__wrap').removeClass('select__wrap_active');
     $('.select__input').removeClass('select__input_active');
