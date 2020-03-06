@@ -193,6 +193,10 @@ body {
     z-index: 9999;
     margin: 30px 0 0 30px;
 }
+.add_error {
+    color: red;
+    font-size: 14px;
+}
 .info_top-prof {
     display: flex;
     align-items: center;
@@ -231,6 +235,11 @@ body {
     width: 160px;
     margin: 0 auto;
     margin-top: 30px;
+    transition: all .2s;
+    stroke: #fff;
+    &:hover {
+        stroke: #de4166;
+    }
 }
 .fp-right {
     ul {
@@ -332,6 +341,9 @@ body {
 
 
 @media (max-width: 996px) {
+    #fp-nav {
+        display: none;
+    }
     .super_hidden_name {
         a {
             display: inherit;
