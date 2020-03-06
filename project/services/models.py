@@ -17,7 +17,6 @@ class CategoryCountry(models.Model):
 
 class Country(models.Model):
     name        = models.CharField(max_length=250, blank=True, null=True)
-    slug        = models.SlugField(unique=True)
     image       = models.ImageField(upload_to='media/', blank=True, null=True)
 
     def __str__(self):
