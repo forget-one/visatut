@@ -142,6 +142,23 @@
 			<div class="default-block">
 				<div class="default-content">
 					<div class="blog-block normalScroll">
+						
+						{% for item in posts %}
+						<a href="{% url 'post' id=item.id %}" class="a_link_blog">
+							<div class="blog-prof">
+								<div class="blog-img">
+									<img src="{{ item.image.url }}" alt="">
+								</div>
+								<div class="blog-text">
+									<div class="blog__title">
+										{{ item.title }}
+									</div>
+									{{ item.text|safe }}
+								</div>
+							</div>
+						</a>
+						{% endfor %}
+							
 						<a href="blog_subPage.html" class="a_link_blog">
 							<div class="blog-prof">
 								<div class="blog-img">

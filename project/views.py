@@ -14,11 +14,13 @@ def index(request):
 
     
 def blog(request):
-    return render(request, 'blog.html')
+    posts               = Post.objects.all()
+    return render(request, 'blog.html', locals())
 
 
-def blogxz(request):
-    return render(request, 'blogxz.html')
+def post(request, id):
+    post = Post.objects.get(id=id)
+    return render(request, 'post.html')
 
 
 def franchise(request):
