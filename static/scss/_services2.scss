@@ -17,7 +17,6 @@
     }
     .blog-text {
         width: 85%;
-        text-decoration: none;
     }
     .blog-img {
         width: 15%;
@@ -145,6 +144,76 @@
     width: 100px;
     color: #4088c9;
 }
+
+.parner_sub-block {
+    width: 95%;
+    margin: 0 auto;
+    height: 86%;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.partner_text {
+    color: #6c6a67;
+    font-size: 15px;
+    line-height: 1.42857143;
+    text-align: justify;
+    margin-top: 10px;
+}
+.partn-prof {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    svg {
+        fill: #6c6a67;
+        width: 20px;
+    height: auto;
+    margin: 5px 10px 5px 20px;
+    }
+}
+.partn-block {
+    margin: 15px 0;
+}
+.cont-block {
+    display: flex;
+    flex-direction: column;
+}
+.part-text {
+    color: #6c6a67;
+    font-size: 15px;
+    line-height: 1.3;
+}
+.header-btn {
+    margin-top: 10px;
+}
+.red_link {
+    color: #e35c72;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 16px;
+}
+.partner_bold__title {
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.partn-block_last {
+    .partn-prof {
+        svg {
+            width: 70px;
+        }
+    }
+    .cont-block {
+        width: 70%;
+
+    }
+    .content_num {
+        margin: 0;
+    }
+}
+
 
 @media (max-width: 996px) {
     .services_fixed .psevdo_point {
