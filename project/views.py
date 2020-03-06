@@ -52,6 +52,11 @@ def partner_usa(request):
 
 
 
+def search_service(request):
+    return render(request, 'search_service.html')
+
+
+
 
 
 

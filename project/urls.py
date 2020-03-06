@@ -13,4 +13,5 @@ urlpatterns = [
     path('partner_europe/', partner_europe, name='partner_europe'),
     path('partner_potential/', partner_potential, name='partner_potential'),
     path('partner_usa/', partner_usa, name='partner_usa'),
+    path('search_service/', search_service, name='search_service'),
 ]

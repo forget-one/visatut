@@ -513,6 +513,9 @@ $('.select__wrap_item').on('click', function() {
                     current_wrap.append('<div class="add_error">Це поле обовязкове для заповнення</div>');
                  }
                 }
+            } else {
+              event.preventDefault();
+              window.location.pathname = '/search_service/';
             }
           }
     });
