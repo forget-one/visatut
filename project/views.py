@@ -12,20 +12,6 @@ def index(request):
     # countries           = category_country.country
     return render(request, 'index.html', locals())
 
-    
-def blog(request):
-    posts               = Post.objects.all()
-    return render(request, 'blog.html', locals())
-
-
-def post(request, id):
-    post = Post.objects.get(id=id)
-    return render(request, 'post.html')
-
-
-def franchise(request):
-    return render(request, 'franchise.html')
-
 
 def services(request, country):
     country_services = CountryServices.objects.filter(country__name=country)
@@ -39,3 +25,34 @@ def service(request, id):
     return render(request, 'service.html', locals())
 
 
+def franchise(request):
+    return render(request, 'franchise.html')    
+    
+
+def blog(request):
+    posts               = Post.objects.all()
+    return render(request, 'blog.html', locals())
+
+
+def post(request, id):
+    post = Post.objects.get(id=id)
+    return render(request, 'post.html')
+
+
+def partner_europe(request):
+    return render(request, 'partner_europe.html')
+
+
+def partner_potential(request):
+    return render(request, 'partner_potential.html')
+
+
+def partner_usa(request):
+    return render(request, 'partner_usa.html')
+
+
+
+
+
+
+    
