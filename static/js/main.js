@@ -459,6 +459,10 @@ $('.select__wrap_item').on('click', function() {
     $(field).text(text);
     $(input_select).val(id);
     
+    if ($(input_select).val() != "") {
+      $(this).parents('.select').find('.add_error').remove();
+    }
+
     field.attr('data-countries', id)
    
     let engineType = $(this).parents('.select__wrap').parents('.select').find(".field_text");
@@ -498,24 +502,19 @@ $('.select__wrap_item').on('click', function() {
 
 
     $('.services_form').on("submit", function(event) {
-
-      event.preventDefault();
-
           var services_input =  $('.form_select');
-
           for (var current_number = 0; current_number < services_input.length; current_number++) {
-              var current_input = services_input[current_number];
-            
-              if (current_input.value == 0) {
-               let current_wrap = $(current_input).parents('.select__input').parents('.select');
-               console.log('current_wrap: ', current_wrap);
-               current_wrap.append('<div class="add_error">Це поле обовязкове для заповнення</div>');
-             
-              }
-
+            var current_input = services_input[current_number];
+            if (current_input.value == 0) {
+              event.preventDefault();
+                if (current_input.value == 0) {
+                 let current_wrap = $(current_input).parents('.select__input').parents('.select');
+                 if (current_wrap[0].childElementCount == 2) {
+                    current_wrap.append('<div class="add_error">Це поле обовязкове для заповнення</div>');
+                 }
+                }
+            }
           }
-
-         
     });
 
 
