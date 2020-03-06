@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'project',
     'project.blog',
     'project.services',
+    'project.vacancy',
     'tinymce',
 
 ]

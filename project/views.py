@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from project.services.models import *
 from project.blog.models import *
+from project.vacancy.models import *
 # Create your views here.
 
 
@@ -9,6 +10,8 @@ def index(request):
     countries           = Country.objects.all()
     categoryservices    = CategoryServices.objects.all()
     posts               = Post.objects.all()
+    vacancy             = Vacancy.objects.all()
+    gender              = Gender.objects.all()
     # countries           = category_country.country
     return render(request, 'index.html', locals())
 
