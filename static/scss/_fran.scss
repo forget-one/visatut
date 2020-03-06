@@ -9,6 +9,11 @@
 
     .more-btn {
         margin-top: 0;  
+        transition: stroke .2s;
+        stroke: #6c6a67;
+        &:hover {
+            stroke: #e35c72;
+        }
     }
 }
 
@@ -56,7 +61,8 @@
     flex-wrap: wrap;
 
     .services-prof {
-        min-width: 130px;
+        text-decoration: none;
+        min-width: 240px;
         width: 40%;
         margin: 0 auto;
         margin-top: 20px;

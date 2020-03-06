@@ -71,8 +71,8 @@ if (doFullpage > 996) {
 // psevdo ====================================================>
 
 
-console.log(localStorage.psevdo_link);
-if (window.location.pathname == "/C:/Users/odmin/Desktop/visaTUT/index.html") {
+console.log('window.location.pathname: ', window.location.pathname);
+if (window.location.pathname == "/") {
   if (localStorage.psevdo_link != 0) {
     if (window.matchMedia("(max-width: 996px)").matches) {
     function linkTime() {
@@ -93,7 +93,7 @@ $('.psevdo_link').on("click", function() {
   let psevdo_class = $(this).data('index');
  
   localStorage.psevdo_link = psevdo_class;
-  window.location.pathname = '/C:/Users/odmin/Desktop/visaTUT/index.html';
+  window.location.pathname = '/';
 });
 
 
@@ -109,16 +109,16 @@ $('.nav_name_link').on('click', function() {
     let data_scheme = $(this).data('scheme');
   
     if (data_scheme == 1) {
-      window.location.pathname = '/C:/Users/odmin/Desktop/visaTUT/index.html';
+      window.location.pathname = '/';
       localStorage.scheme = 1;
     } else if (data_scheme > 10 && data_scheme < 100) {
       localStorage.scheme = data_scheme;
       console.log('localStorage.scheme: ', localStorage.scheme);
-      window.location.pathname = '/C:/Users/odmin/Desktop/visaTUT/index.html';
+      window.location.pathname = '/';
     }
 });
 
-if (window.location.pathname == "/C:/Users/odmin/Desktop/visaTUT/index.html" && localStorage.scheme != 0 && localStorage.scheme != 1) {
+if (window.location.pathname == "/" && localStorage.scheme != 0 && localStorage.scheme != 1) {
   
 
   if (window.matchMedia("(max-width: 996px)").matches) {
@@ -135,7 +135,7 @@ if (window.location.pathname == "/C:/Users/odmin/Desktop/visaTUT/index.html" && 
   add_visible_content();
  
 }
-if (window.location.pathname == "/C:/Users/odmin/Desktop/visaTUT/index.html" && localStorage.scheme == 1) {
+if (window.location.pathname == "/" && localStorage.scheme == 1) {
   if (window.matchMedia("(max-width: 996px)").matches) {
     function linkTime() {
       let destination = $('#sect2').offset().top;
@@ -496,6 +496,27 @@ $('.select__wrap_item').on('click', function() {
      
   });
 
+
+    $('.services_form').on("submit", function(event) {
+
+      event.preventDefault();
+
+          var services_input =  $('.form_select');
+
+          for (var current_number = 0; current_number < services_input.length; current_number++) {
+              var current_input = services_input[current_number];
+            
+              if (current_input.value == 0) {
+               let current_wrap = $(current_input).parents('.select__input').parents('.select');
+               console.log('current_wrap: ', current_wrap);
+               current_wrap.append('<div class="add_error">Це поле обовязкове для заповнення</div>');
+             
+              }
+
+          }
+
+         
+    });
 
 
 

@@ -260,7 +260,7 @@ transition: all .4s;
     justify-content: flex-end;
     flex-direction: column;
     margin: 0 auto;
-    text-align: -webkit-right;
+    align-items: flex-end;
 
     input[type="checkbox"]:checked, 
     input[type="checkbox"]:not(:checked), 
