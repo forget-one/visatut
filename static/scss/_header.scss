@@ -319,6 +319,16 @@ body {
 .main_nav_bar_for_mobile {
     display: none;
 }
+.bg_slider {
+    height: 100%;
+}
+.slick-track {
+    height: 100%;
+}
+.slick-list {
+    height: 100vh !important;
+}
+
 
 @media (max-width: 996px) {
     .super_hidden_name {
