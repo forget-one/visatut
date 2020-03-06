@@ -70,3 +70,4 @@ class CategoryServices(models.Model):
     image       = models.ImageField(upload_to='media/', blank=True, null=True)
     field       = HTMLField(blank=True, null=True)        
 
+
