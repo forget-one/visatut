@@ -149,9 +149,10 @@
 					</div>
 					<div class="search_result-block blog-block normalScroll">
 						
+						{% for vacancy in vacancies %}
 						<div class="search_result-wrap">
 							<div class="content_num">
-								Збірка моніторів для телевізорів - LG
+								{{ vacancy.name }}
 							</div>
 							<div class="characteristic-wrap">
 								<div class="search_result-prof">
@@ -177,9 +178,7 @@
 											Робота для:
 										</div>
 										<div class="sub_srch">
-											чоловіки
-											жінки
-											сімейні пари
+											{{ vaacncy.gender }}
 										</div>
 									</div>
 								</div>
@@ -198,7 +197,7 @@
 											Місце роботи:
 										</div>
 										<div class="sub_srch">
-											м. Mlawa
+											{{ vacancy.work_position }}
 										</div>
 									</div>
 								</div>
@@ -221,7 +220,7 @@
 											Компанія надає:
 										</div>
 										<div class="sub_srch">
-											- офіційне оформлення; - страхування; - проїзд до роботи - робочий спец. одяг
+											{{ vacancy.our_duties}}
 										</div>
 									</div>
 								</div>
@@ -240,7 +239,7 @@
 											Необхідні документи:
 										</div>
 										<div class="sub_srch">
-											- віза D05 5+;- - можливий без віз
+											{{ vacancy.document }}
 										</div>
 									</div>
 								</div>
@@ -261,7 +260,7 @@
 											Графік роботи:
 										</div>
 										<div class="sub_srch">
-											Умови: з ПН - СБ, 10-12 год/день Оплата праці: 11,00 зл./ год.
+											{{ vacancy.work_day }}
 										</div>
 									</div>
 								</div>
@@ -279,7 +278,7 @@
 											Обов'язки:
 										</div>
 										<div class="sub_srch">
-											- збір моніторів для телевізорів LG
+											{{ vacancy.duties }}
 										</div>
 									</div>
 								</div>
@@ -297,7 +296,7 @@
 											Вимоги:
 										</div>
 										<div class="sub_srch">
-											- спритність рук; - вік до 55 років;.
+											{{ vacancy.requirements }}
 										</div>
 									</div>
 								</div>
@@ -317,13 +316,14 @@
 											Витрати працівників:
 										</div>
 										<div class="sub_srch">
-											- Виготовляємо медично-санітарну книжку - 100 злотих з з/п (сплачується одноразово). - Оформлення запрошення до 7-ми робочих днів. Вартість - 40 злотих. - Житло: будинок зі всіма зручностями або готель(190 зл/.міс. ) - Харчування.
+											{{ vacancy.your_duties }}
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					
+						{% endfor %}
+							
 					</div>
 					<div class="header-btn">
 						Консультація
@@ -333,8 +333,6 @@
 				</div>
 			</div>
 		
-				
-			
 		</section>
 		
 	</div>

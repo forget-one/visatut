@@ -10,8 +10,9 @@ def index(request):
     countries           = Country.objects.all()
     categoryservices    = CategoryServices.objects.all()
     posts               = Post.objects.all()
-    vacancy             = Vacancy.objects.all()
-    gender              = Gender.objects.all()
+    genders             = Gender.objects.all()
+    work_types          = WorkType.objects.all()
+    document_types      = DocumetType.objects.all()
     return render(request, 'index.html', locals())
 
 
@@ -55,7 +56,13 @@ def partner_usa(request):
 
 
 def search_service(request):
-    return render(request, 'search_service.html')
+    data = request.POST
+    print(request.POST.get('vant1'))
+    print(request.POST.get('vant2'))
+    print(request.POST.get('vant3'))
+    print(request.POST.get('vant4'))
+    vacancies = Vacancy.objects.filter()
+    return render(request, 'search_service.html', locals())
 
 
 

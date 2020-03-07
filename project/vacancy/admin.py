@@ -13,6 +13,11 @@ class GenderAdmin(admin.ModelAdmin):
 class DocumetTypeAdmin(admin.ModelAdmin):
     exclude = ['']
 
+
+class WorkTypeAdmin(admin.ModelAdmin):
+    exclude = ['']
+
+admin.site.register(WorkType, WorkTypeAdmin)
 admin.site.register(Vacancy, VacancyAdmin)
 admin.site.register(Gender, GenderAdmin)
 admin.site.register(DocumetType, DocumetTypeAdmin)
