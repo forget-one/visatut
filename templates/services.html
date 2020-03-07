@@ -152,27 +152,27 @@
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div data-scheme="11" class="nav_name nav_name_link">
-							Робочі візи в Європу
+							{{ test }}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name nav_name_active">
-							Литва
+							{{ country.name }}
 						</div>
 					</div>
 
 					
 					<div class="blog-block normalScroll">
-					{% for item in country_services %}
-						<a class="blog-prof_link" href="{% url 'service' id=item.id %}">
+					{% for service in country_services %}
+						<a class="blog-prof_link" href="{% url 'service' id=service.id %}">
 							<div class="blog-prof">
 								<div class="blog-img">
-									<img src="{{ item.country.image.url }}" alt="">
+									<img src="{{ service.country.image.url }}" alt="">
 								</div>
 								<div class="blog-text">
 									<div class="blog__title">
-										{{ item.title }}
+										{{ service.title }}
 									</div>
-									{{ item.suptitle }}
+									{{ service.suptitle }}
 								</div>
 							</div>
 						</a>

@@ -4,9 +4,15 @@ from tinymce import HTMLField
 
 class CategoryCountry(models.Model):
     title           = models.CharField(max_length=250, blank=True, null=True)
+    slug            = models.SlugField(blank=True, null=True)
     image           = models.ImageField(upload_to='media/', blank=True, null=True)
-    category        = models.ManyToManyField(to='Country', blank=True, related_name='categories')
+    country         = models.ManyToManyField(to='Country', blank=True, related_name='countries')
     
+    def get_image_url(self):
+        url = ''
+        if self.image:
+            url = self.image.url
+        return url
 
     def __str__(self):
         return f'{self.title}'
@@ -15,14 +21,11 @@ class CategoryCountry(models.Model):
         verbose_name = 'Категорія'
         verbose_name_plural = 'Категорії'
 
-    def get_image_url(self):
-        url = ''
-        if self.image:
-            url = self.image.url
-        return url
+
 
 class Country(models.Model):
     name        = models.CharField(max_length=250, blank=True, null=True)
+    slug        = models.SlugField(unique=True)
     image       = models.ImageField(upload_to='media/', blank=True, null=True)
 
     def __str__(self):
@@ -87,4 +90,9 @@ class CategoryServices(models.Model):
             url = self.image.url
         return url
 
+    def __str__(self):
+        return f'{self.title}'
 
+    class Meta:
+        verbose_name = 'Сервіс із країнами'
+        verbose_name_plural = 'Сервіси із країнами'

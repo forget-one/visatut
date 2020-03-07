@@ -31,7 +31,7 @@
 				<div data-info="info{{ item.id }}" class="services-prof">
 					{% include '_svg_triple.html' %}
 					<div class="services-image-wrap">
-						<img src="{{ item.image.url }}" alt="">
+						<img src="{{ item.get_image_url }}" alt="">
 					</div>
 					<div class="services__text">
 						{{ item.title }}
@@ -67,7 +67,7 @@
 				<div data-info="info{{ forloop.counter }}z" class="services-prof">
 					{% include '_svg_triple.html' %}
 					<div class="services-image-wrap">
-						<img src="{{ item.image.url }}" alt="">
+						<img src="{{ item.get_image_url }}" alt="">
 					</div> 
 					<div class="services__text">
 						{{ item.title }}
@@ -81,7 +81,7 @@
 <!-- Services content -->
 <div class="hidden_tab_content">
 						
-	{% for obj in category_country %}
+	{% for country_category in category_country %}
 	<div id="info{{ forloop.counter }}" class="info-content content11">
 		<div class="main__title">
 			<h1 class="title_name">
@@ -97,21 +97,21 @@
 			</div>
 			<img src="/static/img/nav.svg" alt="">
 			<div class="nav_name nav_name_active">
-				{{ obj.title }}
+				{{ country_category.title }}
 			</div>
 		</div>
 		<div class="countries-block">
 			
-				{% for item in countries %}
+				{% for country in countries %}
 				
-					{% if item in obj.category.all %}
+					{% if country in country_category.country.all %}
 					<div data-subInfo="sub{{forloop.counter}}" class="countries_profile">
-						<a class="countries_img-wrap" href="{% url 'services' country=item  %}">
-							<img class="countries_img" src="{{ item.get_image_url }}" alt="">
+						<a class="countries_img-wrap" href="{% url 'services' slug=country.slug %}">
+							<img class="countries_img" src="{{ country.get_image_url }}" alt="">
 						</a>
-						<a href="{% url 'services' country=item %}">
+						<a href="{% url 'services' slug=country.slug %}">
 							<div class="countries_text">
-								{{ item.name }}
+								{{ country.name }}
 							</div>
 						</a>
 					</div>
@@ -119,7 +119,6 @@
 
 				{% endfor %}
 				
-
 		</div>
 	</div>
 	{% endfor %}	
@@ -606,7 +605,7 @@
 				{% for item in posts %}
 				<div class="blog-prof">
 				<a href="#" class="blog-img">
-						<img src="{{ item.image.url }}" alt="">
+						<img src="{{ item.get_image_url }}" alt="">
 				</a>
 					<a href="#" class="blog-text">
 							<div class="blog__title">

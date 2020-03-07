@@ -12,13 +12,12 @@ def index(request):
     posts               = Post.objects.all()
     vacancy             = Vacancy.objects.all()
     gender              = Gender.objects.all()
-    # countries           = category_country.country
     return render(request, 'index.html', locals())
 
 
-def services(request, country):
-    country_services = CountryServices.objects.filter(country__name=country)
-    print(country_services)
+def services(request, slug):
+    country             = Country.objects.get(slug=slug)
+    country_services    = CountryServices.objects.filter(country=country)
     return render(request, 'services.html', locals())
 
 
