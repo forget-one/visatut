@@ -15,6 +15,12 @@ class CategoryCountry(models.Model):
         verbose_name = 'Категорія'
         verbose_name_plural = 'Категорії'
 
+    def get_image_url(self):
+        url = ''
+        if self.image:
+            url = self.image.url
+        return url
+
 class Country(models.Model):
     name        = models.CharField(max_length=250, blank=True, null=True)
     image       = models.ImageField(upload_to='media/', blank=True, null=True)
@@ -25,6 +31,12 @@ class Country(models.Model):
     class Meta:
         verbose_name = 'Країна'
         verbose_name_plural = 'Країни'
+    
+    def get_image_url(self):
+        url = ''
+        if self.image:
+            url = self.image.url
+        return url
 
 class StaticService(models.Model):
     title       = models.CharField(max_length=250, blank=True, null=True)
@@ -67,6 +79,12 @@ class CategoryServices(models.Model):
     title       = models.CharField(max_length=250, blank=True, null=True)
     suptitle    = models.TextField(blank=True, null=True)
     image       = models.ImageField(upload_to='media/', blank=True, null=True)
-    field       = HTMLField(blank=True, null=True)        
+    field       = HTMLField(blank=True, null=True)      
+
+    def get_image_url(self):
+        url = ''
+        if self.image:
+            url = self.image.url
+        return url
 
 

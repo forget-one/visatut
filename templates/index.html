@@ -107,7 +107,7 @@
 					{% if item in obj.category.all %}
 					<div data-subInfo="sub{{forloop.counter}}" class="countries_profile">
 						<a class="countries_img-wrap" href="{% url 'services' country=item  %}">
-							<img class="countries_img" src="{{ item.image.url }}" alt="">
+							<img class="countries_img" src="{{ item.get_image_url }}" alt="">
 						</a>
 						<a href="{% url 'services' country=item %}">
 							<div class="countries_text">
@@ -424,12 +424,16 @@
 <div class="default-image default-image-1"></div>
 </div>
 </section>
+<!-- ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff -->
+<!-- ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff -->
+<!-- ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff -->
+<!-- Form -->
 <form method="post" action="" class="post_forms" id="form_cons" style="display:none;">
    <div class="cons_text">
       Для безкоштовної консультації заповніть форму і ми зв'яжемося з Вами протягом 10хв
    </div>
    <div class="inp-vak-wrap">
-      <label class="label__style" for="name">Ваше имя</label>
+      <label class="label__style" for="name">Ваше ім'я</label>
       <input class="input_focus" name="name" type="text" required="">
    </div>
    <div class="inp-vak-wrap">
