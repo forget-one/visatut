@@ -56,4 +56,3 @@ admin.site.register(StaticService, StaticServiceAdmin)
 # admin.site.register(ServiceFeature, ServiceFeatureAdmin)
 # admin.site.register(ServiceFeatureCategory, ServiceFeatureCategoryAdmin)
 
-
