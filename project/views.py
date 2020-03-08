@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from project.services.models import *
 from project.blog.models import *
 from project.vacancy.models import *
+from django.http import request
 # Create your views here.
 
 
