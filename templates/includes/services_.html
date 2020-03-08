@@ -1,0 +1,87 @@
+<section id="sect2" class="sect_name section sect2">
+    <div class="default-block">
+        <div class="default-content">
+            <div class="main__title">
+                <h1 class="title_name">
+                    Послуги
+                </h1>
+            </div>
+            <!-- Кнопки сервісів -->
+            <div class="services-block">
+                {% for service_category in service_categories %}
+                <div data-info="info{{ service_category.id }}" class="services-prof">
+                    {% include '_svg_triple.html' %}
+                    <div class="services-image-wrap">
+                        <img src="{{ service_category.get_thumbnail_url }}" alt="">
+                    </div>
+                    <div class="services__text">
+                        {{ service_category.title }}
+                    </div>
+                </div>
+                {% endfor %}
+                {% for service in static_services %}
+                <div data-info="info{{ forloop.counter }}" class="services-prof">
+                    {% include '_svg_triple.html' %}
+                    <div class="services-image-wrap">
+                        <img src="{{ service.get_thumbnail_url }}" alt="">
+                    </div>
+                    <div class="services__text">
+                        {{ service.title }}
+                    </div>
+                </div>
+                {% endfor %}
+                <div data-info="vacancy" class="services-prof">
+                    {% include '_svg_triple.html' %}
+                    <div class="services-image-wrap">
+                        <img src="/static/img/services-4.jpg" alt="">
+                    </div>
+                    <div class="services__text">
+                        Робота за кордоном
+                    </div>
+                </div>
+            </div>
+            <!-- Контент сервісів  -->
+            <div class="hidden_tab_content">
+                <!-- Хлібні крихти -->
+                {% include 'components/breadcrumbs.html' %}
+                {% for obj in "123"|make_list %}
+                <div id="info{{ forloop.counter }}" class="info-content content22">
+                    <div class="main__title">
+                        <h1 class="title_name">
+                            Послуги
+                        </h1>
+                    </div>
+                    <div class="close-btn">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times"
+                            class="svg-inline--fa fa-times fa-w-11" role="img"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+                            <path fill="currentColor"
+                                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="mini-navigation-block">
+                        <div data-nav="nav1" class="nav_name">
+                            Послуги
+                        </div>
+                        <img src="/static/img/nav.svg" alt="">
+                        <div class="nav_name nav_name_active">
+                            {{ obj}}
+                        </div>
+                    </div>
+                    <div class="dop-content-service normalScroll">
+                        <div class="main_service_title">
+                            {{ obj}}
+                        </div>
+                    </div>
+                    <div class="header-btn form_consultation" data-src='#form_cons'>
+                        Консультація
+                    </div>
+                </div>
+                {% endfor %}
+                {% include 'components/vacancy.html' %}
+            </div>
+        </div>
+        <div class="default-image default-image-1"></div>
+    </div>
+</section>

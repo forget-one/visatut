@@ -7,21 +7,21 @@
                 </h1>
             </div>
             <div class="services-block">
-                {% for service_category in service_categories %}
-                <div data-info="info{{service_category.id}}" class="services-prof">
+                {% for service_category in '123456789'|make_list%}
+                <div data-info="info{{service_category}}" class="services-prof">
                     {% include '_svg_triple.html' %}
                     <div class="services-image-wrap">
-                        <img src="{{service_category.get_thumbnail_url}}" alt="">
+                        <img src="static/img/services-1.jpg" alt="">
                     </div>
                     <div class="services__text">
-                        {{service_category.title}}
+                        Категорія {{service_category}}
                     </div>
                 </div>
                 {% endfor %}
             </div>
             <div class="hidden_tab_content">
-                {% for service_category in service_categories %}
-                <div id="info{{service_category.id}}" class="info-content content11">
+                {% for service_category in '123456789'|make_list %}
+                <div id="info{{service_category}}" class="info-content content11">
                     <div class="main__title">
                         <h1 class="title_name">
                             Послуги
@@ -36,18 +36,18 @@
                         </div>
                         <img src="static/img/nav.svg" alt="">
                         <div class="nav_name nav_name_active">
-                            {{service_category.title}}
+                            Категорія {{service_category}}
                         </div>
                     </div>
                     <div class="countries-block">
-                        {% for country in service_category.countries.all %}
+                        {% for country in '123'|make_list%}
                         <div data-subInfo="sub{{country}}" class="countries_profile">
-                            <a href="{% url 'services' country.id service_category.id %}">
-                                <img class="countries_img" src="{{country.get_thumbnail_url}}" alt="">
+                            <a href="services_1.html">
+                                <img class="countries_img" src="static/img/countries/uhor.png" alt="">
                             </a>
-                            <a href="{% url 'services' country.id service_category.id %}">
+                            <a href="services_1.html">
                                 <div class="countries_text">
-                                    {{country.title}}
+                                    Країна {{country}} в категорії {{service_category}}
                                 </div>
                             </a>
                         </div>

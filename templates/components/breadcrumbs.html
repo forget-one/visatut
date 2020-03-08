@@ -1,0 +1,53 @@
+{% for country_category in '123123'|make_list %}
+<div id="info{{ forloop.counter }}" class="info-content content11">
+    <div class="main__title">
+        <h1 class="title_name">
+            Послуги
+        </h1>
+    </div>
+    <div class="close-btn">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times"
+            class="svg-inline--fa fa-times fa-w-11" role="img"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+            <path fill="currentColor"
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+            </path>
+        </svg>
+    </div>
+    <div class="mini-navigation-block">
+        <div data-nav="nav1" class="nav_name">
+            Послуги
+        </div>
+        <img src="/static/img/nav.svg" alt="">
+        <div class="nav_name nav_name_active">
+            country_category: {{ country_category }} 
+        </div>
+    </div>
+    <div class="countries-block">
+
+        {% for country in '123123'|make_list %}
+
+        <div data-subInfo="sub{{forloop.counter}}" class="countries_profile">
+            {% if country.slug %}
+            <a class="countries_img-wrap" href="{% url 'services' slug=country.slug %}">
+            {% else %}
+            <a class="countries_img-wrap" href="">{{country}}</a>
+            {% endif %}
+                <img class="countries_img" src="{{ country.get_thumbnail_url }}" alt="">
+            </a>
+            {% if country.slug %}
+            <a href="{% url 'services' slug=country.slug %}">
+            {% else %}
+            <a href="">{{country}}</a>
+            {% endif %}
+                <div class="countries_text">
+                    {{ country }}
+                </div>
+            </a>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+{% endfor %}

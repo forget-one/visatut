@@ -4,7 +4,7 @@ from django.db import models
 
 class Vacancy(models.Model):
     name            = models.CharField(max_length=150, blank=True, null=True)
-    country         = models.ForeignKey(to='services.Country', on_delete=models.CASCADE, blank=True, null=True, related_name='country')
+    country         = models.ForeignKey(to='service.Country', on_delete=models.CASCADE, blank=True, null=True, related_name='country')
     gender          = models.ForeignKey(to='Gender', blank=True, null=True, on_delete=models.CASCADE)
     document        = models.ForeignKey(to='DocumetType', blank=True, on_delete=models.CASCADE, null=True, related_name='documents')
     work_type       = models.ForeignKey(to='WorkType', on_delete=models.CASCADE, blank=True, null=True, related_name='work_types')

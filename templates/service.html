@@ -152,17 +152,17 @@
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div data-scheme="11" class="nav_name nav_name_link">
-							Робочі візи в Європу
+							{{service.categories.all.first.title}}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name">
-							<a href="services_1.html">
-								Литва
+							<a href="{% url 'services' service.categories.all.first.countries.all.first.pk service.categories.all.first.pk %}">
+								{{service.categories.all.first.countries.all.first.title}}
 							</a>
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name nav_name_active">
-							Реєстрація компанії в Польщі
+							{{service.title}}
 						</div>
 					</div>
 
