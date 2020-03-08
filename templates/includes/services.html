@@ -8,7 +8,7 @@
             </div>
             <div class="services-block">
                 {% for service_category in service_categories %}
-                <div data-info="info{{service_category.id}}" class="services-prof">
+                <div data-info="service_info{{service_category.id}}" class="services-prof">
                     {% include '_svg_triple.html' %}
                     <div class="services-image-wrap">
                         <img src="{{service_category.get_thumbnail_url}}" alt="">
@@ -18,10 +18,22 @@
                     </div>
                 </div>
                 {% endfor %}
+                {%for static_service in static_services %}
+                <div data-info="static_service_info{{static_service.id}}" class="services-prof">
+                    {% include '_svg_triple.html' %}
+                    <div class="services-image-wrap">
+                        <img src="{{static_service.get_thumbnail_url}}" alt="">
+                    </div>
+                    <div class="services__text">
+                        {{static_service.title}}
+                    </div>
+                </div>
+                {%endfor%}
+
             </div>
             <div class="hidden_tab_content">
                 {% for service_category in service_categories %}
-                <div id="info{{service_category.id}}" class="info-content content11">
+                <div id="service_info{{service_category.id}}" class="info-content content11">
                     <div class="main__title">
                         <h1 class="title_name">
                             Послуги
@@ -55,6 +67,35 @@
                     </div>
                 </div>
                 {% endfor %}
+                {% for static_service in static_services %}
+                <div id="static_service_info{{static_service.id}}" class="info-content content33">
+                    <div class="main__title">
+                        <h1 class="title_name">
+                            Послуги
+                        </h1>
+                    </div>
+                    <div class="close-btn">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+                    </div>
+                    <div class="mini-navigation-block">
+                        <div data-nav="nav1" class="nav_name">
+                            Послуги
+                        </div>
+                        <img src="static/img/nav.svg" alt="">
+                        <div class="nav_name nav_name_active">
+                            {{static_service.title}}
+                        </div>
+                    </div>
+                    <div class="dop-content-service normalScroll">
+                        {{static_service.text|safe}}
+                    </div>
+                    <div class="header-btn form_consultation" data-src='#form_cons'>
+                        Консультація
+                    </div>
+                </div>
+                {%endfor%}
+                {% include 'components/vacancy.html' %}
+
             </div>
         </div>
         <div class="default-image default-image-1">
