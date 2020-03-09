@@ -1,3 +1,4 @@
+for /f "delims=" %F in ('Dir /B /S .\*.py ^|findstr /IE "\\migrations\\[^\\]*.py"^|findstr /IEV "\\__init__.py" ') Do @echo del "%F"
 rm db.sqlite3
 
 
