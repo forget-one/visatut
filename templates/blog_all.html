@@ -142,37 +142,28 @@
 			<div class="default-block">
 				<div class="default-content">
 					<div class="blog-block normalScroll">
-						<div class="blog-img blog-img_for_link">
-							<img src="{{ post.get_image_url }}" alt="">
+						{% for post_category in post_categories %}
+						<div class="blog-prof">
+							<a href="" class="blog-img">
+								<img src="{{ post_category.get_image_url }}" alt="">
+							</a>
+							<a href="" class="blog-text">
+								<div class="blog__title">
+									{{ post_category.title }}
+								</div>
+								{{ post_category.text|safe }}
+							</a>
 						</div>
-						<div class="blog-text">
-							<div class="blog__title">
-								{{ post.title }}
-							</div>
-							{{ post.text|safe }}
-						</div>		
-								
-						
+						{% endfor %}
 					</div>
 				</div>
 				<div class="default-image default-image-1">
 				</div>
 			</div>
-				
 			
 		</section>
 		
 	</div>
-
-
-
-
-
-
-
-
-
-
 
 
 	{% include '_scripts.html' %}

@@ -16,7 +16,7 @@ class Vacancy(models.Model):
     duties          = models.TextField(blank=True, null=True)
     actual          = models.BooleanField(default=True)
     def __str__(self):
-        return f'{self.title}'
+        return f'{self.name}'
 
     class Meta:
         verbose_name = 'Вакансія'

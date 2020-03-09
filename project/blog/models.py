@@ -6,9 +6,9 @@ from tinymce import HTMLField
 class Post(models.Model):
     title           = models.CharField(max_length=150, blank=True, null=True)
     image           = models.ImageField(blank=True, null=True)
-    slug            = models.SlugField(unique=True)
     text            = HTMLField(blank=True, null=True)
     post_category   = models.ForeignKey(to='PostCategory', blank=True, null=True, on_delete=models.CASCADE, related_name='post_categories')
+    updated         = models.DateTimeField(auto_now=True)
 
     def get_image_url(self):
         url = ''
@@ -26,9 +26,10 @@ class Post(models.Model):
 
 class PostCategory(models.Model):
     title       = models.CharField(max_length=150, blank=True, null=True)
+    slug        = models.SlugField(unique=True)
     image       = models.ImageField(blank=True, null=True)
     text        = HTMLField(blank=True, null=True)
-
+    updated     = models.DateTimeField(auto_now=True)
     def get_image_url(self):
         url = ''
         if self.image:

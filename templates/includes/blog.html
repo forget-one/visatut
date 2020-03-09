@@ -7,20 +7,20 @@
 				</h1>
 			</div>
 			<div class="blog-block normalScroll">
-				{% for item in posts %}
+				{% for post_category in post_categories %}
 				<div class="blog-prof">
-					<a href="#" class="blog-img">
-						<img src="{{ item.get_image_url }}" alt="">
+					<a href="{% url 'blog' slug=post_category.slug %}" class="blog-img">
+						<img src="{{ post_category.get_image_url }}" alt="">
 					</a>
-					<a href="#" class="blog-text">
+					<a href="{% url 'blog' slug=post_category.slug %}" class="blog-text">
 						<div class="blog__title">
-							{{ item.title }}
+							{{ post_category.title }}
 						</div>
-						{{ item.text|safe }}
+						{{ post_category.text|safe }}
 					</a>
 				</div>
 				{% endfor %}
-				<a href=" {% url 'blog' %} " class="blog_btn">
+				<a href=" {% url 'blog_all' %} " class="blog_btn">
 					Більше
 				</a>
 			</div>
