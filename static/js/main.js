@@ -507,16 +507,15 @@ $('.select__wrap_item').on('click', function() {
             var current_input = services_input[current_number];
             if (current_input.value == 0) {
               event.preventDefault();
-                if (current_input.value == 0) {
-                 let current_wrap = $(current_input).parents('.select__input').parents('.select');
-                 if (current_wrap[0].childElementCount == 2) {
-                    current_wrap.append('<div class="add_error">Це поле обовязкове для заповнення</div>');
-                 }
+              if (current_input.value == 0) {
+                let current_wrap = $(current_input).parents('.select__input').parents('.select');
+                if (current_wrap[0].childElementCount == 2) {
+                  current_wrap.append('<div class="add_error">Це поле обовязкове для заповнення</div>');
                 }
-            } else {
-              event.preventDefault();
-              window.location.pathname = '/search_service/';
-            }
+              }else{
+                $(this).submit()
+              }
+            } 
           }
     });
 

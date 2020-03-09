@@ -18,6 +18,15 @@
                     </div>
                 </div>
                 {% endfor %}
+                <div data-info="foreign_work" class="services-prof">
+                    {% include '_svg_triple.html' %}
+                    <div class="services-image-wrap">
+                        <img src="/static/img/services-4.jpg" alt="">
+                    </div>
+                    <div class="services__text">
+                        Робота за кордоном
+                    </div>
+                </div>
                 {%for static_service in static_services %}
                 <div data-info="static_service_info{{static_service.id}}" class="services-prof">
                     {% include '_svg_triple.html' %}
@@ -33,7 +42,7 @@
             </div>
             <div class="hidden_tab_content">
                 {% for service_category in service_categories %}
-                <div id="service_info{{service_category.id}}" class="info-content content11">
+                <div id="service_info{{service_category.id}}" class="info-content content{{ forloop.counter }}">
                     <div class="main__title">
                         <h1 class="title_name">
                             Послуги

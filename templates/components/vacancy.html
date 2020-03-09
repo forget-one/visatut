@@ -1,4 +1,4 @@
-<div id="vacancy" class="info-content content">
+<div id="foreign_work" class="info-content contentforeign_work">
     <div class="main__title">
         <h1 class="title_name">
             Послуги
@@ -22,7 +22,7 @@
             Робота за кордоном
         </div>
     </div>
-    <form method="post" class="services_form" action="">
+    <form method="post" class="services_form" action="search_service">
         <div class="select usd-select calk-blocks">
             <div class="select__input select__input1 usd">
                 <div class="visual_label">
@@ -38,7 +38,7 @@
             </div>
             <div class="select__wrap sel_fix_wrap" id="style-1">
                 {% for country in countries %}
-                <div class="select__wrap_item" data-id="poland">{{ country.name }}</div>
+                <div class="select__wrap_item" data-id="poland">{{ country.title }}</div>
                 {% endfor %}
             </div>
         </div>
