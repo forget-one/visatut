@@ -534,11 +534,7 @@ $('.select__wrap_item').on('click', function() {
                 let data = $(".services_form").serializeArray();
               console.log('data: ', data);
 
-<<<<<<< HEAD
-              var formData = {};
-=======
               var obj = {};
->>>>>>> db4275d4e7745c1a399ba87c9afa473db8adb1a5
               $.each(serviceFinder, function(i, field){
                 if(field.value.trim() != ""){
                   if (/\[\]$/.test(field.name)) {
@@ -561,10 +557,7 @@ $('.select__wrap_item').on('click', function() {
                       return data.json();
                     })
 
-<<<<<<< HEAD
-=======
                     
->>>>>>> db4275d4e7745c1a399ba87c9afa473db8adb1a5
 
 
 
