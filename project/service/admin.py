@@ -56,7 +56,3 @@ admin.site.register(StaticService, StaticServiceAdmin)
 # admin.site.register(ServiceFeature, ServiceFeatureAdmin)
 # admin.site.register(ServiceFeatureCategory, ServiceFeatureCategoryAdmin)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 15d14ff2282c728770dab8c8d2f175abfcb681c4

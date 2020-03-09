@@ -26,10 +26,7 @@ class Service(models.Model):
     title      = models.CharField(verbose_name=('Заголовок'), max_length=255)
     categories = models.ManyToManyField(verbose_name=("Категорії послуги"), null=True, to="service.ServiceCategory", related_name='services')
     countries  = models.ManyToManyField(verbose_name=("Країни"),            null=True, to="service.Country",         related_name='services')
-<<<<<<< HEAD
     header     = models.TextField(verbose_name=("Заголовок"), blank=True, null=True, max_length=1000)
-=======
->>>>>>> 15d14ff2282c728770dab8c8d2f175abfcb681c4
     advantages = HTMLField(verbose_name=("Переваги"),            blank=True, null=True)
     procedure  = HTMLField(verbose_name=("Процедура відкриття"), blank=True, null=True)
     addition   = HTMLField(verbose_name=("Додаткові вимоги"),    blank=True, null=True)
@@ -65,11 +62,7 @@ class ServiceCategory(models.Model):
 class Country(models.Model):
     title      = models.CharField(verbose_name=("Назва"), max_length=255)
     thumbnail  = models.ImageField(verbose_name=("Картинка"), blank=True, null=True, upload_to='country/')
-<<<<<<< HEAD
     categories = models.ManyToManyField(verbose_name=("Категорії"), to='service.ServiceCategory', related_name='countries', related_query_name='country', null=True, blank=False)
-=======
-    categories = models.ManyToManyField(verbose_name=("Категорії"), to='service.ServiceCategory', related_name='countries', null=True, blank=False)
->>>>>>> 15d14ff2282c728770dab8c8d2f175abfcb681c4
 
     def __str__(self):
         return f'{self.title}'
