@@ -534,7 +534,7 @@ $('.select__wrap_item').on('click', function() {
                 let data = $(".services_form").serializeArray();
               console.log('data: ', data);
 
-              var obj = {};
+              var formData = {};
               $.each(serviceFinder, function(i, field){
                 if(field.value.trim() != ""){
                   if (/\[\]$/.test(field.name)) {
