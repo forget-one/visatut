@@ -38,7 +38,7 @@
             </div>
             <div class="select__wrap sel_fix_wrap" id="style-1">
                 {% for country in countries %}
-                <div class="select__wrap_item" data-id="poland">{{ country.title }}</div>
+                <div class="select__wrap_item" data-id="{{ country.title }}">{{ country.title }}</div>
                 {% endfor %}
             </div>
         </div>
@@ -57,7 +57,7 @@
             </div>
             <div class="select__wrap sel_fix_wrap" id="style-1">
                 {% for gender in genders %}
-                <div class="select__wrap_item" data-id="poland">{{ gender.human_type }}</div>
+                <div class="select__wrap_item" data-id="{{ gender.human_type }}">{{ gender.human_type }}</div>
                 {% endfor %}
             </div>
         </div>
@@ -76,7 +76,7 @@
             </div>
             <div class="select__wrap sel_fix_wrap" id="style-1">
                 {% for work_type in work_types %}
-                <div class="select__wrap_item" data-id="poland">{{ work_type.work_name }}</div>
+                <div class="select__wrap_item" data-id="{{ work_type.work_name }}">{{ work_type.work_name }}</div>
                 {% endfor %}
             </div>
         </div>
@@ -95,7 +95,7 @@
             </div>
             <div class="select__wrap sel_fix_wrap" id="style-1">
                 {% for doc_type in document_types %}
-                <div class="select__wrap_item" data-id="poland">{{ doc_type.doc_type }}</div>
+                <div class="select__wrap_item" data-id="{{ doc_type.doc_type }}">{{ doc_type.doc_type }}</div>
                 {% endfor %}
             </div>
         </div>
