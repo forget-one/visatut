@@ -8,6 +8,7 @@ from django.http import request
 def index(request):
     service_categories = ServiceCategory.objects.all()
     static_services    = StaticService.objects.all()
+    countries           = Country.objects.all()
     
     posts               = Post.objects.all()
 
@@ -60,8 +61,8 @@ def partner_usa(request):
 
 
 def search_service(request):
-    data = request.POST
-    print(request.POST.get('vant1'))
+    data = request.POST or request.GET
+    print(data)
     print(request.POST.get('vant2'))
     print(request.POST.get('vant3'))
     print(request.POST.get('vant4'))
