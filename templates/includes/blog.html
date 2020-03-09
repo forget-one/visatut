@@ -1,0 +1,32 @@
+<section id="sect6" class="sect_name section">
+	<div class="default-block">
+		<div class="default-content">
+			<div class="main__title">
+				<h1 class="title_name">
+					Блог
+				</h1>
+			</div>
+			<div class="blog-block normalScroll">
+				{% for item in posts %}
+				<div class="blog-prof">
+					<a href="#" class="blog-img">
+						<img src="{{ item.get_image_url }}" alt="">
+					</a>
+					<a href="#" class="blog-text">
+						<div class="blog__title">
+							{{ item.title }}
+						</div>
+						{{ item.text|safe }}
+					</a>
+				</div>
+				{% endfor %}
+				<a href=" {% url 'blog' %} " class="blog_btn">
+					Більше
+				</a>
+			</div>
+
+		</div>
+		<div class="default-image default-image-5">
+		</div>
+	</div>
+</section>

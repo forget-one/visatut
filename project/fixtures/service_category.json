@@ -1,0 +1,14 @@
+[
+    {"model":"service.ServiceCategory", "pk":1, "fields":{
+        "title":"Робочі візи в Європу",
+        "thumbnail":"service_category/europe.jpg"
+    }},
+    {"model":"service.ServiceCategory", "pk":2, "fields":{
+        "title":"Візова Підтримка США, Канада, Великобританія",
+        "thumbnail":"service_category/usa.jpg"
+    }},
+    {"model":"service.ServiceCategory", "pk":3, "fields":{
+        "title":"Відкриття компаній за кордоном",
+        "thumbnail":"service_category/abroad.jpg"
+    }}
+]

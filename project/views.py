@@ -1,31 +1,34 @@
 from django.shortcuts import render, HttpResponse
-from project.services.models import *
+from project.service.models import *
 from project.blog.models import *
 from project.vacancy.models import *
 from django.http import request
-# Create your views here.
 
 
 def index(request):
-    category_country    = CategoryCountry.objects.all()
-    countries           = Country.objects.all()
-    categoryservices    = CategoryServices.objects.all()
+    service_categories = ServiceCategory.objects.all()
+    static_services    = StaticService.objects.all()
+    
     posts               = Post.objects.all()
+
     genders             = Gender.objects.all()
     work_types          = WorkType.objects.all()
     document_types      = DocumetType.objects.all()
     return render(request, 'index.html', locals())
 
 
-def services(request, slug):
-    country             = Country.objects.get(slug=slug)
-    country_services    = CountryServices.objects.filter(country=country)
+def services(request, country_pk=None, service_category_pk=None):
+    if country_pk:
+        country             = Country.objects.get(pk=country_pk)
+        country_services    = Service.objects.filter(countries__id__in=[country.id,])
+    if service_category_pk:
+        service_category     = ServiceCategory.objects.get(pk=service_category_pk)
     return render(request, 'services.html', locals())
 
 
 def service(request, id):
-    data = CountryServices.objects.get(id=id)
-    fields = Field.objects.filter(field=data)
+    service   = Service.objects.get(id=id)
+    # fields = Field.objects.filter(field=data)
     return render(request, 'service.html', locals())
 
 
@@ -70,4 +73,4 @@ def search_service(request):
 
 
 
-    
+

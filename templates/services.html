@@ -152,15 +152,14 @@
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div data-scheme="11" class="nav_name nav_name_link">
-							fff
+							{{country.categories.all.first.title}}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name nav_name_active">
-							{{ country.name }}
+							{{ country.title }}
 						</div>
 					</div>
 
-					
 					<div class="blog-block normalScroll">
 					{% for service in country_services %}
 						<a class="blog-prof_link" href="{% url 'service' id=service.id %}">

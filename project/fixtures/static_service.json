@@ -1,0 +1,22 @@
+[
+    {"model":"service.StaticService", "pk":2, "fields":{
+        "title":"Доставка автомобілів та товарів з США",
+        "thumbnail":"static_service/auto_usa.jpg"
+    }},
+    {"model":"service.StaticService", "pk":3, "fields":{
+        "title":"Послуги страхування",
+        "thumbnail":"static_service/insurance.jpg"
+    }},
+    {"model":"service.StaticService", "pk":4, "fields":{
+        "title":"Студентські програми",
+        "thumbnail":"static_service/student.jpg"
+    }},
+    {"model":"service.StaticService", "pk":5, "fields":{
+        "title":"Еміграційні програми",
+        "thumbnail":"static_service/emigrant.jpg"
+    }},
+    {"model":"service.StaticService", "pk":6, "fields":{
+        "title":"Адвокатська підтримка у США та Європі",
+        "thumbnail":"static_service/advocat.jpg"
+    }}
+]

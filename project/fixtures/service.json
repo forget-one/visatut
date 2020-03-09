@@ -1,0 +1,127 @@
+[
+    {"model":"service.Service", "pk":1, "fields":{
+        "title":"Литовська робоча віза на 1 рік 360/360",
+        "categories":[1],
+        "countries":[1]
+    }},
+    {"model":"service.Service", "pk":2, "fields":{
+        "title":"Реєстрація компанії в Литві",
+        "categories":[1],
+        "countries":[1]
+    }},
+    {"model":"service.Service", "pk":3, "fields":{
+        "title":"Польська національна віза D 05 для роботи терміном на 6 місяців 180/360",
+        "categories":[1],
+        "countries":[2]
+    }},
+    {"model":"service.Service", "pk":4, "fields":{
+        "title":"Польська національна віза D 05a на сезонні роботи терміном на 9 місяців 270/360",
+        "categories":[1],
+        "countries":[2]
+    }},
+    {"model":"service.Service", "pk":5, "fields":{
+        "title":"Польська національна робоча віза D 06 від воєводи терміном на 12 місяців 360/360",
+        "categories":[1],
+        "countries":[2]
+    }},
+    {"model":"service.Service", "pk":6, "fields":{
+        "title":"Реєстрація компанії в Польщі",
+        "categories":[1],
+        "countries":[2]
+    }},
+    {"model":"service.Service", "pk":7, "fields":{
+        "title":"Карта Поляка",
+        "categories":[1],
+        "countries":[2]
+    }},
+    {"model":"service.Service", "pk":8, "fields":{
+        "title":"Сталий Побут в Польщі на основі Карти Побуту",
+        "categories":[1],
+        "countries":[2]
+    }},
+    {"model":"service.Service", "pk":9, "fields":{
+        "title":"Громадянство Польщі на основі Карти Сталого Побуту",
+        "categories":[1],
+        "countries":[2]
+    }},
+    {"model":"service.Service", "pk":10, "fields":{
+        "title":"Національна робоча віза в Чехію терміном на 3 місяці на 90 днів",
+        "categories":[1],
+        "countries":[3]
+    }},
+    {"model":"service.Service", "pk":11, "fields":{
+        "title":"Національна робоча карта в Чехію терміном на 2 роки",
+        "categories":[1],
+        "countries":[3]
+    }},
+    {"model":"service.Service", "pk":12, "fields":{
+        "title":"Угорська національна робоча карта терміном на 2 роки",
+        "categories":[1],
+        "countries":[4]
+    }},
+    {"model":"service.Service", "pk":13, "fields":{
+        "title":"На даний час ми призупинили допомогу в отриманні Естонських віз без прив’язки до роботи.",
+        "categories":[1],
+        "countries":[5]
+    }},
+    {"model":"service.Service", "pk":14, "fields":{
+        "title":"Туристична віза В1/В2 в США",
+        "categories":[2],
+        "countries":[7]
+    }},
+    {"model":"service.Service", "pk":15, "fields":{
+        "title":"Гостьова віза B2 в США",
+        "categories":[2],
+        "countries":[7]
+    }},
+    {"model":"service.Service", "pk":16, "fields":{
+        "title":"Бізнес віза B1 в США",
+        "categories":[2],
+        "countries":[7]
+    }},
+    {"model":"service.Service", "pk":17, "fields":{
+        "title":"Студентська віза F1 в США",
+        "categories":[2],
+        "countries":[7]
+    }},
+    {"model":"service.Service", "pk":18, "fields":{
+        "title":"Робота на круїзному лайнері в США віза C1/D",
+        "categories":[2],
+        "countries":[7]
+    }}, 
+    {"model":"service.Service", "pk":19, "fields":{
+        "title":"Реєстрація компанії в США",
+        "categories":[2],
+        "countries":[7]
+    }},
+    {"model":"service.Service", "pk":20, "fields":{
+        "title":"Туристична віза в Канаду",
+        "categories":[2],
+        "countries":[8]
+    }},
+    {"model":"service.Service", "pk":21, "fields":{
+        "title":"Гостьова віза в Канаду",
+        "categories":[2],
+        "countries":[8]
+    }},
+    {"model":"service.Service", "pk":22, "fields":{
+        "title":"Бізнес віза в Канаду",
+        "categories":[2],
+        "countries":[8]
+    }},
+    {"model":"service.Service", "pk":23, "fields":{
+        "title":"Туристична віза в Великобританію (Англію)",
+        "categories":[2],
+        "countries":[9]
+    }},
+    {"model":"service.Service", "pk":24, "fields":{
+        "title":"Гостьова віза в Великобританію (Англію)",
+        "categories":[2],
+        "countries":[9]
+    }},
+    {"model":"service.Service", "pk":25, "fields":{
+        "title":"Бізнес віза Великобританію (Англію)",
+        "categories":[1],
+        "countries":[1]
+    }}
+]
