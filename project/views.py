@@ -3,6 +3,7 @@ from project.service.models import *
 from project.blog.models import *
 from project.vacancy.models import *
 from django.http import request
+from django.views.decorators.csrf import csrf_exempt
 
 
 def index(request):
@@ -59,7 +60,7 @@ def partner_usa(request):
     return render(request, 'partner_usa.html')
 
 
-
+@csrf_exempt
 def search_service(request):
     data = request.POST or request.GET
     print(data)

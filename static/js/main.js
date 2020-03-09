@@ -501,25 +501,81 @@ $('.select__wrap_item').on('click', function() {
   });
 
 
-    $('.services_form').on("submit", function(event) {
-          var services_input =  $('.form_select');
-          for (var current_number = 0; current_number < services_input.length; current_number++) {
-            var current_input = services_input[current_number];
-            if (current_input.value == 0) {
-              event.preventDefault();
-              if (current_input.value == 0) {
-                let current_wrap = $(current_input).parents('.select__input').parents('.select');
-                if (current_wrap[0].childElementCount == 2) {
-                  current_wrap.append('<div class="add_error">Це поле обовязкове для заповнення</div>');
-                }
-              }else{
-                $(this).submit()
-              }
-            } 
+   
+  $('.services_form').on("submit", function(event) {
+    var services_input =  $('.form_select');
+    showValues();
+    alert('1');
+    for (var current_number = 0; current_number < services_input.length; current_number++) {
+      var current_input = services_input[current_number];
+      if (current_input.value == 0) {
+        event.preventDefault();
+        if (current_input.value == 0) {
+          // console.log( $(this).serialize() );
+          let current_wrap = $(current_input).parents('.select__input').parents('.select');
+          if (current_wrap[0].childElementCount == 2) {
+            current_wrap.append('<div class="add_error">Це поле обовязкове для заповнення</div>');
           }
-    });
+          
+          else{
+            // alert('1');
+            // // showValues();
+            // $(this).submit();
+          }
+        }
+      } 
+    }
+});
+
+              var serviceFinder = $('.services_form').attr('action');
+              console.log('serviceFinder: ', serviceFinder);
+
+              function showValues(){
+                let data = $(".services_form").serializeArray();
+              console.log('data: ', data);
+
+              var obj = {};
+              $.each(serviceFinder, function(i, field){
+                if(field.value.trim() != ""){
+                  if (/\[\]$/.test(field.name)) {
+                    var fName = field.name.substr(0,field.name.length-2);
+                    if (!formDataArrays[fName]) {
+                      formDataArrays[fName] = [];
+                    }
+                    formData[fName+"["+formDataArrays[fName].length+"]"] = field.value;
+                    formDataArrays[fName].push(field.value);
+                  } else {
+                    formData[field.name] = field.value;
+                  }
+                }
+            });
+                    fetch(serviceFinder, {
+                      method: 'POST',
+                      body: body
+                    })
+                    .then(data => {
+                      return data.json();
+                    })
 
 
+
+
+              
+                // for (var key in data) {
+                //   obj[data[key][0]] = data[key][1];
+                //   console.log('obj: ', obj);
+                // }
+                //   Array.from(data);
+                //   var body = new URLSearchParams($.param(obj));
+                //   console.log(body)
+                //     fetch(serviceFinder, {
+                //       method: 'POST',
+                //       body: body
+                //     })
+                //     .then(data => {
+                //       return data.json();
+                //     })
+              }
 
 
 
