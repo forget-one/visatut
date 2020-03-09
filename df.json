@@ -1,0 +1,1400 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "blog",
+    "model": "postcategory"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "blog",
+    "model": "post"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "service",
+    "model": "country"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "service",
+    "model": "servicecategory"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "service",
+    "model": "servicefeature"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "service",
+    "model": "servicefeaturecategory"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "service",
+    "model": "service"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "vacancy",
+    "model": "documettype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "vacancy",
+    "model": "gender"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "vacancy",
+    "model": "worktype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "vacancy",
+    "model": "vacancy"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "service",
+    "model": "staticservice"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "aigcc66cge09et3ndbxm2ejbbl93epzs",
+  "fields": {
+    "session_data": "NjM0ZGQ3OWFkY2E1YjdiMDZjOTI4MDljYjEwZTdjMWVkMDZkNGJkODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlMDFiNzMzNmNlNDViNWE2OGI5NDU3ZjRkMTdlNTAyNWFiMGUxMzdiIn0=",
+    "expire_date": "2020-03-22T13:18:47.852Z"
+  }
+},
+{
+  "model": "service.staticservice",
+  "pk": 1,
+  "fields": {
+    "title": "\u0420\u043e\u0431\u043e\u0442\u0430 \u0437\u0430 \u043a\u043e\u0440\u0434\u043e\u043d\u043e\u043c",
+    "text": null,
+    "thumbnail": ""
+  }
+},
+{
+  "model": "service.staticservice",
+  "pk": 2,
+  "fields": {
+    "title": "\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0456\u043b\u0456\u0432 \u0442\u0430 \u0442\u043e\u0432\u0430\u0440\u0456\u0432 \u0437 \u0421\u0428\u0410",
+    "text": null,
+    "thumbnail": "static_service/auto_usa.jpg"
+  }
+},
+{
+  "model": "service.staticservice",
+  "pk": 3,
+  "fields": {
+    "title": "\u041f\u043e\u0441\u043b\u0443\u0433\u0438 \u0441\u0442\u0440\u0430\u0445\u0443\u0432\u0430\u043d\u043d\u044f",
+    "text": null,
+    "thumbnail": "static_service/insurance.jpg"
+  }
+},
+{
+  "model": "service.staticservice",
+  "pk": 4,
+  "fields": {
+    "title": "\u0421\u0442\u0443\u0434\u0435\u043d\u0442\u0441\u044c\u043a\u0456 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0438",
+    "text": null,
+    "thumbnail": "static_service/student.jpg"
+  }
+},
+{
+  "model": "service.staticservice",
+  "pk": 5,
+  "fields": {
+    "title": "\u0415\u043c\u0456\u0433\u0440\u0430\u0446\u0456\u0439\u043d\u0456 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0438",
+    "text": null,
+    "thumbnail": "static_service/emigrant.jpg"
+  }
+},
+{
+  "model": "service.staticservice",
+  "pk": 6,
+  "fields": {
+    "title": "\u0410\u0434\u0432\u043e\u043a\u0430\u0442\u0441\u044c\u043a\u0430 \u043f\u0456\u0434\u0442\u0440\u0438\u043c\u043a\u0430 \u0443 \u0421\u0428\u0410 \u0442\u0430 \u0404\u0432\u0440\u043e\u043f\u0456",
+    "text": null,
+    "thumbnail": "static_service/advocat.jpg"
+  }
+},
+{
+  "model": "service.service",
+  "pk": 1,
+  "fields": {
+    "title": "\u041b\u0438\u0442\u043e\u0432\u0441\u044c\u043a\u0430 \u0440\u043e\u0431\u043e\u0447\u0430 \u0432\u0456\u0437\u0430 \u043d\u0430 1 \u0440\u0456\u043a 360/360",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      1
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 2,
+  "fields": {
+    "title": "\u0420\u0435\u0454\u0441\u0442\u0440\u0430\u0446\u0456\u044f \u043a\u043e\u043c\u043f\u0430\u043d\u0456\u0457 \u0432 \u041b\u0438\u0442\u0432\u0456",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      1
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 3,
+  "fields": {
+    "title": "\u041f\u043e\u043b\u044c\u0441\u044c\u043a\u0430 \u043d\u0430\u0446\u0456\u043e\u043d\u0430\u043b\u044c\u043d\u0430 \u0432\u0456\u0437\u0430 D 05 \u0434\u043b\u044f \u0440\u043e\u0431\u043e\u0442\u0438 \u0442\u0435\u0440\u043c\u0456\u043d\u043e\u043c \u043d\u0430 6 \u043c\u0456\u0441\u044f\u0446\u0456\u0432 180/360",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      2
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 4,
+  "fields": {
+    "title": "\u041f\u043e\u043b\u044c\u0441\u044c\u043a\u0430 \u043d\u0430\u0446\u0456\u043e\u043d\u0430\u043b\u044c\u043d\u0430 \u0432\u0456\u0437\u0430 D 05a \u043d\u0430 \u0441\u0435\u0437\u043e\u043d\u043d\u0456 \u0440\u043e\u0431\u043e\u0442\u0438 \u0442\u0435\u0440\u043c\u0456\u043d\u043e\u043c \u043d\u0430 9 \u043c\u0456\u0441\u044f\u0446\u0456\u0432 270/360",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      2
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 5,
+  "fields": {
+    "title": "\u041f\u043e\u043b\u044c\u0441\u044c\u043a\u0430 \u043d\u0430\u0446\u0456\u043e\u043d\u0430\u043b\u044c\u043d\u0430 \u0440\u043e\u0431\u043e\u0447\u0430 \u0432\u0456\u0437\u0430 D 06 \u0432\u0456\u0434 \u0432\u043e\u0454\u0432\u043e\u0434\u0438 \u0442\u0435\u0440\u043c\u0456\u043d\u043e\u043c \u043d\u0430 12 \u043c\u0456\u0441\u044f\u0446\u0456\u0432 360/360",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      2
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 6,
+  "fields": {
+    "title": "\u0420\u0435\u0454\u0441\u0442\u0440\u0430\u0446\u0456\u044f \u043a\u043e\u043c\u043f\u0430\u043d\u0456\u0457 \u0432 \u041f\u043e\u043b\u044c\u0449\u0456",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      2
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 7,
+  "fields": {
+    "title": "\u041a\u0430\u0440\u0442\u0430 \u041f\u043e\u043b\u044f\u043a\u0430",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      2
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 8,
+  "fields": {
+    "title": "\u0421\u0442\u0430\u043b\u0438\u0439 \u041f\u043e\u0431\u0443\u0442 \u0432 \u041f\u043e\u043b\u044c\u0449\u0456 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0456 \u041a\u0430\u0440\u0442\u0438 \u041f\u043e\u0431\u0443\u0442\u0443",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      2
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 9,
+  "fields": {
+    "title": "\u0413\u0440\u043e\u043c\u0430\u0434\u044f\u043d\u0441\u0442\u0432\u043e \u041f\u043e\u043b\u044c\u0449\u0456 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0456 \u041a\u0430\u0440\u0442\u0438 \u0421\u0442\u0430\u043b\u043e\u0433\u043e \u041f\u043e\u0431\u0443\u0442\u0443",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      2
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 10,
+  "fields": {
+    "title": "\u041d\u0430\u0446\u0456\u043e\u043d\u0430\u043b\u044c\u043d\u0430 \u0440\u043e\u0431\u043e\u0447\u0430 \u0432\u0456\u0437\u0430 \u0432 \u0427\u0435\u0445\u0456\u044e \u0442\u0435\u0440\u043c\u0456\u043d\u043e\u043c \u043d\u0430 3 \u043c\u0456\u0441\u044f\u0446\u0456 \u043d\u0430 90 \u0434\u043d\u0456\u0432",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      3
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 11,
+  "fields": {
+    "title": "\u041d\u0430\u0446\u0456\u043e\u043d\u0430\u043b\u044c\u043d\u0430 \u0440\u043e\u0431\u043e\u0447\u0430 \u043a\u0430\u0440\u0442\u0430 \u0432 \u0427\u0435\u0445\u0456\u044e \u0442\u0435\u0440\u043c\u0456\u043d\u043e\u043c \u043d\u0430 2 \u0440\u043e\u043a\u0438",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      3
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 12,
+  "fields": {
+    "title": "\u0423\u0433\u043e\u0440\u0441\u044c\u043a\u0430 \u043d\u0430\u0446\u0456\u043e\u043d\u0430\u043b\u044c\u043d\u0430 \u0440\u043e\u0431\u043e\u0447\u0430 \u043a\u0430\u0440\u0442\u0430 \u0442\u0435\u0440\u043c\u0456\u043d\u043e\u043c \u043d\u0430 2 \u0440\u043e\u043a\u0438",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      4
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 13,
+  "fields": {
+    "title": "\u041d\u0430 \u0434\u0430\u043d\u0438\u0439 \u0447\u0430\u0441 \u043c\u0438 \u043f\u0440\u0438\u0437\u0443\u043f\u0438\u043d\u0438\u043b\u0438 \u0434\u043e\u043f\u043e\u043c\u043e\u0433\u0443 \u0432 \u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u0456 \u0415\u0441\u0442\u043e\u043d\u0441\u044c\u043a\u0438\u0445 \u0432\u0456\u0437 \u0431\u0435\u0437 \u043f\u0440\u0438\u0432\u2019\u044f\u0437\u043a\u0438 \u0434\u043e \u0440\u043e\u0431\u043e\u0442\u0438.",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      5
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 14,
+  "fields": {
+    "title": "\u0422\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u043d\u0430 \u0432\u0456\u0437\u0430 \u04121/\u04122 \u0432 \u0421\u0428\u0410",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      7
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 15,
+  "fields": {
+    "title": "\u0413\u043e\u0441\u0442\u044c\u043e\u0432\u0430 \u0432\u0456\u0437\u0430 B2 \u0432 \u0421\u0428\u0410",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      7
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 16,
+  "fields": {
+    "title": "\u0411\u0456\u0437\u043d\u0435\u0441 \u0432\u0456\u0437\u0430 B1 \u0432 \u0421\u0428\u0410",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      7
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 17,
+  "fields": {
+    "title": "\u0421\u0442\u0443\u0434\u0435\u043d\u0442\u0441\u044c\u043a\u0430 \u0432\u0456\u0437\u0430 F1 \u0432 \u0421\u0428\u0410",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      7
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 18,
+  "fields": {
+    "title": "\u0420\u043e\u0431\u043e\u0442\u0430 \u043d\u0430 \u043a\u0440\u0443\u0457\u0437\u043d\u043e\u043c\u0443 \u043b\u0430\u0439\u043d\u0435\u0440\u0456 \u0432 \u0421\u0428\u0410 \u0432\u0456\u0437\u0430 C1/D",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      7
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 19,
+  "fields": {
+    "title": "\u0420\u0435\u0454\u0441\u0442\u0440\u0430\u0446\u0456\u044f \u043a\u043e\u043c\u043f\u0430\u043d\u0456\u0457 \u0432 \u0421\u0428\u0410",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      7
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 20,
+  "fields": {
+    "title": "\u0422\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u043d\u0430 \u0432\u0456\u0437\u0430 \u0432 \u041a\u0430\u043d\u0430\u0434\u0443",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      8
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 21,
+  "fields": {
+    "title": "\u0413\u043e\u0441\u0442\u044c\u043e\u0432\u0430 \u0432\u0456\u0437\u0430 \u0432 \u041a\u0430\u043d\u0430\u0434\u0443",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      8
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 22,
+  "fields": {
+    "title": "\u0411\u0456\u0437\u043d\u0435\u0441 \u0432\u0456\u0437\u0430 \u0432 \u041a\u0430\u043d\u0430\u0434\u0443",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      8
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 23,
+  "fields": {
+    "title": "\u0422\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u043d\u0430 \u0432\u0456\u0437\u0430 \u0432 \u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0456\u044e (\u0410\u043d\u0433\u043b\u0456\u044e)",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      9
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 24,
+  "fields": {
+    "title": "\u0413\u043e\u0441\u0442\u044c\u043e\u0432\u0430 \u0432\u0456\u0437\u0430 \u0432 \u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0456\u044e (\u0410\u043d\u0433\u043b\u0456\u044e)",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      2
+    ],
+    "countries": [
+      9
+    ]
+  }
+},
+{
+  "model": "service.service",
+  "pk": 25,
+  "fields": {
+    "title": "\u0411\u0456\u0437\u043d\u0435\u0441 \u0432\u0456\u0437\u0430 \u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0456\u044e (\u0410\u043d\u0433\u043b\u0456\u044e)",
+    "advantages": null,
+    "procedure": null,
+    "addition": null,
+    "categories": [
+      1
+    ],
+    "countries": [
+      1
+    ]
+  }
+},
+{
+  "model": "service.servicecategory",
+  "pk": 1,
+  "fields": {
+    "title": "\u0420\u043e\u0431\u043e\u0447\u0456 \u0432\u0456\u0437\u0438 \u0432 \u0404\u0432\u0440\u043e\u043f\u0443",
+    "thumbnail": "service_category/europe.jpg"
+  }
+},
+{
+  "model": "service.servicecategory",
+  "pk": 2,
+  "fields": {
+    "title": "\u0412\u0456\u0437\u043e\u0432\u0430 \u041f\u0456\u0434\u0442\u0440\u0438\u043c\u043a\u0430 \u0421\u0428\u0410, \u041a\u0430\u043d\u0430\u0434\u0430, \u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0456\u044f",
+    "thumbnail": "service_category/usa.jpg"
+  }
+},
+{
+  "model": "service.servicecategory",
+  "pk": 3,
+  "fields": {
+    "title": "\u0412\u0456\u0434\u043a\u0440\u0438\u0442\u0442\u044f \u043a\u043e\u043c\u043f\u0430\u043d\u0456\u0439 \u0437\u0430 \u043a\u043e\u0440\u0434\u043e\u043d\u043e\u043c",
+    "thumbnail": "service_category/abroad.jpg"
+  }
+},
+{
+  "model": "service.country",
+  "pk": 1,
+  "fields": {
+    "title": "\u041b\u0438\u0442\u0432\u0430",
+    "thumbnail": "country/lithuania.png",
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "service.country",
+  "pk": 2,
+  "fields": {
+    "title": "\u041f\u043e\u043b\u044c\u0449\u0430",
+    "thumbnail": "country/poland.png",
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "service.country",
+  "pk": 3,
+  "fields": {
+    "title": "\u0427\u0435\u0445\u0456\u044f",
+    "thumbnail": "country/chechia.png",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "service.country",
+  "pk": 4,
+  "fields": {
+    "title": "\u0423\u0433\u043e\u0440\u0449\u0438\u043d\u0430",
+    "thumbnail": "country/hungary.png",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "service.country",
+  "pk": 5,
+  "fields": {
+    "title": "\u0415\u0441\u0442\u043e\u043d\u0456\u044f",
+    "thumbnail": "country/estonia.png",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "service.country",
+  "pk": 6,
+  "fields": {
+    "title": "\u041f\u0430\u0441\u043f\u043e\u0440\u0442 \u0404\u0421",
+    "thumbnail": "",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "service.country",
+  "pk": 7,
+  "fields": {
+    "title": "\u0421\u0428\u0410",
+    "thumbnail": "country/usa.png",
+    "categories": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "service.country",
+  "pk": 8,
+  "fields": {
+    "title": "\u041a\u0430\u043d\u0430\u0434\u0430",
+    "thumbnail": "country/canada.png",
+    "categories": [
+      2
+    ]
+  }
+},
+{
+  "model": "service.country",
+  "pk": 9,
+  "fields": {
+    "title": "\u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0456\u044f",
+    "thumbnail": "country/englang.png",
+    "categories": [
+      2
+    ]
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u0431\u043b\u043e\u0433\u0443",
+    "content_type": 7,
+    "codename": "add_postcategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u0431\u043b\u043e\u0433\u0443",
+    "content_type": 7,
+    "codename": "change_postcategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u0431\u043b\u043e\u0433\u0443",
+    "content_type": 7,
+    "codename": "delete_postcategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u0431\u043b\u043e\u0433\u0443",
+    "content_type": 7,
+    "codename": "view_postcategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add \u041f\u043e\u0441\u0442",
+    "content_type": 8,
+    "codename": "add_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change \u041f\u043e\u0441\u0442",
+    "content_type": 8,
+    "codename": "change_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete \u041f\u043e\u0441\u0442",
+    "content_type": 8,
+    "codename": "delete_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view \u041f\u043e\u0441\u0442",
+    "content_type": 8,
+    "codename": "view_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add \u041a\u0440\u0430\u0457\u043d\u0430",
+    "content_type": 9,
+    "codename": "add_country"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change \u041a\u0440\u0430\u0457\u043d\u0430",
+    "content_type": 9,
+    "codename": "change_country"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete \u041a\u0440\u0430\u0457\u043d\u0430",
+    "content_type": 9,
+    "codename": "delete_country"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view \u041a\u0440\u0430\u0457\u043d\u0430",
+    "content_type": 9,
+    "codename": "view_country"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u0441\u0435\u0440\u0432\u0456\u0441\u0443",
+    "content_type": 10,
+    "codename": "add_servicecategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u0441\u0435\u0440\u0432\u0456\u0441\u0443",
+    "content_type": 10,
+    "codename": "change_servicecategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u0441\u0435\u0440\u0432\u0456\u0441\u0443",
+    "content_type": 10,
+    "codename": "delete_servicecategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u0441\u0435\u0440\u0432\u0456\u0441\u0443",
+    "content_type": 10,
+    "codename": "view_servicecategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add ",
+    "content_type": 11,
+    "codename": "add_servicefeature"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change ",
+    "content_type": 11,
+    "codename": "change_servicefeature"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete ",
+    "content_type": 11,
+    "codename": "delete_servicefeature"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view ",
+    "content_type": 11,
+    "codename": "view_servicefeature"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add ",
+    "content_type": 12,
+    "codename": "add_servicefeaturecategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change ",
+    "content_type": 12,
+    "codename": "change_servicefeaturecategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete ",
+    "content_type": 12,
+    "codename": "delete_servicefeaturecategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view ",
+    "content_type": 12,
+    "codename": "view_servicefeaturecategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add \u0421\u0435\u0440\u0432\u0456\u0441",
+    "content_type": 13,
+    "codename": "add_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change \u0421\u0435\u0440\u0432\u0456\u0441",
+    "content_type": 13,
+    "codename": "change_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete \u0421\u0435\u0440\u0432\u0456\u0441",
+    "content_type": 13,
+    "codename": "delete_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view \u0421\u0435\u0440\u0432\u0456\u0441",
+    "content_type": 13,
+    "codename": "view_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add \u0422\u0438\u043f \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0456\u0432",
+    "content_type": 14,
+    "codename": "add_documettype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change \u0422\u0438\u043f \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0456\u0432",
+    "content_type": 14,
+    "codename": "change_documettype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete \u0422\u0438\u043f \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0456\u0432",
+    "content_type": 14,
+    "codename": "delete_documettype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view \u0422\u0438\u043f \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0456\u0432",
+    "content_type": 14,
+    "codename": "view_documettype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add \u0421\u0442\u0430\u0442\u044c",
+    "content_type": 15,
+    "codename": "add_gender"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change \u0421\u0442\u0430\u0442\u044c",
+    "content_type": 15,
+    "codename": "change_gender"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete \u0421\u0442\u0430\u0442\u044c",
+    "content_type": 15,
+    "codename": "delete_gender"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view \u0421\u0442\u0430\u0442\u044c",
+    "content_type": 15,
+    "codename": "view_gender"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add \u0422\u0438\u043f \u0440\u043e\u0431\u043e\u0442\u0438",
+    "content_type": 16,
+    "codename": "add_worktype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change \u0422\u0438\u043f \u0440\u043e\u0431\u043e\u0442\u0438",
+    "content_type": 16,
+    "codename": "change_worktype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete \u0422\u0438\u043f \u0440\u043e\u0431\u043e\u0442\u0438",
+    "content_type": 16,
+    "codename": "delete_worktype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view \u0422\u0438\u043f \u0440\u043e\u0431\u043e\u0442\u0438",
+    "content_type": 16,
+    "codename": "view_worktype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add \u0412\u0430\u043a\u0430\u043d\u0441\u0456\u044f",
+    "content_type": 17,
+    "codename": "add_vacancy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change \u0412\u0430\u043a\u0430\u043d\u0441\u0456\u044f",
+    "content_type": 17,
+    "codename": "change_vacancy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete \u0412\u0430\u043a\u0430\u043d\u0441\u0456\u044f",
+    "content_type": 17,
+    "codename": "delete_vacancy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view \u0412\u0430\u043a\u0430\u043d\u0441\u0456\u044f",
+    "content_type": 17,
+    "codename": "view_vacancy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add \u0421\u0435\u0440\u0432\u0456\u0441",
+    "content_type": 18,
+    "codename": "add_staticservice"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change \u0421\u0435\u0440\u0432\u0456\u0441",
+    "content_type": 18,
+    "codename": "change_staticservice"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete \u0421\u0435\u0440\u0432\u0456\u0441",
+    "content_type": 18,
+    "codename": "delete_staticservice"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view \u0421\u0435\u0440\u0432\u0456\u0441",
+    "content_type": 18,
+    "codename": "view_staticservice"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$3vBzwxtW2Urc$GeQtIZEUvtNYCW1bAOebaPCAPIPk/XZAS1t07T3yD/k=",
+    "last_login": "2020-03-08T13:18:47.850Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-03-08T13:18:45.613Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
