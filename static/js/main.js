@@ -504,7 +504,7 @@ $('.select__wrap_item').on('click', function() {
    
   $('.services_form').on("submit", function(event) {
     var services_input =  $('.form_select');
-    showValues();
+    
     for (var current_number = 0; current_number < services_input.length; current_number++) {
       var current_input = services_input[current_number];
       if (current_input.value == 0) {
@@ -517,6 +517,7 @@ $('.select__wrap_item').on('click', function() {
           }
           
           else{
+            showValues();
             // alert('1');
             // // showValues();
             // $(this).submit();
