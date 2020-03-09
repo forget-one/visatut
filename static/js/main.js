@@ -505,7 +505,6 @@ $('.select__wrap_item').on('click', function() {
   $('.services_form').on("submit", function(event) {
     var services_input =  $('.form_select');
     showValues();
-    alert('1');
     for (var current_number = 0; current_number < services_input.length; current_number++) {
       var current_input = services_input[current_number];
       if (current_input.value == 0) {
@@ -535,20 +534,20 @@ $('.select__wrap_item').on('click', function() {
               console.log('data: ', data);
 
               var obj = {};
-              $.each(serviceFinder, function(i, field){
+              $.each(x, function(i, field){
                 if(field.value.trim() != ""){
-                  if (/\[\]$/.test(field.name)) {
-                    var fName = field.name.substr(0,field.name.length-2);
-                    if (!formDataArrays[fName]) {
-                      formDataArrays[fName] = [];
+                  if(obj[field.name] != undefined){
+                    var val = obj[field.name];
+                    if(!Array.isArray(val)){
+                       arr = [val];
                     }
-                    formData[fName+"["+formDataArrays[fName].length+"]"] = field.value;
-                    formDataArrays[fName].push(field.value);
-                  } else {
-                    formData[field.name] = field.value;
+                    arr.push(field.value.trim());
+                    obj[field.name] = arr;
+                  }else{
+                    obj[field.name] = field.value;
                   }
-                }
-            });
+                  }
+              });
                     fetch(serviceFinder, {
                       method: 'POST',
                       body: body
@@ -557,7 +556,6 @@ $('.select__wrap_item').on('click', function() {
                       return data.json();
                     })
 
-                    
 
 
 
