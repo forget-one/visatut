@@ -75,8 +75,8 @@
                 <input type="hidden" name="vant3" class="form_select" value="0">
             </div>
             <div class="select__wrap sel_fix_wrap" id="style-1">
-                {% for gender in genders %}
-                <div class="select__wrap_item" data-id="{{ gender.human_type }}">{{ gender.human_type }}</div>
+                {% for work_type in work_types %}
+                <div class="select__wrap_item" data-id="{{ work_type.work_type }}">{{ work_type.work_type }}</div>
                 {% endfor %}
             </div>
         </div>
