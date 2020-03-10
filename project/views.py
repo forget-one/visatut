@@ -50,8 +50,8 @@ def franchise(request):
 
 def blog(request, slug):
     post_category   = PostCategory.objects.get(slug=slug)
-    posts           = Post.objects.filter(post_category=post_category)
-    paginator       = Paginator(posts, 1)
+    posts           = Post.objects.filter(post_category=post_category).order_by('-updated')
+    paginator       = Paginator(posts, 2)
     page_number     = request.GET.get('page', 1)
     page            = paginator.get_page(page_number)
     is_paginated    = page.has_other_pages()
@@ -111,7 +111,7 @@ def search_service(request):
     vacancies = Vacancy.objects.filter(
         country__title=request.POST.get('vant1'),
         gender__human_type=request.POST.get('vant2'),
-        work_type__work_name=request.POST.get('vant3'),
+        work_type__work_type=request.POST.get('vant3'),
         document__doc_type=request.POST.get('vant4'),
     )
     print(vacancies)
