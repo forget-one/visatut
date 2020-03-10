@@ -111,7 +111,6 @@ def search_service(request):
     vacancies = Vacancy.objects.filter(
         country__title=request.POST.get('vant1'),
         gender__human_type=request.POST.get('vant2'),
-        work_type__work_type=request.POST.get('vant3'),
         document__doc_type=request.POST.get('vant4'),
     )
     print(vacancies)
