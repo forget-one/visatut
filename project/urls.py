@@ -5,8 +5,9 @@ from .views import *
 urlpatterns = [
     path('',                   index,             name='index'),
     path('services/<country_pk>/<service_category_pk>/',     services,          name='services'),
-    path('blog/',              blog,              name='blog'),
-    path('blog/<id>/',         post,              name='post'),
+    path('blog/<slug>/',       blog,              name='blog'),
+    path('post/<id>/',         post,              name='post'),
+    path('blog_all/',          blog_all,              name='blog_all'),
     path('franchise/',         franchise,         name='franchise'),
     path('service/<id>/',      service,           name='service'),
     path('partner_europe/',    partner_europe,    name='partner_europe'),

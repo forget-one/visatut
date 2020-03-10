@@ -4,11 +4,11 @@ from tinymce import HTMLField
 
 
 class Post(models.Model):
-    title           = models.CharField(max_length=150, blank=True, null=True)
-    image           = models.ImageField(blank=True, null=True)
-    slug            = models.SlugField(unique=True)
-    text            = HTMLField(blank=True, null=True)
-    post_category   = models.ForeignKey(to='PostCategory', blank=True, null=True, on_delete=models.CASCADE, related_name='post_categories')
+    title           = models.CharField(verbose_name='Заголовок', max_length=150, blank=True, null=True)
+    image           = models.ImageField(verbose_name='Зображення', blank=True, null=True)
+    text            = HTMLField(verbose_name='Текст', blank=True, null=True)
+    post_category   = models.ForeignKey(verbose_name='Відноситься до категорії', to='PostCategory', blank=True, null=True, on_delete=models.CASCADE, related_name='post_categories')
+    updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
 
     def get_image_url(self):
         url = ''
@@ -25,10 +25,11 @@ class Post(models.Model):
 
 
 class PostCategory(models.Model):
-    title       = models.CharField(max_length=150, blank=True, null=True)
-    image       = models.ImageField(blank=True, null=True)
-    text        = HTMLField(blank=True, null=True)
-
+    title       = models.CharField(verbose_name='Заголовок', max_length=150, blank=True, null=True)
+    slug        = models.SlugField(verbose_name='Посилання', unique=True)
+    image       = models.ImageField(verbose_name='Зображення', blank=True, null=True)
+    text        = HTMLField(verbose_name='Текст', blank=True, null=True)
+    updated     = models.DateTimeField(verbose_name='Змінено', auto_now=True)
     def get_image_url(self):
         url = ''
         if self.image:
