@@ -143,8 +143,14 @@
     padding: 7px;
     width: 100px;
     color: #4088c9;
+    text-decoration: none;
 }
-
+.all_bottom_nav_inactive {
+    background: #ccc;
+    color: #fff;
+    cursor: default;
+    border: 2px solid #ccc;
+}
 .parner_sub-block {
     width: 95%;
     margin: 0 auto;

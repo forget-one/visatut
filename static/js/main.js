@@ -240,7 +240,9 @@ $.extend($.lazyLoadXT, {
   //   $('.hidden_name').addClass('scroll_all');
   // }
 
- 
+  if ($(".all_bottom_nav").hasClass("all_bottom_nav_inactive")) {
+      $('.all_bottom_nav_inactive').attr("href", "#")
+  }
 
 
 

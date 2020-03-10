@@ -153,7 +153,7 @@
 									<div class="blog__title">
 										{{ post.title }}
 									</div>
-									{{ post.text|safe|truncatechars:200 }}
+									{{ post.text|truncatewords:50|striptags|safe }}
 								</div>
 							</div>
 						</a>
@@ -161,16 +161,16 @@
 						<div class="nav_bottom-block">
 							
 							{% if prev_url %}
-							<a href='?page={{ prev_url }}' class="first_nav all_bottom_nav">
+							{% endif %}
+							<a href='?page={{ prev_url }}' class="first_nav all_bottom_nav all_bottom_nav_inactive">
 								сюда
 							</a>
-							{% endif %}
 							
 							{% if next_url %}
+							{% endif %}
 							<a href='?page={{ next_url }}' class="first_nav all_bottom_nav">
 								туда
 							</a>
-							{% endif %}
 						</div>
 					</div>
 				</div>
