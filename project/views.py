@@ -5,6 +5,12 @@ from project.vacancy.models import *
 from django.http import request
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
+from django.http import JsonResponse
+from django.core.mail import send_mail
+from django.conf import settings
+from .models import Page 
+
+
 
 def index(request):
     service_categories  = ServiceCategory.objects.all()
@@ -16,12 +22,25 @@ def index(request):
     document_types      = DocumetType.objects.all()
 
     post_categories     = PostCategory.objects.order_by('-updated')[:3]
+
+    page, created = Page.objects.get_or_create(
+        code    = f"{request.META.get('PATH_INFO')}")
     return render(request, 'index.html', locals())
 
 
 
-
-
+@csrf_exempt
+def tell_us(request):
+    data = request.POST 
+    print(data)
+    send_mail(
+        f"Sps za babki {data.get('name')}, {data.get('phone')}, {data.get('email')}",
+        'you are welcome',
+        settings.EMAIL_HOST_USER,
+        [settings.EMAIL_HOST_USER],
+        fail_silently=False
+)
+    return JsonResponse({})
 
 def services(request, country_pk=None, service_category_pk=None):
     if country_pk:
@@ -29,12 +48,13 @@ def services(request, country_pk=None, service_category_pk=None):
         country_services    = Service.objects.filter(countries__id__in=[country.id,])
     if service_category_pk:
         service_category     = ServiceCategory.objects.get(pk=service_category_pk)
+    title = country.title
     return render(request, 'services.html', locals())
 
 
 def service(request, id):
     service   = Service.objects.get(id=id)
-    # fields = Field.objects.filter(field=data)
+    title     = service.title
     return render(request, 'service.html', locals())
 
 
@@ -42,8 +62,11 @@ def service(request, id):
 
 
 def franchise(request):
-    return render(request, 'franchise.html')    
+    page, created = Page.objects.get_or_create(
+        code    = f"{request.META.get('PATH_INFO')}")
+    return render(request, 'franchise.html', locals())    
     
+
 
 
 
@@ -62,23 +85,26 @@ def blog(request, slug):
 
     if page.has_next():
         next_url = f'{page.next_page_number()}'
-    print(prev_url)
-    print(next_url)
+    title           = post_category.title
     return render(request, 'blog.html', {
         'posts': page.object_list,
         'prev_url': prev_url,
-        'next_url': next_url
+        'next_url': next_url,
+        'title': title
         }
     )
 
 
 def blog_all(request):
     post_categories     = PostCategory.objects.order_by('-updated')
+    page, created = Page.objects.get_or_create(
+        code    = f"{request.META.get('PATH_INFO')}")
     return render(request, 'blog_all.html', locals())
 
 
 def post(request, id):
     post = Post.objects.get(id=id)
+    title = post.title
     return render(request, 'post.html', locals())
 
 
@@ -86,15 +112,21 @@ def post(request, id):
 
 
 def partner_europe(request):
-    return render(request, 'partner_europe.html')
+    page, created = Page.objects.get_or_create(
+        code    = f"{request.META.get('PATH_INFO')}")
+    return render(request, 'partner_europe.html', locals())
 
 
 def partner_potential(request):
-    return render(request, 'partner_potential.html')
+    page, created = Page.objects.get_or_create(
+        code    = f"{request.META.get('PATH_INFO')}")
+    return render(request, 'partner_potential.html', locals())
 
 
 def partner_usa(request):
-    return render(request, 'partner_usa.html')
+    page, created = Page.objects.get_or_create(
+        code    = f"{request.META.get('PATH_INFO')}")
+    return render(request, 'partner_usa.html', locals())
 
 
 
@@ -114,6 +146,8 @@ def search_service(request):
         document__doc_type=request.POST.get('vant4'),
     )
     print(vacancies)
+    page, created = Page.objects.get_or_create(
+        code    = f"{request.META.get('PATH_INFO')}")
     return render(request, 'search_service.html', locals())
 
 

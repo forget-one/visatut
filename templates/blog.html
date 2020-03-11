@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>{{ title }}</title>
 	<meta name="viewport" content="width=device-width initial-scale=1">
 	<link rel="stylesheet" href="/static/css/style.css">
-
+	<link rel="icon" type="image/x-icon" href="/static/img/visatut-logo.png">
 </head>
 <body class="services_fixed blog_fixed">
 	<div class="main_nav_bar_for_mobile">
@@ -153,22 +153,20 @@
 									<div class="blog__title">
 										{{ post.title }}
 									</div>
-									{{ post.text|truncatewords:50|striptags|safe }}
+									{{ post.text|truncatewords_html:40|striptags|safe }}
 								</div>
 							</div>
 						</a>
 						{% endfor %}
 						<div class="nav_bottom-block">
 							
-							{% if prev_url %}
-							{% endif %}
-							<a href='?page={{ prev_url }}' class="first_nav all_bottom_nav all_bottom_nav_inactive">
+							
+							
+							<a href='{% if prev_url %}?page={{ prev_url }}{% endif %}' class="first_nav all_bottom_nav {% if not prev_url %} all_bottom_nav_inactive {% endif %}">
 								сюда
 							</a>
 							
-							{% if next_url %}
-							{% endif %}
-							<a href='?page={{ next_url }}' class="first_nav all_bottom_nav">
+							<a href='{% if next_url %}?page={{ next_url }}{% endif %}' class="first_nav all_bottom_nav {% if not next_url %} all_bottom_nav_inactive {% endif %}">
 								туда
 							</a>
 						</div>
