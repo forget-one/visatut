@@ -144,10 +144,10 @@
 					<div class="blog-block normalScroll">
 						{% for post_category in post_categories %}
 						<div class="blog-prof">
-							<a href="" class="blog-img">
+							<a href="{% url 'blog' slug=post_category.slug %}" class="blog-img">
 								<img src="{{ post_category.get_image_url }}" alt="">
 							</a>
-							<a href="" class="blog-text">
+							<a href="{% url 'blog' slug=post_category.slug %}" class="blog-text">
 								<div class="blog__title">
 									{{ post_category.title }}
 								</div>
