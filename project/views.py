@@ -11,7 +11,6 @@ from django.conf import settings
 from .models import Page 
 
 
-
 def index(request):
     service_categories  = ServiceCategory.objects.all()
     static_services     = StaticService.objects.all()

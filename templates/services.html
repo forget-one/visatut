@@ -151,8 +151,8 @@
 							Послуги
 						</div>
 						<img src="/static/img/nav.svg" alt="">
-						<div data-scheme="11" class="nav_name nav_name_link">
-							{{country.categories.all.first.title}}
+						<div data-scheme="1" class="nav_name nav_name_link">
+							{{service_category}}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name nav_name_active">
@@ -161,6 +161,7 @@
 					</div>
 
 					<div class="blog-block normalScroll">
+						{{ test }}
 					{% for service in country_services %}
 						<a class="blog-prof_link" href="{% url 'service' id=service.id %}">
 							<div class="blog-prof">
