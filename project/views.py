@@ -36,10 +36,10 @@ def tell_us(request):
         f"Sps za babki {data.get('name')}, {data.get('phone')}, {data.get('email')}",
         'you are welcome',
         settings.EMAIL_HOST_USER,
-        [settings.EMAIL_HOST_USER],
+        ['easyebengrad@gmail.com'],
         fail_silently=False
 )
-    return JsonResponse({})
+    return JsonResponse({'status': 'OK'})
 
 def services(request, country_pk=None, service_category_pk=None):
     if country_pk:
