@@ -107,14 +107,15 @@ $('.psevdo_link').on("click", function() {
 
 $('.nav_name_link').on('click', function() {
     let data_scheme = $(this).data('scheme');
-  
-    if (data_scheme == 1) {
+    let nav_name_first = $('.nav_name_first').data('scheme');
+    if (data_scheme == nav_name_first) {
       window.location.pathname = '/';
       localStorage.scheme = 1;
     } else if (data_scheme > 10 && data_scheme < 100) {
       localStorage.scheme = data_scheme;
       console.log('localStorage.scheme: ', localStorage.scheme);
       window.location.pathname = '/';
+      
     }
 });
 
@@ -196,7 +197,7 @@ $('.header-button').on('click', function() {
 
 
 
-localStorage.setItem('scheme', '0');
+
 localStorage.setItem('psevdo_link', '0');
 
 
