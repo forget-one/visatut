@@ -154,11 +154,11 @@
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div data-scheme="{{ service_category.id }}" class="nav_name nav_name_link">
-							{{service_category}}
+							{{service_category|truncatechars_html:30}}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name nav_name_active">
-							{{ country.title }}
+							{{ country.title|truncatechars_html:30 }}
 						</div>
 					</div>
 
