@@ -106,20 +106,23 @@ $('.psevdo_link').on("click", function() {
 
 
 $('.nav_name_link').on('click', function() {
+    localStorage.setItem('finder_page', '1');
     let data_scheme = $(this).data('scheme');
-  
-    if (data_scheme == 1) {
+    let nav_name_first = $('.nav_name_first').data('scheme');
+    if (data_scheme == nav_name_first) {
       window.location.pathname = '/';
-      localStorage.scheme = 1;
-    } else if (data_scheme > 10 && data_scheme < 100) {
+      localStorage.scheme = nav_name_first;
+    } else if (data_scheme >= 1 && data_scheme <= 100) {
       localStorage.scheme = data_scheme;
+      
       console.log('localStorage.scheme: ', localStorage.scheme);
       window.location.pathname = '/';
+      alert(data_scheme);
     }
 });
 
-if (window.location.pathname == "/" && localStorage.scheme != 0 && localStorage.scheme != 1) {
-  
+if (window.location.pathname == "/" && localStorage.scheme != 0 && localStorage.scheme != 101 && localStorage.finder_page == 1) {
+  localStorage.finder_page = 0;
 
   if (window.matchMedia("(max-width: 996px)").matches) {
     function linkTime() {
@@ -135,7 +138,8 @@ if (window.location.pathname == "/" && localStorage.scheme != 0 && localStorage.
   add_visible_content();
  
 }
-if (window.location.pathname == "/" && localStorage.scheme == 1) {
+if (window.location.pathname == "/" && localStorage.scheme == 101 && localStorage.finder_page == 1) {
+  localStorage.finder_page = 0;
   if (window.matchMedia("(max-width: 996px)").matches) {
     function linkTime() {
       let destination = $('#sect2').offset().top;
@@ -150,6 +154,7 @@ if (window.location.pathname == "/" && localStorage.scheme == 1) {
 
 function add_visible_content () {
   let find_content = $('.hidden_tab_content').find('.content' + localStorage.scheme);
+  console.log('localStorage.scheme: ', '.content' + localStorage.scheme);
   
 
   let default_content = $('.sect2 .default-block .default-content');
@@ -196,7 +201,7 @@ $('.header-button').on('click', function() {
 
 
 
-localStorage.setItem('scheme', '0');
+
 localStorage.setItem('psevdo_link', '0');
 
 
