@@ -8,7 +8,7 @@
 	<link rel="icon" type="image/x-icon" href="/static/img/visatut-logo.png">
 </head>
 <body class="services_fixed">
-	<div class="main_nav_bar_for_mobile">
+		<div class="main_nav_bar_for_mobile">
 		
 		<div class="sociate-block sociate-block_mobile">
 			<div class="sociate-prof">
@@ -151,7 +151,7 @@
 							Послуги
 						</div>
 						<img src="/static/img/nav.svg" alt="">
-						<div data-scheme="11" class="nav_name nav_name_link">
+						<div data-scheme="{{ service_category.id }}" class="nav_name nav_name_link">
 							{{service_category.title}}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
@@ -169,24 +169,49 @@
 
 					<div class="blog-block normalScroll">
 						<div class="main_service_title">
-							{{ data.title }}
+							{{ service.title }}
 						</div>
 						<div class="sub_service_text">
-							{{ data.suptitle }}
+							{{ service.header }}
 						</div>
-						{% for item in fields %}
+
+
 						<div class="services_flex-block">
 							{% include '_svg_service.html' %}
 							<div class="content_num-block">
 								<div class="content_num">
-									{{ item.title }}
+									Переваги
 								</div>
 								<div class="sub_content_num">
-									{{ item.count|safe }}
+									{{ service.advantages|safe }}
 								</div>
 							</div>
 						</div>
-						{% endfor %}
+
+						<div class="services_flex-block">
+							{% include '_svg_service.html' %}
+							<div class="content_num-block">
+								<div class="content_num">
+									Процедурні відкриття
+								</div>
+								<div class="sub_content_num">
+									{{ service.procedure|safe }}
+								</div>
+							</div>
+						</div>
+
+						<div class="services_flex-block">
+							{% include '_svg_service.html' %}
+							<div class="content_num-block">
+								<div class="content_num">
+									Додаткові вимоги
+								</div>
+								<div class="sub_content_num">
+									{{ service.addition|safe }}
+								</div>
+							</div>
+						</div>
+
 					</div>
 
 
@@ -201,8 +226,8 @@
 
 			
 		</section>
-		{% include 'includes/form.html' %}
 	</div>
-	{% include '_scripts.html' %}
+		{% include 'includes/form.html' %}
+		{% include '_scripts.html' %}
 </body>
 </html>
