@@ -109,7 +109,10 @@ $('.nav_name_link').on('click', function() {
     localStorage.setItem('finder_page', '1');
     let data_scheme = $(this).data('scheme');
     let nav_name_first = $('.nav_name_first').data('scheme');
+    console.log('nav_name_first: ', nav_name_first);
     if (data_scheme == nav_name_first) {
+     
+
       window.location.pathname = '/';
       localStorage.scheme = nav_name_first;
     } else if (data_scheme >= 1 && data_scheme <= 100) {
