@@ -51,7 +51,7 @@ def services(request, country_pk=None, service_category_pk=None):
 
     page, created = Page.objects.get_or_create(
         code    = f"{request.META.get('PATH_INFO')}")
-    if not page.title.exists(): title = country.title
+    if not page.title: title = country.title
     return render(request, 'services.html', locals())
 
 
@@ -72,7 +72,7 @@ def service(request, country_pk=None, service_category_pk=None, post_id=None):
     title     = service.title
     page, created = Page.objects.get_or_create(
         code    = f"{request.META.get('PATH_INFO')}")
-    if not page.title.exists(): title = service.title
+    if not page.title: title = service.title
     return render(request, 'service.html', locals())
 
 
@@ -105,7 +105,7 @@ def blog(request, slug):
     title           = post_category.title
     page, created = Page.objects.get_or_create(
         code    = f"{request.META.get('PATH_INFO')}")
-    if not page.title.exists(): title = post_category.title
+    if not page.title: title = post_category.title
     return render(request, 'blog.html', locals())
 
 
@@ -121,7 +121,7 @@ def post(request, id):
     title = post.title
     page, created = Page.objects.get_or_create(
         code    = f"{request.META.get('PATH_INFO')}")
-    if not page.title.exists(): title = post.title
+    if not page.title: title = post.title
     return render(request, 'post.html', locals())
 
 

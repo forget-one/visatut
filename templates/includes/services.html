@@ -42,7 +42,7 @@
             </div>
             <div class="hidden_tab_content">
                 {% for service_category in service_categories %}
-                <div id="service_info{{service_category.id}}" class="info-content content{{ forloop.counter }}">
+                <div id="service_info{{ service_category.id }}" class="info-content content{{ service_category.id }}">
                     <div class="main__title">
                         <h1 class="title_name">
                             Послуги
