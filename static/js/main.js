@@ -117,7 +117,6 @@ $('.nav_name_link').on('click', function() {
       
       console.log('localStorage.scheme: ', localStorage.scheme);
       window.location.pathname = '/';
-      alert(data_scheme);
     }
 });
 
