@@ -152,17 +152,17 @@
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div data-scheme="11" class="nav_name nav_name_link">
-							{{service.categories.all.first.title}}
+							{{service_category.title}}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name">
 							<a href="{% url 'services' service.categories.all.first.countries.all.first.pk service.categories.all.first.pk %}">
-								{{service.categories.all.first.countries.all.first.title}}
+								{{ country.title }}
 							</a>
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name nav_name_active">
-							{{service.title}}
+							{{ service.title }}
 						</div>
 					</div>
 

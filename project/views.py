@@ -51,11 +51,21 @@ def services(request, country_pk=None, service_category_pk=None):
     return render(request, 'services.html', locals())
 
 
-def service(request, id):
-    service   = Service.objects.get(id=id)
+# def service(request, id):
+#     service   = Service.objects.get(id=id)
+#     title     = service.title
+#     return render(request, 'service.html', locals())
+
+def service(request, country_pk=None, service_category_pk=None, post_id=None):
+    if country_pk:
+        country             = Country.objects.get(pk=country_pk)
+        country_services    = Service.objects.filter(countries__id__in=[country.id,])
+    if service_category_pk:
+        service_category     = ServiceCategory.objects.get(pk=service_category_pk)
+
+    service   = Service.objects.get(id=post_id)
     title     = service.title
     return render(request, 'service.html', locals())
-
 
 
 
