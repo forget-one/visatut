@@ -10,6 +10,17 @@
 	<link rel="icon" type="image/x-icon" href="/static/img/visatut-logo.png">
 </head>
 <body>
+	<div class="load_spin">
+		<img src="/static/img/712.svg" alt="">
+	</div>
+	
+	<form method="POST" action="" class="true_form" id="modal-form_true" style="display:none;">
+		<img class="form_true_img" src="/static/img/png-123.png" alt="">
+		<div class="usually_modal_text">
+			Дякуємо, заявка опрацьована <br>
+			Наші менеджери звяжуться з Вами
+		</div>
+		</form>
 	{% include '_navbar.html' %}
 	<div id="fullpage" class="main fullpage">
 		{% include '_header.html' %}

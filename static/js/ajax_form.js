@@ -12,11 +12,6 @@ $(function() {
 //  **/
 function Onload() {
     valide_form('#form_cons', '.inp-vak-wrap', true);
-   
-    // valide_form('#form_calculator', '.input-wrap', false);
-
-    // valid_calcularot_form('#new_modal_form', '.inp-vak-wrap');
-
 }
 function location_leng() {
     return location.pathname.split('/')[1];
@@ -79,88 +74,19 @@ function valide_form(id_form, error_inp_wrap, check_request) {
             submitHandler: function(form) {
                 event.preventDefault();
 
-                // $('.load_spin').addClass('load_spin_active');
+                $('.load_spin').addClass('load_spin_active');
                 var form_input = $(form).serializeArray();
                 var url_form = form.action;
                 var form_json = {
 
                 };
-
                 var data_form = $(form).data('form') ;
 
                 $(form_input).each(function(index, obj) {
                     form_json[obj.name] = obj.value;
                 });
-                if(data_form == 'calculator'){
-                    if($('#form_calculator').length>0){
-
-                            form_json.loading_points=[];
-                            form_json.unloading_points=[];
-
-                        var form_calculator = $('#form_calculator').serializeArray();
-
-console.log(form_calculator);
-
-                        $(form_calculator).each(function(index, obj) {
-
-
-                                if(obj.name == "download_point"){
-                                    form_json.loading_points.push(obj.value)
-                                }
-                                else if(obj.name == 'unloading_point'){
-                                    form_json.unloading_points.push(obj.value)
-                                }else{
-
-                                    form_json[obj.name] = obj.value;
-                                }
-
-
-
-
-
-                          });
-                          console.log(url_form);
-                          console.log(form_json);
-                          console.log(new URLSearchParams($.param(form_json)));
-
-                          fetch(url_form, {
-                            method: 'POST',
-                            body: new URLSearchParams($.param(form_json))
-                          })
-                          .then(data => {
-
-                            return data.json();
-                          })
-                          .then(data => {
-                            if(data.status=='OK' && typeof data['status'] !== "undefined"){
-                                sayHi();
-                            }
-                            if(data.status=='BAD' && typeof data['status'] !== "undefined"){
-                                // // $('.load_spin').removeClass('load_spin_active');
-                                $(".error_block_false").text("Невірний логін або пароль");
-                              //   $.fancybox.open({
-                              //     src: '#modal-form_false',
-                              //   });
-
-                            }
-
-                            if(typeof data['url'] !== "undefined" && data.url!=''){
-                              //   sayHi();
-                                console.log(location.href)
-                                console.log(data.url)
-                                location.href=data.url;
-                            }
-                          })
-
-
-
-                    }else{
-                        console.log("not fond form_calculator");
-
-                    }
-
-
-                } else if(url_form != '' && data_form !== 'calculator') {
+               
+                if(url_form != '') {
 
 
                     console.log(url_form);
@@ -179,28 +105,18 @@ console.log(form_calculator);
                             sayHi();
                         }
                         if(data.status=='BAD' && typeof data['status'] !== "undefined"){
-                            // // $('.load_spin').removeClass('load_spin_active');
                             $(".error_block_false").text("Невірний логін або пароль");
+                            $('.load_spin').removeClass('load_spin_active');
                         }
                         if(typeof data['url'] !== "undefined" && data.url!=''){
                             location.href=data.url;
                         }
                     })
-
                 }else {
                     console.log("forn_not_actions");
                 }
-                // function explode(){
-                //     if (id_form == '#modal-form_user') {
-
-                //     } else {
-                //         sayHi();
-                //     }
-                // }
-
-                // explode()
                 function sayHi() {
-                    // // $('.load_spin').removeClass('load_spin_active');
+                    $('.load_spin').removeClass('load_spin_active');
                     $.fancybox.close();
                     if (check_request === true) {
                         $.fancybox.open({
@@ -216,7 +132,6 @@ console.log(form_calculator);
                                     }
                                 }
                             }
-
                             var form_textaria = $(form)[0].querySelectorAll('textarea');
                             if (form_textaria.length > 0) {
                                 form_textaria[0].value = '';
@@ -224,7 +139,6 @@ console.log(form_calculator);
                         }
                     }
                 }
-
             }
         });
     }
