@@ -103,9 +103,9 @@ def blog(request, slug):
     if page.has_next():
         next_url = f'{page.next_page_number()}'
     title           = post_category.title
-    page, created = Page.objects.get_or_create(
+    paget, created = Page.objects.get_or_create(
         code    = f"{request.META.get('PATH_INFO')}")
-    if not page.title: title = post_category.title
+    if not paget.title: title = post_category.title
     return render(request, 'blog.html', locals())
 
 

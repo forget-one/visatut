@@ -143,7 +143,7 @@
 				<div class="default-content">
 					<div class="blog-block normalScroll">
 						
-						{% for post in posts %}
+						{% for post in page %}
 						<a href="{% url 'post' id=post.id %}" class="a_link_blog">
 							<div class="blog-prof">
 								<div class="blog-img">
@@ -162,6 +162,7 @@
 							
 							
 							
+							{% if is_paginated %}
 							<a href='{% if prev_url %}?page={{ prev_url }}{% endif %}' class="first_nav all_bottom_nav {% if not prev_url %} all_bottom_nav_inactive {% endif %}">
 								сюда
 							</a>
@@ -169,6 +170,7 @@
 							<a href='{% if next_url %}?page={{ next_url }}{% endif %}' class="first_nav all_bottom_nav {% if not next_url %} all_bottom_nav_inactive {% endif %}">
 								туда
 							</a>
+							{% endif %}
 						</div>
 					</div>
 				</div>
