@@ -26,7 +26,7 @@ class Service(models.Model):
     title      = models.CharField(verbose_name=('Заголовок'), max_length=255)
     categories = models.ManyToManyField(verbose_name=("Категорії послуги"), to="service.ServiceCategory", related_name='services')
     countries  = models.ManyToManyField(verbose_name=("Країни"), to="service.Country",         related_name='services')
-    header     = models.TextField(verbose_name=("Заголовок"), blank=True, null=True, max_length=1000)
+    header     = models.TextField(verbose_name=("Підзаголовок"), blank=True, null=True, max_length=1000)
     advantages = HTMLField(verbose_name=("Переваги"),            blank=True, null=True)
     procedure  = HTMLField(verbose_name=("Процедура відкриття"), blank=True, null=True)
     addition   = HTMLField(verbose_name=("Додаткові вимоги"),    blank=True, null=True)
@@ -42,7 +42,6 @@ class Service(models.Model):
 class ServiceCategory(models.Model):
     title     = models.CharField(verbose_name=('Назва'), max_length=255)
     thumbnail = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='service_category/')
-    # countries = models.ManyToManyField(verbose_name=("Країни"), to="service.Country", related_name='categories', null=True, blank=False)
 
     def __str__(self):
         return f'{self.title}'
@@ -86,26 +85,6 @@ class Country(models.Model):
 
 
 
-class ServiceFeature(models.Model):
-
-
-    def __str__(self):
-        return f''
-    
-    class Meta:
-        verbose_name = '' 
-        verbose_name_plural = ''
-
-
-class ServiceFeatureCategory(models.Model):
-
-
-    def __str__(self):
-        return f''
-    
-    class Meta:
-        verbose_name = '' 
-        verbose_name_plural = ''
 
 
 
