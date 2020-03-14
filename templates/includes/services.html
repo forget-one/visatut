@@ -11,7 +11,7 @@
                 <div data-info="service_info{{service_category.id}}" class="services-prof">
                     {% include '_svg_triple.html' %}
                     <div class="services-image-wrap">
-                        <img src="{{service_category.get_thumbnail_url}}" alt="">
+                        <img src="{{service_category.get_thumbnail_url}}" alt="{{ service_category.img_alt }}">
                     </div>
                     <div class="services__text">
                         {{service_category.title}}
@@ -31,7 +31,7 @@
                 <div data-info="static_service_info{{static_service.id}}" class="services-prof">
                     {% include '_svg_triple.html' %}
                     <div class="services-image-wrap">
-                        <img src="{{static_service.get_thumbnail_url}}" alt="">
+                        <img src="{{static_service.get_thumbnail_url}}" alt="{{ static_service.img_alt }}">
                     </div>
                     <div class="services__text">
                         {{static_service.title}}
@@ -64,7 +64,7 @@
                         {% for country in service_category.countries.all %}
                         <div data-subInfo="sub{{country}}" class="countries_profile">
                             <a class="countries_img-wrap" href="{% url 'services' country.id service_category.id %}">
-                                <img class="countries_img" src="{{country.get_thumbnail_url}}" alt="">
+                                <img class="countries_img" src="{{country.get_thumbnail_url}}" alt="{{ country.img_alt }}">
                             </a>
                             <a href="{% url 'services' country.id service_category.id %}">
                                 <div class="countries_text">
@@ -90,7 +90,7 @@
                         <div data-nav="nav1" class="nav_name">
                             Послуги
                         </div>
-                        <img src="static/img/nav.svg" alt="">
+                        <img src="static/img/nav.svg" alt="{{ post_category.img_alt }}">
                         <div class="nav_name nav_name_active">
                             {{static_service.title}}
                         </div>

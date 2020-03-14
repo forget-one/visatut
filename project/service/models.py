@@ -6,6 +6,7 @@ from django.urls import reverse
 class StaticService(models.Model):
     title     = models.CharField(verbose_name=('Заголовок'), max_length=255)
     text      = HTMLField(verbose_name=("Текст"), blank=True, null=True)
+    img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
     thumbnail = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='static_service/')
     
     def get_thumbnail_url(self):
@@ -41,6 +42,7 @@ class Service(models.Model):
 
 class ServiceCategory(models.Model):
     title     = models.CharField(verbose_name=('Назва'), max_length=255)
+    img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
     thumbnail = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='service_category/')
 
     def __str__(self):
@@ -60,6 +62,7 @@ class ServiceCategory(models.Model):
 
 class Country(models.Model):
     title      = models.CharField(verbose_name=("Назва"), max_length=255)
+    img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
     thumbnail  = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='country/')
     categories = models.ManyToManyField(verbose_name=("Категорії"), to='service.ServiceCategory', related_name='countries', related_query_name='country', blank=False)
 

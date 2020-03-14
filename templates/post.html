@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="keywords" content="{{ page.meta_key }}">
+	<meta name="description" content="{{ page.meta_descr }}">
 	<title>{{ title }}</title>
 	<meta name="viewport" content="width=device-width initial-scale=1">
 	<link rel="stylesheet" href="/static/css/style.css">
@@ -143,7 +145,7 @@
 				<div class="default-content">
 					<div class="blog-block normalScroll">
 						<div class="blog-img blog-img_for_link">
-							<img src="{{ post.get_image_url }}" alt="">
+							<img src="{{ post.get_image_url }}" alt="{{ post.img_alt }}">
 						</div>
 						<div class="blog-text">
 							<div class="blog__title">
@@ -163,17 +165,6 @@
 		</section>
 		
 	</div>
-
-
-
-
-
-
-
-
-
-
-
 
 	{% include '_scripts.html' %}
 </body>

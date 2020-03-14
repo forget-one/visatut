@@ -3,7 +3,19 @@ from .models import *
 # Register your models here.
 
 class VacancyAdmin(admin.ModelAdmin):
-    exclude = ['']
+    fieldsets = (
+        (None, {
+            'fields': ['name']
+        }),
+        ('Параметри пошуку', {
+            'classes': ('extrapretty', 'wide',),
+            'fields': [('country', 'gender', 'document', 'work_type'),]
+        }),
+        ('Основна інформація', {
+            'fields': ['requirements', 'work_position', 'work_day' , 'your_duties', 'our_duties', 'duties', 'actual',]
+        })
+    )
+    list_filter = ['actual']
 
 
 class GenderAdmin(admin.ModelAdmin):

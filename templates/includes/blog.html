@@ -10,7 +10,7 @@
 				{% for post_category in post_categories %}
 				<div class="blog-prof">
 					<a href="{% url 'blog' slug=post_category.slug %}" class="blog-img">
-						<img src="{{ post_category.get_image_url }}" alt="">
+						<img src="{{ post_category.get_image_url }}" alt="{{ post_category.img_alt }}">
 					</a>
 					<a href="{% url 'blog' slug=post_category.slug %}" class="blog-text">
 						<div class="blog__title">

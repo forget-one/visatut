@@ -6,6 +6,7 @@ from tinymce import HTMLField
 class Post(models.Model):
     title           = models.CharField(verbose_name='Заголовок', max_length=150, blank=True, null=True)
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True)
+    img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
     text            = HTMLField(verbose_name='Текст', blank=True, null=True)
     post_category   = models.ForeignKey(verbose_name='Відноситься до категорії', to='PostCategory', blank=True, null=True, on_delete=models.CASCADE, related_name='post_categories')
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
@@ -27,6 +28,7 @@ class Post(models.Model):
 class PostCategory(models.Model):
     title       = models.CharField(verbose_name='Заголовок', max_length=150, blank=True, null=True)
     slug        = models.SlugField(verbose_name='Посилання', unique=True)
+    img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
     image       = models.ImageField(verbose_name='Зображення', blank=True, null=True)
     text        = HTMLField(verbose_name='Текст', blank=True, null=True)
     updated     = models.DateTimeField(verbose_name='Змінено', auto_now=True)
