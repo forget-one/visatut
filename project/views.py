@@ -66,10 +66,6 @@ def service(request, country_pk=None, service_category_pk=None, post_id=None):
 
     service   = Service.objects.get(id=post_id)
     
-    title     = service.title
-    page, created = Page.objects.get_or_create(
-        code    = f"{request.META.get('PATH_INFO')}")
-    if not page.title: title = service.title
     return render(request, 'service.html', locals())
 
 
@@ -99,10 +95,6 @@ def blog(request, slug):
 
     if page.has_next():
         next_url = f'{page.next_page_number()}'
-    title           = post_category.title
-    paget, created = Page.objects.get_or_create(
-        code    = f"{request.META.get('PATH_INFO')}")
-    if not paget.title: title = post_category.title
     return render(request, 'blog.html', locals())
 
 
@@ -113,9 +105,10 @@ def blog_all(request):
     return render(request, 'blog_all.html', locals())
 
 
-def post(request, id):
-    post = Post.objects.get(id=id)
-    title = post.title
+def post(request, slug, id):
+    post_category   = PostCategory.objects.get(slug=slug)
+    post            = Post.objects.get(id=id)
+    title           = post.title
     page, created = Page.objects.get_or_create(
         code    = f"{request.META.get('PATH_INFO')}")
     if not page.title: title = post.title
@@ -160,6 +153,7 @@ def search_service(request):
         document__doc_type=request.POST.get('vant4'),
     )
     print(vacancies)
+    
     page, created = Page.objects.get_or_create(
         code    = f"{request.META.get('PATH_INFO')}")
     return render(request, 'search_service.html', locals())

@@ -3,16 +3,51 @@ from .models import *
 
 
 class ServiceCategoryAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {
+            'fields': [
+                'title',
+                ('thumbnail', 'img_alt'),
+            ],
+            'classes': 'wide'
+        }),
+        ('Мета-дані', {
+            'fields': [
+                'meta_title',
+                'meta_descr',
+                'meta_key',
+            ],
+            'classes': ['collapse']
+        }),
+    ]
     list_display = [
         'id',
         'title',
-    ] 
+    ]
     list_display_links = [
         'id',
         'title',
     ]
 
 class CountryAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {
+            'fields': [
+                'title',
+                ('thumbnail', 'img_alt'),
+                'categories',
+            ],
+            'classes': 'wide'
+        }),
+        ('Мета-дані', {
+            'fields': [
+                'meta_title',
+                'meta_descr',
+                'meta_key',
+            ],
+            'classes': ['collapse']
+        }),
+    ]
     list_display = [
         'id',
         'title',
@@ -23,6 +58,32 @@ class CountryAdmin(admin.ModelAdmin):
     ]
 
 class ServiceAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {
+            'fields': [
+                'title',
+                'header',
+                ('categories', 'countries'),
+            ],
+            'classes': 'wide'
+        }),
+        ('Переваги, процедура, додатково', {
+            'fields': [
+                'advantages',
+                'procedure',
+                'addition',
+            ],
+            'classes': ['collapse']
+        }),
+        ('Мета-дані', {
+            'fields': [
+                'meta_title',
+                'meta_descr',
+                'meta_key',
+            ],
+            'classes': ['collapse']
+        }),
+    ]
     list_display = [
         'id',
         'title',
@@ -32,6 +93,16 @@ class ServiceAdmin(admin.ModelAdmin):
         'title',
     ]
 class StaticServiceAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {
+            'fields': [
+                'title',
+                ('thumbnail', 'img_alt'),
+                'text',
+            ],
+            'classes': 'wide'
+        }),
+    ]
     list_display = [
         'id',
         'title',

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="keywords" content="{{ page.meta_key }}">
-	<meta name="description" content="{{ page.meta_descr }}">
-	<title>{{ title }}</title>
+	<meta name="keywords" content="{% if service.meta_key %}{{ service.meta_key }}{% endif %}">
+	<meta name="description" content="{% if service.meta_descr %}{{ service.meta_descr }}{% endif %}">
+	<title>{% if service.meta_title %}{{ service.meta_title }}{% else %}{{ service.title }}{% endif %}</title>
 	<meta name="viewport" content="width=device-width initial-scale=1">
 	<link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="/static/css/style.css">

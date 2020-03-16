@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="keywords" content="{{ page.meta_key }}">
 	<meta name="description" content="{{ page.meta_descr }}">
-	<title>{{ title }}</title>
+	<title>{% if page.title %}{{ page.title }}{% else %}Пошук по вакансіям{% endif %}</title>
 	<meta name="viewport" content="width=device-width initial-scale=1">
 	<link rel="stylesheet" href="/static/css/style.css">
 	<link rel="icon" type="image/x-icon" href="/static/img/visatut-logo.png">
