@@ -10,6 +10,9 @@ class Post(models.Model):
     text            = HTMLField(verbose_name='Текст', blank=True, null=True)
     post_category   = models.ForeignKey(verbose_name='Відноситься до категорії', to='PostCategory', blank=True, null=True, on_delete=models.CASCADE, related_name='post_categories')
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
+    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
+    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
+    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
 
     def get_image_url(self):
         url = ''
@@ -32,6 +35,10 @@ class PostCategory(models.Model):
     image       = models.ImageField(verbose_name='Зображення', blank=True, null=True)
     text        = HTMLField(verbose_name='Текст', blank=True, null=True)
     updated     = models.DateTimeField(verbose_name='Змінено', auto_now=True)
+    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
+    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
+    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
+    
     def get_image_url(self):
         url = ''
         if self.image:

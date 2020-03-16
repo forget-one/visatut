@@ -49,9 +49,6 @@ def services(request, country_pk=None, service_category_pk=None):
         service_category     = ServiceCategory.objects.get(pk=service_category_pk)
     title = service_category.title
 
-    page, created = Page.objects.get_or_create(
-        code    = f"{request.META.get('PATH_INFO')}")
-    if not page.title: title = country.title
     return render(request, 'services.html', locals())
 
 

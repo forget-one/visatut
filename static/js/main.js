@@ -108,11 +108,12 @@ $('.psevdo_link').on("click", function() {
 $('.nav_name_link').on('click', function() {
     localStorage.setItem('finder_page', '1');
     let data_scheme = $(this).data('scheme');
+    console.log('data_scheme: ', data_scheme);
     let nav_name_first = $('.nav_name_first').data('scheme');
-    console.log('nav_name_first: ', nav_name_first);
+   
     if (data_scheme == nav_name_first) {
      
-
+      console.log('nav_name_first: ', nav_name_first);
       window.location.pathname = '/';
       localStorage.scheme = nav_name_first;
     } else if (data_scheme >= 1 && data_scheme <= 100) {
@@ -123,7 +124,18 @@ $('.nav_name_link').on('click', function() {
     }
 });
 
-if (window.location.pathname == "/" && localStorage.scheme != 0 && localStorage.scheme != 101 && localStorage.finder_page == 1) {
+$('.nav_name_blog').on('click', function(){
+  let data_scheme = $(this).data('scheme');
+  let nav_name_blog = $('.nav_name_blog').data('scheme');
+    if (data_scheme == nav_name_blog) {
+      
+      window.location.pathname = '/';
+      localStorage.scheme = nav_name_blog;
+      
+    }
+});
+
+if (window.location.pathname == "/" && localStorage.scheme != 0 && localStorage.scheme != 101 && localStorage.scheme != 102 && localStorage.finder_page == 1) {
   localStorage.finder_page = 0;
 
   if (window.matchMedia("(max-width: 996px)").matches) {
@@ -140,7 +152,8 @@ if (window.location.pathname == "/" && localStorage.scheme != 0 && localStorage.
   add_visible_content();
  
 }
-if (window.location.pathname == "/" && localStorage.scheme == 101 && localStorage.finder_page == 1) {
+if (window.location.pathname == "/" && localStorage.scheme == 101 && localStorage.finder_page == 1 && localStorage.scheme != 102) {
+ 
   localStorage.finder_page = 0;
   if (window.matchMedia("(max-width: 996px)").matches) {
     function linkTime() {
@@ -152,6 +165,22 @@ if (window.location.pathname == "/" && localStorage.scheme == 101 && localStorag
     } else {
       fullpage_api.moveSectionDown();
     }
+}
+if (window.location.pathname == "/" && localStorage.scheme == 102) {
+  console.log("tuta");
+  
+  localStorage.finder_page = 0;
+  if (window.matchMedia("(max-width: 996px)").matches) {
+    function linkTime() {
+      let destination = $('#sect6').offset().top;
+      $('html, body').animate({ scrollTop: destination }, 600);
+      return false;
+    }
+    setTimeout(linkTime, 500);
+    } else {
+      fullpage_api . moveTo (6);
+    }
+    localStorage.scheme = 0;
 }
 
 function add_visible_content () {

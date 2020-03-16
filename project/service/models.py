@@ -8,6 +8,9 @@ class StaticService(models.Model):
     text      = HTMLField(verbose_name=("Текст"), blank=True, null=True)
     img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
     thumbnail = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='static_service/')
+    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
+    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
+    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
     
     def get_thumbnail_url(self):
         thumbnail_url = ''
@@ -31,6 +34,9 @@ class Service(models.Model):
     advantages = HTMLField(verbose_name=("Переваги"),            blank=True, null=True)
     procedure  = HTMLField(verbose_name=("Процедура відкриття"), blank=True, null=True)
     addition   = HTMLField(verbose_name=("Додаткові вимоги"),    blank=True, null=True)
+    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
+    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
+    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
 
     def __str__(self):
         return f'{self.title}'
@@ -44,6 +50,9 @@ class ServiceCategory(models.Model):
     title     = models.CharField(verbose_name=('Назва'), max_length=255)
     img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
     thumbnail = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='service_category/')
+    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
+    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
+    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
 
     def __str__(self):
         return f'{self.title}'
@@ -65,6 +74,9 @@ class Country(models.Model):
     img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
     thumbnail  = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='country/')
     categories = models.ManyToManyField(verbose_name=("Категорії"), to='service.ServiceCategory', related_name='countries', related_query_name='country', blank=False)
+    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
+    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
+    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
 
     def __str__(self):
         return f'{self.title}'
