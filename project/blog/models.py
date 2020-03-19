@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce import HTMLField
+from django.urls import reverse
 # Create your models here.
 
 
@@ -16,12 +17,15 @@ class Post(models.Model):
 
     def get_image_url(self):
         url = ''
-        if self.image:
-            url = self.image.url
+        if self.image: url = self.image.url
         return url
 
     def __str__(self):
         return f'{self.title}'
+
+    def get_absolute_url(self):
+        return reverse("post", kwargs={"slug": self.post_category.slug, "id": self.pk})
+    
 
     class Meta:
         verbose_name = 'Пост'
@@ -39,11 +43,8 @@ class PostCategory(models.Model):
     meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
     meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
     
-    def get_image_url(self):
-        url = ''
-        if self.image:
-            url = self.image.url
-        return url
+    def get_absolute_url(self):
+        return reverse('blog', kwargs={'slug': self.slug})
 
     def __str__(self):
         return f'{self.title}'
