@@ -48,14 +48,9 @@ def services(request, country_pk=None, service_category_pk=None):
     if service_category_pk:
         service_category     = ServiceCategory.objects.get(pk=service_category_pk)
     title = service_category.title
-
     return render(request, 'services.html', locals())
 
 
-# def service(request, id):
-#     service   = Service.objects.get(id=id)
-#     title     = service.title
-#     return render(request, 'service.html', locals())
 
 def service(request, country_pk=None, service_category_pk=None, post_id=None):
     if country_pk:
@@ -148,10 +143,16 @@ def search_service(request):
     print(request.POST.get('vant3'))
     print(request.POST.get('vant4'))
     vacancies = Vacancy.objects.filter(
-        country__title=request.POST.get('vant1'),
-        gender__human_type=request.POST.get('vant2'),
-        document__doc_type=request.POST.get('vant4'),
-    )
+        country__title      = request.POST.get('vant1'),
+        gender__human_type  = request.POST.get('vant2'),
+        work_type__work_type= request.POST.get('vant3'),
+        document__doc_type  = request.POST.get('vant4'),
+    ).select_related(
+        'country',
+        'gender',
+        'document',
+        'work_type',
+        )
     print(vacancies)
     
     page, created = Page.objects.get_or_create(

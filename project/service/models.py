@@ -1,19 +1,18 @@
 from django.db import models
 from tinymce import HTMLField
 from django.urls import reverse 
-
+from project.models import MetaData
 
 class StaticService(models.Model):
     title           = models.CharField(verbose_name=('Заголовок'), max_length=255)
     text            = HTMLField(verbose_name=("Текст"), blank=True, null=True)
-    img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
-    thumbnail       = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='static_service/')
+    image           = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='static_service/')
     
-    def get_thumbnail_url(self):
-        thumbnail_url = ''
-        if self.thumbnail:
-            thumbnail_url = self.thumbnail.url
-        return thumbnail_url
+    def get_image_url(self):
+        url = ''
+        if self.image: url = self.image.url
+        return url
+
     
     def __str__(self):
         return f'{self.title}'
@@ -23,7 +22,7 @@ class StaticService(models.Model):
         verbose_name_plural = 'Сервіси' 
 
 
-class Service(models.Model):
+class Service(MetaData):
     title           = models.CharField(verbose_name=('Заголовок'), max_length=255)
     categories      = models.ManyToManyField(verbose_name=("Категорії послуги"), to="service.ServiceCategory", related_name='services')
     countries       = models.ManyToManyField(verbose_name=("Країни"), to="service.Country",         related_name='services')
@@ -31,9 +30,6 @@ class Service(models.Model):
     advantages      = HTMLField(verbose_name=("Переваги"),            blank=True, null=True)
     procedure       = HTMLField(verbose_name=("Процедура відкриття"), blank=True, null=True)
     addition        = HTMLField(verbose_name=("Додаткові вимоги"),    blank=True, null=True)
-    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
-    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
-    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
 
     def __str__(self):
         return f'{self.title}'
@@ -43,22 +39,17 @@ class Service(models.Model):
         verbose_name_plural = 'Сервіси по країнах' 
 
 
-class ServiceCategory(models.Model):
+class ServiceCategory(MetaData):
     title           = models.CharField(verbose_name=('Назва'), max_length=255, blank=True, null=True)
-    img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
-    thumbnail       = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='service_category/')
-    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
-    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
-    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
+    image       = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='service_category/')
 
     def __str__(self):
         return f'{self.title}'
     
-    def get_thumbnail_url(self):
-        thumbnail_url = ''
-        if self.thumbnail:
-            thumbnail_url = self.thumbnail.url
-        return thumbnail_url
+    def get_image_url(self):
+        url = ''
+        if self.image: url = self.image.url
+        return url
     
     class Meta:
         verbose_name = ('Категорія сервісу')
@@ -66,23 +57,23 @@ class ServiceCategory(models.Model):
 
 
 
-class Country(models.Model):
+class Country(MetaData):
     title           = models.CharField(verbose_name=("Назва"), max_length=255)
-    img_alt         = models.CharField(verbose_name='Альт картинки', max_length=100, blank=True, null=True, default=' ')
-    thumbnail       = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='country/')
-    categories      = models.ManyToManyField(verbose_name=("Категорії"), to='service.ServiceCategory', related_name='countries', related_query_name='country', blank=False)
-    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
-    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
-    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
+    image           = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='country/')
+    categories      = models.ManyToManyField(verbose_name=("Категорії"), to='service.ServiceCategory', related_name='countries', blank=False)
 
+
+    def get_absolute_url(self):
+        return reverse("services", kwargs={"country_pk": self.pk, 'service_category_pk': self.categories.first().id })
+    
     def __str__(self):
         return f'{self.title}'
+
     
-    def get_thumbnail_url(self):
-        thumbnail_url = ''
-        if self.thumbnail:
-            thumbnail_url = self.thumbnail.url
-        return thumbnail_url
+    def get_image_url(self):
+        url = ''
+        if self.image: url = self.image.url
+        return url
 
     class Meta:
         verbose_name = 'Країна' 

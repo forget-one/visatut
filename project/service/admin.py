@@ -1,61 +1,35 @@
 from django.contrib import admin
 from .models import *
+from project.mixins import ViewImage, meta_data
 
-
-class ServiceCategoryAdmin(admin.ModelAdmin):
+class ServiceCategoryAdmin(ViewImage, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
                 'title',
-                ('thumbnail', 'img_alt'),
+                ('image', 'view_image'),
             ],
             'classes': 'wide'
         }),
-        ('Мета-дані', {
-            'fields': [
-                'meta_title',
-                'meta_descr',
-                'meta_key',
-            ],
-            'classes': ['collapse']
-        }),
-    ]
-    list_display = [
-        'id',
-        'title',
-    ]
-    list_display_links = [
-        'id',
-        'title',
-    ]
+    ] + meta_data
+    readonly_fields = ['view_image']
+    list_display = ['id', 'title',]
+    list_display_links = ['id', 'title',]
 
-class CountryAdmin(admin.ModelAdmin):
+class CountryAdmin(ViewImage, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
                 'title',
-                ('thumbnail', 'img_alt'),
+                ('image', 'view_image'),
                 'categories',
             ],
             'classes': 'wide'
         }),
-        ('Мета-дані', {
-            'fields': [
-                'meta_title',
-                'meta_descr',
-                'meta_key',
-            ],
-            'classes': ['collapse']
-        }),
-    ]
-    list_display = [
-        'id',
-        'title',
-    ]
-    list_display_links = [
-        'id',
-        'title',
-    ]
+    ] + meta_data
+    readonly_fields = ['view_image']
+    list_display = ['id', 'title',]
+    list_display_links = ['id', 'title',]
 
 class ServiceAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -75,55 +49,27 @@ class ServiceAdmin(admin.ModelAdmin):
             ],
             'classes': ['collapse']
         }),
-        ('Мета-дані', {
-            'fields': [
-                'meta_title',
-                'meta_descr',
-                'meta_key',
-            ],
-            'classes': ['collapse']
-        }),
-    ]
-    list_display = [
-        'id',
-        'title',
-    ] 
-    list_display_links = [
-        'id',
-        'title',
-    ]
-class StaticServiceAdmin(admin.ModelAdmin):
+    ] + meta_data
+    list_display = [ 'id', 'title',] 
+    list_display_links = [ 'id', 'title',]
+class StaticServiceAdmin(ViewImage, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
                 'title',
-                ('thumbnail', 'img_alt'),
+                ('image', 'view_image'),
                 'text',
             ],
             'classes': 'wide'
         }),
     ]
-    list_display = [
-        'id',
-        'title',
-    ] 
-    list_display_links = [
-        'id',
-        'title',
-    ]
+    readonly_fields = ['view_image']
+    list_display = [ 'id', 'title',] 
+    list_display_links = [ 'id', 'title',]
 
-# class ServiceFeatureAdmin(admin.ModelAdmin):
-#     pass 
-
-# class ServiceFeatureCategoryAdmin(admin.ModelAdmin):
-#     pass 
 
 
 admin.site.register(ServiceCategory, ServiceCategoryAdmin)
 admin.site.register(Country, CountryAdmin)
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(StaticService, StaticServiceAdmin)
-
-# admin.site.register(ServiceFeature, ServiceFeatureAdmin)
-# admin.site.register(ServiceFeatureCategory, ServiceFeatureCategoryAdmin)
-

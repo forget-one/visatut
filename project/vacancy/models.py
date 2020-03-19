@@ -1,8 +1,8 @@
 from django.db import models
-
+from project.models import MetaData
 # Create your models here.
 
-class Vacancy(models.Model):
+class Vacancy(MetaData):
     name            = models.CharField(verbose_name='Назва роботи', max_length=150, blank=True, null=True)
     country         = models.ForeignKey(to='service.Country', verbose_name='Країна', on_delete=models.CASCADE, blank=True, null=True, related_name='country')
     gender          = models.ForeignKey(to='Gender', verbose_name='Робота для',  blank=True, null=True, on_delete=models.CASCADE)
@@ -15,9 +15,6 @@ class Vacancy(models.Model):
     our_duties      = models.TextField(verbose_name='Компанія надає', blank=True, null=True)
     duties          = models.TextField(verbose_name="Обов'язки", blank=True, null=True)
     actual          = models.BooleanField(verbose_name="Актуальна?", default=True)
-    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
-    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
-    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
     def __str__(self):
         return f'{self.name}'
 

@@ -16,7 +16,8 @@ class VacancyAdmin(admin.ModelAdmin):
         })
     )
     list_filter = ['actual']
-
+    list_display = ['pk', 'name']
+    list_display_links = ['pk', 'name']
 
 class GenderAdmin(admin.ModelAdmin):
     exclude = ['']

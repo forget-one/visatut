@@ -149,8 +149,25 @@
 							Послуги
 						</h1>
 					</div>
+					<div class="mini-navigation-block">
+						<div data-nav="nav1" data-scheme="1" class="nav_name nav_name_link nav_name_first">
+							Послуги
+						</div>
+						<img src="/static/img/nav.svg" alt="">
+						<div data-nav="navname"  class="nav_name nav_name_link nav_name_active">
+							Пошук по вакансіям
+						</div>
+					</div>
 					<div class="search_result-block blog-block normalScroll">
 						
+						{% if not vacancies %}
+						<div class="search_result-wrap">
+							<div style="text-align: center;" class="content_num">
+								Вакансій за даним запитом не знайдено.
+							</div>
+						</div>
+						{% endif %}
+							
 						{% for vacancy in vacancies %}
 						<div class="search_result-wrap">
 							<div class="content_num">

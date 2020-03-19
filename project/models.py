@@ -14,3 +14,12 @@ class Page(models.Model):
     class Meta:
         verbose_name = 'Сторінка'
         verbose_name_plural = 'Сторінки'
+
+
+class MetaData(models.Model):
+    meta_title      = models.CharField(verbose_name='Мета-заголовок', max_length=255, blank=True, null=True)
+    meta_descr      = models.TextField(verbose_name=("Мета-опис"), blank=True, null=True)
+    meta_key        = models.TextField(verbose_name=("Мета-ключі"), blank=True, null=True)
+
+    class Meta:
+        abstract = True
