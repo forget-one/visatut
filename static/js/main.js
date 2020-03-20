@@ -9,6 +9,10 @@ $(document).ready(function() {
 });
 
 
+
+
+
+
 var inputHasFocus = $('.input_focus');
 inputHasFocus.on('focus', function() {
   let focusFinder = $(this).parents('.inp-vak-wrap').find('.label__style');

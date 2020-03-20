@@ -39,6 +39,14 @@
     }
 
 }
+.slick-dots li button {
+    width: 100%;
+    height: 100%;
+}
+.slick-dots li button:before {
+    width: 100%;
+    height: 100%;
+}
 
 .hidden_nav-bar {
     position: fixed;
