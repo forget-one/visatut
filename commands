@@ -1,13 +1,14 @@
+pip3 install -r requirements.txt
 rm db.sqlite3
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+find . -path "*/migrations/*.pyc"  -delete
 
+git add . && git commit -m 'something' && git pull origin master 
+git add . && git commit -m 'something' && git push origin master
 
 python3 manage.py makemigrations 
 python3 manage.py migrate 
-python3 manage.py createsuperuser 
-python3 manage.py loaddata service_category country service static_service
+echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', '', 'admin')" | python manage.py shell
+python3 manage.py loaddata db.json
 python3 manage.py runserver
 
-
-
-######./manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
-./manage.py loaddata db.json

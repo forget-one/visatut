@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 from project.mixins import *
 
-class PostInline(ViewImage, admin.StackedInline):
+class PostInline(ViewImageMixin, admin.StackedInline):
     model       = Post
     extra       = 0
     fieldsets   = [
@@ -19,7 +19,7 @@ class PostInline(ViewImage, admin.StackedInline):
 
     readonly_fields = ['updated', 'view_image']
 
-class PostAdmin(ViewOnSiteMixin, ViewImage, admin.ModelAdmin):
+class PostAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
@@ -40,7 +40,7 @@ class PostAdmin(ViewOnSiteMixin, ViewImage, admin.ModelAdmin):
     view_on_site        = True
 
 
-class PostCategoryAdmin(ViewOnSiteMixin, ViewImage, admin.ModelAdmin):
+class PostCategoryAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
@@ -53,6 +53,7 @@ class PostCategoryAdmin(ViewOnSiteMixin, ViewImage, admin.ModelAdmin):
             'classes': 'wide'
         }),
     ] + meta_data
+    save_as = True  
     readonly_fields     = ['updated', 'view_image',]
     inlines             = [PostInline]
     list_display        = ['pk', 'title', 'view_image', 'on_site']

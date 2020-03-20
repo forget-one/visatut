@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import *
+from django.utils.safestring import mark_safe
+
 # Register your models here.
 
 class VacancyAdmin(admin.ModelAdmin):
@@ -15,17 +17,17 @@ class VacancyAdmin(admin.ModelAdmin):
             'fields': ['requirements', 'work_position', 'work_day' , 'your_duties', 'our_duties', 'duties', 'actual',]
         })
     )
+
     list_filter = ['actual']
-    list_display = ['pk', 'name']
-    list_display_links = ['pk', 'name']
+    save_as = True
+    list_display = ['pk', 'name', 'actual']
+    list_display_links = ['pk', 'name', 'actual']
 
 class GenderAdmin(admin.ModelAdmin):
     exclude = ['']
 
-
 class DocumetTypeAdmin(admin.ModelAdmin):
     exclude = ['']
-
 
 class WorkTypeAdmin(admin.ModelAdmin):
     exclude = ['']

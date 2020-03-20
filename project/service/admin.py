@@ -1,8 +1,8 @@
 from django.contrib import admin
 from .models import *
-from project.mixins import ViewImage, meta_data
+from project.mixins import ViewImageMixin, meta_data
 
-class ServiceCategoryAdmin(ViewImage, admin.ModelAdmin):
+class ServiceCategoryAdmin(ViewImageMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
@@ -13,10 +13,10 @@ class ServiceCategoryAdmin(ViewImage, admin.ModelAdmin):
         }),
     ] + meta_data
     readonly_fields = ['view_image']
-    list_display = ['id', 'title',]
+    list_display = ['id', 'title', 'view_image']
     list_display_links = ['id', 'title',]
 
-class CountryAdmin(ViewImage, admin.ModelAdmin):
+class CountryAdmin(ViewImageMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
@@ -28,7 +28,7 @@ class CountryAdmin(ViewImage, admin.ModelAdmin):
         }),
     ] + meta_data
     readonly_fields = ['view_image']
-    list_display = ['id', 'title',]
+    list_display = ['id', 'title', 'view_image']
     list_display_links = ['id', 'title',]
 
 class ServiceAdmin(admin.ModelAdmin):
@@ -52,7 +52,7 @@ class ServiceAdmin(admin.ModelAdmin):
     ] + meta_data
     list_display = [ 'id', 'title',] 
     list_display_links = [ 'id', 'title',]
-class StaticServiceAdmin(ViewImage, admin.ModelAdmin):
+class StaticServiceAdmin(ViewImageMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
@@ -64,8 +64,8 @@ class StaticServiceAdmin(ViewImage, admin.ModelAdmin):
         }),
     ]
     readonly_fields = ['view_image']
-    list_display = [ 'id', 'title',] 
-    list_display_links = [ 'id', 'title',]
+    list_display = ['id', 'title', 'view_image']
+    list_display_links = ['id', 'title',]
 
 
 
