@@ -2522,6 +2522,9 @@ body {
   border-radius: 50%;
   transition: all .4s; }
 
+.slick-slide img {
+  object-fit: cover; }
+
 .slick-dotted.slick-slider {
   margin-bottom: 0; }
 

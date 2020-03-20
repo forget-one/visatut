@@ -71,6 +71,7 @@ body {
 .slick-slide img {
     // height: 100vh;
     // width: 100vw;
+    object-fit: cover;
 }
 .slick-dotted.slick-slider {
     margin-bottom: 0;
