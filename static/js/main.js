@@ -187,6 +187,23 @@ if (window.location.pathname == "/" && localStorage.scheme == 102) {
     localStorage.scheme = 0;
 }
 
+if (window.location.pathname == "/" && localStorage.scheme == 103) {
+  console.log("tuta");
+  
+  localStorage.finder_page = 0;
+  if (window.matchMedia("(max-width: 996px)").matches) {
+    function linkTime() {
+      let destination = $('#sect5').offset().top;
+      $('html, body').animate({ scrollTop: destination }, 600);
+      return false;
+    }
+    setTimeout(linkTime, 500);
+    } else {
+      fullpage_api . moveTo (5);
+    }
+    localStorage.scheme = 0;
+}
+
 function add_visible_content () {
   let find_content = $('.hidden_tab_content').find('.content' + localStorage.scheme);
   console.log('localStorage.scheme: ', '.content' + localStorage.scheme);
