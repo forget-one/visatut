@@ -2,7 +2,7 @@ from django.utils.safestring import mark_safe
 
 class ViewOnSiteMixin(object):
     def on_site(self, obj):
-        return mark_safe("<a href='%s'>Дивитися на сайті</a>" % obj.get_absolute_url())
+        return mark_safe("<a href='%s' target='_blank'>Дивитися на сайті</a>" % obj.get_absolute_url())
     on_site.short_description = "Дивитися на сайті"
 
  
