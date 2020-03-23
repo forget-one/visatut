@@ -154,12 +154,12 @@
 							Послуги
 						</div>
 						<img src="/static/img/nav.svg" alt="">
-						<div data-scheme="{{ service_category.id }}" class="nav_name nav_name_link">
+						<div data-scheme="{{ service_category.pk }}" class="nav_name nav_name_link">
 							{{service_category.title|truncatechars_html:30}}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name">
-							<a href="{% url 'services' country.id service_category.id %}">
+							<a href="{% url 'services' country.pk service_category.pk %}">
 								{{ country.title|truncatechars_html:30 }}
 							</a>
 						</div>

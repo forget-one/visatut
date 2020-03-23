@@ -2,7 +2,7 @@ from django.db import models
 from project.models import MetaData
 # Create your models here.
 
-class Vacancy(MetaData):
+class Vacancy(models.Model):
     name            = models.CharField(verbose_name='Назва роботи', max_length=150, blank=True, null=True)
     country         = models.ForeignKey(to='service.Country', verbose_name='Країна', on_delete=models.CASCADE, blank=True, null=True, related_name='country')
     gender          = models.ForeignKey(to='Gender', verbose_name='Робота для',  blank=True, null=True, on_delete=models.CASCADE)

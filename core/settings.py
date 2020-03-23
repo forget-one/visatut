@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'project',
     'project.blog',
     'project.service',
@@ -115,6 +116,16 @@ EMAIL_HOST_USER = "admin@jcbservice.com.ua"
 EMAIL_HOST_PASSWORD = "jcb69018"
 EMAIL_HOST = "mail.jcbservice.com.ua"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+STATIC_PAGES_SITEMAP = [
+    'index',
+    'franchise',
+    'partner_europe',
+    'partner_potential',
+    'partner_usa',
+    'search_service',
+]
 
 
 

@@ -27,6 +27,7 @@ class CountryAdmin(ViewImageMixin, admin.ModelAdmin):
             'classes': 'wide'
         }),
     ] + meta_data
+    filter_horizontal = ['categories']
     readonly_fields = ['view_image']
     list_display = ['id', 'title', 'view_image']
     list_display_links = ['id', 'title',]
@@ -37,7 +38,7 @@ class ServiceAdmin(admin.ModelAdmin):
             'fields': [
                 'title',
                 'header',
-                ('categories', 'countries'),
+                'countries',
             ],
             'classes': 'wide'
         }),
@@ -47,9 +48,9 @@ class ServiceAdmin(admin.ModelAdmin):
                 'procedure',
                 'addition',
             ],
-            'classes': ['collapse']
         }),
     ] + meta_data
+    list_filter = ['countries']
     list_display = [ 'id', 'title',] 
     list_display_links = [ 'id', 'title',]
 class StaticServiceAdmin(ViewImageMixin, admin.ModelAdmin):
