@@ -18,5 +18,5 @@ def search_service(request):
         actual              = vant5(data.get('actual'))
     ).select_related('country', 'gender', 'document', 'work_type',)
     page, created = Page.objects.get_or_create(
-        slug    = f"{request.META.get('PATH_INFO')}")
+        slug    = f"{request.build_absolute_uri()}")
     return render(request, 'search_service.html', locals())

@@ -19,7 +19,6 @@ class VacancyAdmin(admin.ModelAdmin):
     )
 
     list_filter = ['actual']
-    save_as = True
     list_display = ['pk', 'name', 'actual']
     list_display_links = ['pk', 'name', 'actual']
 

@@ -13,7 +13,7 @@ class DefaultPageMixin:
 
     def get(self, request):
         page, created = Page.objects.get_or_create(
-            slug    = f"{request.META.get('PATH_INFO')}")
+            slug    = f"{request.build_absolute_uri()}")
         return render(request, self.template, {'page': page})  
 
 class ViewImageMixin(object):
