@@ -161,7 +161,7 @@
 					<div class="blog-block normalScroll">
 						
 						{% for post in page %}
-						<a href="{% url 'post' post_category.slug post.id  %}" class="a_link_blog">
+						<a href="{% url 'post' post_category.slug post.pk  %}" class="a_link_blog">
 							<div class="blog-prof">
 								<div class="blog-img">
 									<img src="{{ post.get_image_url }}" alt="{{ post.img_alt }}">

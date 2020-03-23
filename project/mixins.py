@@ -1,11 +1,20 @@
 from django.utils.safestring import mark_safe
+from .models import Page 
+from django.shortcuts import render
 
 class ViewOnSiteMixin(object):
     def on_site(self, obj):
         return mark_safe("<a href='%s' target='_blank'>Дивитися на сайті</a>" % obj.get_absolute_url())
     on_site.short_description = "Дивитися на сайті"
 
- 
+
+class DefaultPageMixin:
+    template = None
+
+    def get(self, request):
+        page, created = Page.objects.get_or_create(
+            slug    = f"{request.META.get('PATH_INFO')}")
+        return render(request, self.template, {'page': page})  
 
 class ViewImageMixin(object):
     def view_image(self, obj):
@@ -24,3 +33,4 @@ meta_data = [
         }),
     ]
     
+
