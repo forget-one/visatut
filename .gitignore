@@ -1,4 +1,4 @@
-#db.sqlite3
+# db.sqlite3
 .vscode
 .env
 .venv
@@ -24,4 +24,5 @@ __pycache__/
 
 # settings.ini
 static_root/
+
 
