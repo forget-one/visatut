@@ -1,0 +1,20 @@
+server{
+
+    server_name 139.162.153.13;
+    listen 80;
+
+
+    location /media {
+        alias /home/kleikoks/projects/visatut/src/media;
+    }
+
+    location /static {
+        alias /home/kleikoks/projects/visatut/src/static_root;
+    }
+
+    location / {
+        uwsgi_pass unix:/home/kleikoks/projects/visatut/src/config/visatut.sock;
+        include /etc/nginx/uwsgi_params;
+    }
+
+}
