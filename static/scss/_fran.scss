@@ -166,6 +166,12 @@
     color: #6c6a67;
     font-size: 16px;
     text-align: right;
+    transition: all .2s;
+    cursor: pointer;
+
+    &:hover {
+        color: #e35c72;
+    }
 }
 .contact-prof {
     display: flex;

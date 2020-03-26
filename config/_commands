@@ -1,5 +1,5 @@
-sudo ln -s /home/jurgeon/projects/project_name/src/config/project_name                    /etc/nginx/sites-enabled/
-sudo ln -s /home/jurgeon/projects/project_name/src/config/project_name.service            /etc/systemd/system/
+sudo ln -s /home/kleikoks/projects/visatut/src/config/visatut                    /etc/nginx/sites-enabled/
+sudo ln -s /home/kleikoks/projects/visatut/src/config/visatut.service            /etc/systemd/system/
 
 
 sudo systemctl enable nginx
@@ -7,10 +7,10 @@ sudo systemctl start nginx
 sudo systemctl restart nginx
 #sudo systemctl status nginx
 
-sudo systemctl enable project_name
-sudo systemctl start project_name
-sudo systemctl restart project_name
-#sudo systemctl status project_name
+sudo systemctl enable visatut
+sudo systemctl start visatut
+sudo systemctl restart visatut
+#sudo systemctl status visatut
 
 sudo systemctl daemon-reload
 

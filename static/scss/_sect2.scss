@@ -43,7 +43,7 @@ transition: all .4s;
     transition: all .4s;
     z-index: 9;
     top: -50px;
-  
+  opacity: 0;
 
 }
 .fill_hover {
@@ -84,6 +84,7 @@ transition: all .4s;
             opacity: 1;
         }
         .more-but {
+            opacity: 1;
             stroke: #fff !important;
         }
     }
