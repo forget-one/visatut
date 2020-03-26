@@ -33,7 +33,6 @@ class PostCategory(MetaData):
     title           = models.CharField(verbose_name='Заголовок', max_length=150, blank=True, null=True)
     slug            = models.SlugField(verbose_name='Посилання', unique=True)
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True)
-    text            = HTMLField(verbose_name='Текст', blank=True, null=True)
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
     
 
