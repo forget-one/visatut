@@ -7,16 +7,13 @@
 				</h1>
 			</div>
 			<div class="blog-block normalScroll">
+				
 				{% for post_category in post_categories %}
 				<div class="blog-prof">
-					<a href="{% url 'blog' slug=post_category.slug %}" class="blog-img">
-						<img src="{{ post_category.get_image_url }}" alt="{{ post_category.img_alt }}">
-					</a>
 					<a href="{% url 'blog' slug=post_category.slug %}" class="blog-text">
 						<div class="blog__title">
 							{{ post_category.title }}
 						</div>
-						{{ post_category.text|safe }}
 					</a>
 				</div>
 				{% endfor %}

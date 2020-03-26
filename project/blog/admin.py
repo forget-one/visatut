@@ -40,26 +40,23 @@ class PostAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
     view_on_site        = True
 
 
-class PostCategoryAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
+class PostCategoryAdmin(ViewOnSiteMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
                 'title',
                 'slug',
-                ('image', 'view_image'),
-                'text',
                 'updated',
             ],
             'classes': 'wide'
         }),
     ] + meta_data
     save_as = True  
-    readonly_fields     = ['updated', 'view_image',]
+    readonly_fields     = ['updated',]
     inlines             = [PostInline]
-    list_display        = ['pk', 'title', 'view_image', 'on_site']
+    list_display        = ['pk', 'title', 'on_site']
     list_display_links  = ['pk', 'title',]
     view_on_site        = True
-    save_as = True
 
 admin.site.register(PostCategory, PostCategoryAdmin)
 admin.site.register(Post, PostAdmin)
