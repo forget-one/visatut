@@ -19,8 +19,8 @@ class StaticService(models.Model):
         return f'{self.title}'
     
     class Meta:
-        verbose_name = 'Послуга' 
-        verbose_name_plural = 'Послуги' 
+        verbose_name = "Переглянути список послуг(без зв'язку із країнами)" 
+        verbose_name_plural = "Переглянути список послуг(без зв'язку із країнами)"  
 
 
 class Service(MetaData):
@@ -36,8 +36,8 @@ class Service(MetaData):
         return f'{self.title}'
     
     class Meta:
-        verbose_name = 'Послуга країни' 
-        verbose_name_plural = 'Послуги країн' 
+        verbose_name = 'Переглянути список послуг країн' 
+        verbose_name_plural = 'Переглянути список послуг країн' 
 
 
 class ServiceCategory(MetaData):
@@ -54,8 +54,8 @@ class ServiceCategory(MetaData):
         return url
     
     class Meta:
-        verbose_name = ('Категорія послуг')
-        verbose_name_plural = ('Категорії послуг')
+        verbose_name = ('Переглянути категорії послуг для країн')
+        verbose_name_plural = ('Переглянути категорії послуг для країн')
 
 
 
@@ -79,8 +79,8 @@ class Country(MetaData):
         return url
 
     class Meta:
-        verbose_name = 'Країна' 
-        verbose_name_plural = 'Країни'
+        verbose_name = 'Переглянути список країн' 
+        verbose_name_plural = 'Переглянути список країн'
 
 
 
