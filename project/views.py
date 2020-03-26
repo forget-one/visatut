@@ -28,7 +28,7 @@ def index(request):
     work_types          = WorkType.objects.all()
     document_types      = DocumetType.objects.all()
     post_categories     = PostCategory.objects.order_by('-updated')[:3]
-    page, created       = Page.objects.get_or_create(slug = f"{request.build_absolute_uri()}")
+    page, created       = Page.objects.get_or_create(slug = f"{request.get_full_path}")
     return render(request, 'index.html', locals())
 
 def services(request, country_pk, service_category_pk):

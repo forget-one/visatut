@@ -20,9 +20,12 @@
 					</a>
 				</div>
 				{% endfor %}
+				
+				{% if post_categories %}
 				<a href=" {% url 'blog_all' %} " class="blog_btn">
 					Більше
 				</a>
+				{% endif %}
 			</div>
 
 		</div>

@@ -25,8 +25,8 @@ class Post(MetaData):
     
 
     class Meta:
-        verbose_name = 'Пост'
-        verbose_name_plural = 'Пости'
+        verbose_name = 'Переглянути пости'
+        verbose_name_plural = 'Переглянути пости'
 
 
 class PostCategory(MetaData):
@@ -49,5 +49,5 @@ class PostCategory(MetaData):
         return url
 
     class Meta:
-        verbose_name = 'Категорія блогу'
-        verbose_name_plural = 'Категорії блогу'
+        verbose_name = 'Переглянути категорії блогу'
+        verbose_name_plural = 'Переглянути категорії блогу'

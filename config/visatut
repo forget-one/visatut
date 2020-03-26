@@ -1,6 +1,6 @@
 server{
 
-    server_name 139.162.153.13;
+    server_name kleikoks.fun;
     listen 80;
 
 
