@@ -452,11 +452,18 @@ body {
         width: 12px !important;
         margin: -2px 0 0 -2px;
     }
+  
 }
 
 
 
 @media (max-width: 996px) {
+    .title_name {
+        margin-top: -35px !important;
+    }
+    .normalScroll {
+        overflow: unset !important;
+    }
     #fp-nav {
         display: none;
     }
@@ -469,7 +476,7 @@ body {
         scroll-behavior: smooth;
     }
     .sect_name {
-        height: unset !important;
+        height: 100% !important;
     }
     .main_nav_bar_for_mobile {
         display: block;
@@ -546,7 +553,7 @@ body {
     .header-btn_mobile {
         display: flex;
         margin: 0;
-        margin-top: 0px;
+        margin-top: 0px !important;
     }
     .info_top-block_mobileNone {
         display: none;
@@ -564,11 +571,11 @@ body {
     .nav-bar {
         transition: all .4s;
         justify-content: space-around;
-        background: #000000e3;
+        background: rgba(49, 43, 43, 0.57);
         top: 0px;
         right: unset;
         position: fixed;
-        height: 81px;
+        height: 55px;
         width: 100%;
         left: 0;
         display: flex;
@@ -668,7 +675,7 @@ body {
     .ham {
         position: absolute;
         right: 0;
-        top: 0;
+        top: -16px;
     }
     .nav-bar {
     }
