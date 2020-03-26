@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-
+  $('.mobile_mask').mask("+38(999) 99 99 999");
 
   $('.form_consultation').fancybox({
     touch: false,
