@@ -16,6 +16,12 @@ class ServiceCategoryAdmin(ViewImageMixin, admin.ModelAdmin):
     list_display = ['id', 'title', 'view_image']
     list_display_links = ['id', 'title',]
 
+    def has_delete_permission(self, request, obj=None):
+        if obj is not None:
+            if obj.pk == 1 or obj.pk == 2 or obj.pk == 3:
+                return False
+        return True
+
 class CountryAdmin(ViewImageMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
@@ -53,6 +59,8 @@ class ServiceAdmin(admin.ModelAdmin):
     list_filter = ['countries']
     list_display = [ 'id', 'title',] 
     list_display_links = [ 'id', 'title',]
+
+
 class StaticServiceAdmin(ViewImageMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
