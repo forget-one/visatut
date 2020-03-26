@@ -4,7 +4,8 @@ from project.mixins import *
 
 class PostInline(ViewImageMixin, admin.StackedInline):
     model       = Post
-    extra       = 0
+    extra       = 1
+    max_num     = 1
     fieldsets   = [
         (None, {
             'fields': [
