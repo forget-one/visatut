@@ -47,7 +47,6 @@ class PostCategoryAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
                 'title',
                 'slug',
                 ('image', 'view_image'),
-                'text',
                 'updated',
             ],
             'classes': 'wide'
@@ -59,7 +58,6 @@ class PostCategoryAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
     list_display        = ['pk', 'title', 'view_image', 'on_site']
     list_display_links  = ['pk', 'title',]
     view_on_site        = True
-    save_as = True
 
 admin.site.register(PostCategory, PostCategoryAdmin)
 admin.site.register(Post, PostAdmin)

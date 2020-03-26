@@ -1,7 +1,6 @@
 server{
 
     server_name kleikoks.fun;
-    listen 80;
 
 
     location /media {
@@ -16,5 +15,25 @@ server{
         uwsgi_pass unix:/home/kleikoks/projects/visatut/src/config/visatut.sock;
         include /etc/nginx/uwsgi_params;
     }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/kleikoks.fun/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/kleikoks.fun/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server{
+    if ($host = kleikoks.fun) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name kleikoks.fun;
+    listen 80;
+    return 404; # managed by Certbot
+
 
 }
