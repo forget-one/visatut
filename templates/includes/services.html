@@ -57,18 +57,19 @@
                         </div>
                         <img src="static/img/nav.svg" alt="">
                         <div class="nav_name nav_name_active">
-                            {{service_category.title}}
+                            {{ service_category.title }}
                         </div>
                     </div>
                     <div class="countries-block">
-                        {% for country in service_category.countries.all %}
-                        <div data-subInfo="sub{{country}}" class="countries_profile">
-                            <a class="countries_img-wrap" href="{% url 'services' country.pk service_category.pk %}">
-                                <img class="countries_img" src="{{country.get_image_url}}" alt="{{ country.img_alt }}">
+                        {{service_category.countries}}
+                        {% for country in service_category.countries.objects.all  %}
+                        <div data-subInfo="sub{{ country }}" class="countries_profile">
+                            <a class="countries_img-wrap" href="{% url 'services' service_category.pk %}">
+                                <img class="countries_img" src="{{ country.get_image_url }}" alt="{{ country.img_alt }}">
                             </a>
-                            <a href="{% url 'services' country.pk service_category.pk %}">
+                            <a href="{% url 'services' service_category.pk %}">
                                 <div class="countries_text">
-                                    {{country.title}}
+                                    {{ country.title }}
                                 </div>
                             </a>
                         </div>

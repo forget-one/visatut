@@ -9,13 +9,11 @@ class PageAdmin(admin.ModelAdmin):
         return mark_safe("<a href='%s' target='_blank'>Дивитися на сайті</a>" % obj.get_absolute_url())
     on_site.short_description = "Дивитися на сайті"
 
-
     readonly_fields = ['slug']
     list_display = ['title', 'slug', 'on_site']
     list_display_links = ['title', 'slug']
 
 admin.site.register(Page, PageAdmin)
-admin.site.unregister(User)
 admin.site.unregister(Group)
 
 

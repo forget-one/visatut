@@ -16,8 +16,8 @@ class Page(models.Model):
         return f'{self.title} --- {self.slug}'
 
     class Meta:
-        verbose_name = 'Список статичних сторінок'
-        verbose_name_plural = 'Список статичних сторінок'
+        verbose_name = 'Сторінки'
+        verbose_name_plural = 'Сторінки'
 
 
 class MetaData(models.Model):

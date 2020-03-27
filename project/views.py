@@ -23,7 +23,6 @@ class PartnerUsa(DefaultPageMixin, View):
 def index(request):
     service_categories  = ServiceCategory.objects.all()
     static_services     = StaticService.objects.all()
-    countries           = Country.objects.all()
     genders             = Gender.objects.all()
     work_types          = WorkType.objects.all()
     document_types      = DocumetType.objects.all()
@@ -31,10 +30,10 @@ def index(request):
     page, created       = Page.objects.get_or_create(slug = f"{request.get_full_path}")
     return render(request, 'index.html', locals())
 
-def services(request, country_pk, service_category_pk):
+def services(request, country_pk):
     country             = Country.objects.get(pk=country_pk)
     country_services    = Service.objects.filter(countries__id__in=[country.pk,])
-    service_category    = ServiceCategory.objects.get(pk=service_category_pk)
+    service_category    = ServiceCategory.objects.get(countries=country)
     return render(request, 'services.html', locals())
 
 def service(request, country_pk, service_category_pk, post_id):

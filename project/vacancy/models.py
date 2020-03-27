@@ -19,8 +19,8 @@ class Vacancy(models.Model):
         return f'{self.name}'
 
     class Meta:
-        verbose_name = 'Список вакансій'
-        verbose_name_plural = 'Список вакансій'
+        verbose_name = 'Вакансії'
+        verbose_name_plural = 'Вакансії'
     
 class Gender(models.Model):
     human_type = models.CharField(verbose_name="Обов'язки", max_length=100, blank=True, null=True)
@@ -29,8 +29,8 @@ class Gender(models.Model):
         return f'{self.human_type}'
 
     class Meta:
-        verbose_name = "Робота для(список)"
-        verbose_name_plural = "Робота для(список)"
+        verbose_name = "Стать"
+        verbose_name_plural = "Стать"
     
 class DocumetType(models.Model):
     doc_type    = models.CharField(verbose_name="Необхідні документи", max_length=50, blank=True, null=True)
@@ -40,8 +40,8 @@ class DocumetType(models.Model):
         return f'{self.doc_type}'
 
     class Meta:
-        verbose_name = "Необхідні документи(список)"
-        verbose_name_plural = "Необхідні документи(список)"
+        verbose_name = "Необхідні документи"
+        verbose_name_plural = "Необхідні документи"
 
 
 class WorkType(models.Model):
@@ -51,5 +51,5 @@ class WorkType(models.Model):
         return f'{self.work_type}'
 
     class Meta:
-        verbose_name = 'Тип робіт(список)'
-        verbose_name_plural = 'Тип робіт(список)'
+        verbose_name = 'Типи робіт'
+        verbose_name_plural = 'Типи робіт'
