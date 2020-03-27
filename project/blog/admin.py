@@ -16,6 +16,8 @@ class PostInline(ViewImageMixin, admin.StackedInline):
             'classes': ['wide'],
         }),
     ] + meta_data
+    
+    
 
     readonly_fields = ['updated', 'view_image']
 
@@ -51,7 +53,10 @@ class PostCategoryAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
             ],
             'classes': 'wide'
         }),
-    ] + meta_data
+    ] + meta_data   
+    def get_inline_instances(self, request, obj=None):
+        return [inline(self.model, self.admin_site) for inline in self.inlines]
+
     save_as = True  
     readonly_fields     = ['updated', 'view_image',]
     inlines             = [PostInline]

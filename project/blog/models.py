@@ -8,7 +8,7 @@ class Post(MetaData):
     title           = models.CharField(verbose_name='Заголовок', max_length=150, blank=True, null=True)
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True)
     text            = HTMLField(verbose_name='Текст', blank=True, null=True)
-    post_category   = models.ForeignKey(verbose_name='Відноситься до категорії', to='PostCategory', blank=True, null=True, on_delete=models.CASCADE, related_name='post_categories')
+    post_category   = models.ForeignKey(verbose_name='Відноситься до категорії', to='PostCategory', blank=True, null=True, on_delete=models.CASCADE, related_name='posts')
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
 
 
