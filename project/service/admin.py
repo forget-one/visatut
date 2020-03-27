@@ -2,6 +2,22 @@ from django.contrib import admin
 from .models import *
 from project.mixins import ViewImageMixin, meta_data
 
+
+class CountryInline(ViewImageMixin, admin.StackedInline):
+    model   = Country
+    extra   = 0
+    fieldsets = [
+        (None, {
+            'fields': [
+                'title',
+                ('image', 'view_image'),
+            ],
+            'classes': 'wide'
+        }),
+    ] + meta_data
+    readonly_fields = ['view_image']
+
+
 class ServiceCategoryAdmin(ViewImageMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
@@ -15,6 +31,7 @@ class ServiceCategoryAdmin(ViewImageMixin, admin.ModelAdmin):
     readonly_fields = ['view_image']
     list_display = ['id', 'title', 'view_image']
     list_display_links = ['id', 'title',]
+    inlines         = [CountryInline]
 
     def has_delete_permission(self, request, obj=None):
         if obj is not None:
@@ -28,12 +45,11 @@ class CountryAdmin(ViewImageMixin, admin.ModelAdmin):
             'fields': [
                 'title',
                 ('image', 'view_image'),
-                'categories',
+                'category',
             ],
             'classes': 'wide'
         }),
     ] + meta_data
-    filter_horizontal = ['categories']
     readonly_fields = ['view_image']
     list_display = ['id', 'title', 'view_image']
     list_display_links = ['id', 'title',]

@@ -4,9 +4,9 @@ from django.urls import reverse
 from project.models import MetaData
 
 class StaticService(models.Model):
-    title           = models.CharField(verbose_name=('Заголовок'), max_length=255, blank=True, null=True)
-    text            = HTMLField(verbose_name=("Підзаголовок"), blank=True, null=True)
-    image           = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='static_service/')
+    title           = models.CharField(verbose_name='Заголовок', max_length=255, blank=True, null=True)
+    text            = HTMLField(verbose_name='Підзаголовок', blank=True, null=True)
+    image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='static_service/')
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
     
     def get_image_url(self):
@@ -24,12 +24,12 @@ class StaticService(models.Model):
 
 
 class Service(MetaData):
-    title           = models.CharField(verbose_name=('Заголовок'), max_length=255, blank=True, null=True,)
-    countries       = models.ForeignKey(verbose_name=("Країна"), to="service.Country", on_delete=models.CASCADE, related_name='services', blank=True, null=True)
-    header          = models.TextField(verbose_name=("Підзаголовок"), blank=True, null=True, max_length=1000)
-    advantages      = HTMLField(verbose_name=("Переваги"),            blank=True, null=True)
-    procedure       = HTMLField(verbose_name=("Процедура відкриття"), blank=True, null=True)
-    addition        = HTMLField(verbose_name=("Додаткові вимоги"),    blank=True, null=True)
+    title           = models.CharField(verbose_name='Заголовок', max_length=255, blank=True, null=True,)
+    countries       = models.ForeignKey(verbose_name='Країна', to="service.Country", on_delete=models.CASCADE, related_name='services', blank=True, null=True)
+    header          = models.TextField(verbose_name='Підзаголовок', blank=True, null=True, max_length=1000)
+    advantages      = HTMLField(verbose_name='Переваги',            blank=True, null=True)
+    procedure       = HTMLField(verbose_name='Процедура відкриття', blank=True, null=True)
+    addition        = HTMLField(verbose_name='Додаткові вимоги',    blank=True, null=True)
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
 
     def __str__(self):
@@ -41,8 +41,8 @@ class Service(MetaData):
 
 
 class ServiceCategory(MetaData):
-    title           = models.CharField(verbose_name=('Назва'), max_length=255, blank=True, null=True)
-    image       = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='service_category/')
+    title           = models.CharField(verbose_name='Назва', max_length=255, blank=True, null=True)
+    image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='service_category/')
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
 
     def __str__(self):
@@ -54,21 +54,18 @@ class ServiceCategory(MetaData):
         return url
     
     class Meta:
-        verbose_name = ('Послуги(із країнами)')
-        verbose_name_plural = ('Послуги(із країнами)')
+        verbose_name = 'Послуги(із країнами)'
+        verbose_name_plural = 'Послуги(із країнами)'
 
 
 
 class Country(MetaData):
-    title           = models.CharField(verbose_name=("Назва"), max_length=255, blank=True, null=True,)
-    image           = models.ImageField(verbose_name=("Зображення"), blank=True, null=True, upload_to='country/')
-    categories      = models.ManyToManyField(verbose_name=("Категорії послуг"), to='service.ServiceCategory', related_name='countries', blank=True)
+    title           = models.CharField(verbose_name='Назва', max_length=255, blank=True, null=True,)
+    image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='country/')
+    category        = models.ForeignKey(verbose_name='Категорія послуг', to='service.ServiceCategory', on_delete=models.CASCADE, related_name='countries', blank=True, null=True)
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
 
 
-    def get_absolute_url(self):
-        return reverse("services", kwargs={"country_pk": self.pk, 'service_category_pk': self.categories.first().id })
-    
     def __str__(self):
         return f'{self.title}'
 
