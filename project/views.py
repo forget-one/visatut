@@ -32,15 +32,14 @@ def index(request):
 
 def services(request, country_pk):
     country             = Country.objects.get(pk=country_pk)
-    country_services    = Service.objects.filter(countries__id__in=[country.pk,])
-    service_category    = ServiceCategory.objects.get(countries=country)
+    country_services    = Service.objects.filter(countries__id__in=[country_pk,])
+    service_category    = ServiceCategory.objects.get(country=country)
     return render(request, 'services.html', locals())
 
-def service(request, country_pk, service_category_pk, post_id):
+def service(request, country_pk, service_id):
     country             = Country.objects.get(pk=country_pk)
     country_services    = Service.objects.filter(countries__id__in=[country.pk,])
-    service_category    = ServiceCategory.objects.get(pk=service_category_pk)
-    service             = Service.objects.get(pk=post_id)
+    service             = Service.objects.get(pk=service_id)
     return render(request, 'service.html', locals())
        
 def blog(request, slug):

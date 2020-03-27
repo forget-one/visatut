@@ -25,7 +25,7 @@ class StaticService(models.Model):
 
 class Service(MetaData):
     title           = models.CharField(verbose_name='Заголовок', max_length=255, blank=True, null=True,)
-    countries       = models.ForeignKey(verbose_name='Країна', to="service.Country", on_delete=models.CASCADE, related_name='services', blank=True, null=True)
+    countries       = models.ManyToManyField(verbose_name='Країна', to="service.Country", related_name='services', blank=True)
     header          = models.TextField(verbose_name='Підзаголовок', blank=True, null=True, max_length=1000)
     advantages      = HTMLField(verbose_name='Переваги',            blank=True, null=True)
     procedure       = HTMLField(verbose_name='Процедура відкриття', blank=True, null=True)
@@ -62,7 +62,7 @@ class ServiceCategory(MetaData):
 class Country(MetaData):
     title           = models.CharField(verbose_name='Назва', max_length=255, blank=True, null=True,)
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='country/')
-    category        = models.ForeignKey(verbose_name='Категорія послуг', to='service.ServiceCategory', on_delete=models.CASCADE, related_name='countries', blank=True, null=True)
+    category        = models.ForeignKey(verbose_name='Категорія послуг', to='service.ServiceCategory', on_delete=models.CASCADE, related_name='country', blank=True, null=True)
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
 
 

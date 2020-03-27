@@ -153,10 +153,11 @@
 					<div class="mini-navigation-block">
 						<div data-nav="nav1" data-scheme="101" class="nav_name nav_name_link nav_name_first">
 							Послуги
+							{{ test }}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
-						<div data-scheme="{{ service_category.pk }}" class="nav_name nav_name_link">
-							{{service_category.title|truncatechars_html:30}}
+						<div data-scheme="{{ country.category.pk }}" class="nav_name nav_name_link">
+							{{country.category.title|truncatechars_html:30}}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name">
