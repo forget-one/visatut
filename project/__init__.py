@@ -7,4 +7,3 @@ class ProjectConfig(AppConfig):
 
 
 default_app_config = 'project.ProjectConfig'
-

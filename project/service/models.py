@@ -4,28 +4,32 @@ from django.urls import reverse
 from project.models import MetaData
 
 class StaticService(models.Model):
+    class Meta:
+        verbose_name = "Послугу(без країн)" 
+        verbose_name_plural = "Послуги(без країн)"  
+
     title           = models.CharField(verbose_name='Заголовок', max_length=255, blank=True, null=True)
     text            = HTMLField(verbose_name='Підзаголовок', blank=True, null=True)
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='static_service/')
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
     
+    def __str__(self):
+        return f'{self.title}'
+
     def get_image_url(self):
         url = ''
         if self.image: url = self.image.url
         return url
-
     
-    def __str__(self):
-        return f'{self.title}'
-    
-    class Meta:
-        verbose_name = "Послуги(без країн)" 
-        verbose_name_plural = "Статичні послуги(без країн)"  
-
 
 class Service(MetaData):
+    class Meta:
+        verbose_name = 'Послугу країн' 
+        verbose_name_plural = 'Послуги країн' 
+
     title           = models.CharField(verbose_name='Заголовок', max_length=255, blank=True, null=True,)
-    countries       = models.ManyToManyField(verbose_name='Країна', to="service.Country", related_name='services', blank=True)
+    destiny         = models.CharField(verbose_name='Варіант', blank=True, null=True, max_length=50)
+    country         = models.ForeignKey(verbose_name='Країна', to="service.Country", on_delete=models.CASCADE, related_name='services', blank=True, null=True)
     header          = models.TextField(verbose_name='Підзаголовок', blank=True, null=True, max_length=1000)
     advantages      = HTMLField(verbose_name='Переваги',            blank=True, null=True)
     procedure       = HTMLField(verbose_name='Процедура відкриття', blank=True, null=True)
@@ -33,14 +37,17 @@ class Service(MetaData):
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
 
     def __str__(self):
-        return f'{self.title}'
-    
-    class Meta:
-        verbose_name = 'Послуги країн' 
-        verbose_name_plural = 'Послуги країн' 
+        return f'{self.title} --- {self.destiny}'
 
+    def get_absolute_url(self):
+        return reverse("service", kwargs={"service_id": self.pk})
+    
 
 class ServiceCategory(MetaData):
+    class Meta:
+        verbose_name = 'Послуги(із країнами)'
+        verbose_name_plural = 'Послуги(із країнами)'
+
     title           = models.CharField(verbose_name='Назва', max_length=255, blank=True, null=True)
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='service_category/')
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
@@ -52,48 +59,26 @@ class ServiceCategory(MetaData):
         url = ''
         if self.image: url = self.image.url
         return url
-    
-    class Meta:
-        verbose_name = 'Послуги(із країнами)'
-        verbose_name_plural = 'Послуги(із країнами)'
-
 
 
 class Country(MetaData):
+    class Meta:
+        verbose_name = 'Країну' 
+        verbose_name_plural = 'Країни'
+
     title           = models.CharField(verbose_name='Назва', max_length=255, blank=True, null=True,)
+    destiny         = models.CharField(verbose_name='Варіант', blank=True, null=True, max_length=50)
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='country/')
     category        = models.ForeignKey(verbose_name='Категорія послуг', to='service.ServiceCategory', on_delete=models.CASCADE, related_name='country', blank=True, null=True)
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
 
-
     def __str__(self):
-        return f'{self.title}'
+        return f'{self.title} --- {self.destiny}'
 
+    def get_absolute_url(self):
+        return reverse("services", kwargs={"country_pk": self.pk})
     
     def get_image_url(self):
         url = ''
         if self.image: url = self.image.url
         return url
-
-    class Meta:
-        verbose_name = 'Країни' 
-        verbose_name_plural = 'Країни'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

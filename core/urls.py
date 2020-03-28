@@ -4,7 +4,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.contrib.sitemaps.views import sitemap
 from project.blog.sitemaps import PostSitemap, PostCategorySitemap
-from project.service.sitemaps import CountrySitemap, ServiceSitemap, ServiceCategorySitemap, StaticServiceSitemap
+from project.service.sitemaps import CountrySitemap, ServiceSitemap
 from project.sitemaps import StaticSitemap
 from .views import robots_txt
 
@@ -13,8 +13,6 @@ sitemaps = {
   'post_categories': PostCategorySitemap,
   'countries':      CountrySitemap, 
   'services':     ServiceSitemap,
-  'service_categories':     ServiceCategorySitemap,
-  'static_services':     StaticServiceSitemap,
   'static':     StaticSitemap,
 }
 

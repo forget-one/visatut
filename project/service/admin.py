@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import *
-from project.mixins import ViewImageMixin, meta_data
+from project.mixins import *
 
 
 class CountryInline(ViewImageMixin, admin.StackedInline):
@@ -9,13 +9,35 @@ class CountryInline(ViewImageMixin, admin.StackedInline):
     fieldsets = [
         (None, {
             'fields': [
-                'title',
+                ('title', 'destiny'),
                 ('image', 'view_image'),
             ],
             'classes': 'wide'
         }),
     ] + meta_data
+
     readonly_fields = ['view_image']
+
+
+class ServiceInline(admin.StackedInline):
+    model = Service
+    extra = 0
+    fieldsets = [
+        (None, {
+            'fields': [
+                ('title', 'destiny'),
+                'header',
+            ],
+            'classes': 'wide'
+        }),
+        ('Переваги, процедура, додатково', {
+            'fields': [
+                'advantages',
+                'procedure',
+                'addition',
+            ],
+        }),
+    ] + meta_data
 
 
 class ServiceCategoryAdmin(ViewImageMixin, admin.ModelAdmin):
@@ -28,9 +50,10 @@ class ServiceCategoryAdmin(ViewImageMixin, admin.ModelAdmin):
             'classes': 'wide'
         }),
     ] + meta_data
-    readonly_fields = ['view_image']
-    list_display = ['id', 'title', 'view_image']
-    list_display_links = ['id', 'title',]
+
+    readonly_fields = ['view_image', 'view_image_a']
+    list_display = ['id', 'title', 'view_image_a']
+    list_display_links = ['id', 'title', 'view_image_a']
     inlines         = [CountryInline]
 
     def has_delete_permission(self, request, obj=None):
@@ -39,28 +62,33 @@ class ServiceCategoryAdmin(ViewImageMixin, admin.ModelAdmin):
                 return False
         return True
 
-class CountryAdmin(ViewImageMixin, admin.ModelAdmin):
+
+class CountryAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
-                'title',
+                ('title', 'destiny'),
                 ('image', 'view_image'),
                 'category',
             ],
             'classes': 'wide'
         }),
     ] + meta_data
-    readonly_fields = ['view_image']
-    list_display = ['id', 'title', 'view_image']
-    list_display_links = ['id', 'title',]
 
-class ServiceAdmin(admin.ModelAdmin):
+    save_as             = True
+    readonly_fields     = ['view_image', 'view_image_a']
+    list_display        = ['id', 'title', 'view_image_a', 'on_site']
+    list_display_links  = ['id', 'title', 'view_image_a']
+    inlines             = [ServiceInline]
+
+
+class ServiceAdmin(ViewOnSiteMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
-                'title',
+                ('title', 'destiny'),
                 'header',
-                'countries',
+                'country',
             ],
             'classes': 'wide'
         }),
@@ -72,9 +100,10 @@ class ServiceAdmin(admin.ModelAdmin):
             ],
         }),
     ] + meta_data
-    list_filter = ['countries']
-    list_display = [ 'id', 'title',] 
-    list_display_links = [ 'id', 'title',]
+
+    save_as             = True
+    list_display        = [ 'id', 'title', 'on_site'] 
+    list_display_links  = [ 'id', 'title']
 
 
 class StaticServiceAdmin(ViewImageMixin, admin.ModelAdmin):
@@ -88,9 +117,9 @@ class StaticServiceAdmin(ViewImageMixin, admin.ModelAdmin):
             'classes': 'wide'
         }),
     ]
-    readonly_fields = ['view_image']
-    list_display = ['id', 'title', 'view_image']
-    list_display_links = ['id', 'title',]
+    readonly_fields     = ['view_image', 'view_image_a']
+    list_display        = ['id', 'title', 'view_image_a']
+    list_display_links  = ['id', 'title', 'view_image_a']
 
 
 

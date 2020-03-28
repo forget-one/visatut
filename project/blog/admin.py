@@ -7,7 +7,7 @@ class PostAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
         (None, {
             'fields': [
                 'title',
-                'post_category',
+                'category',
                 ('image', 'view_image'),
                 'text',
                 'updated',
@@ -16,10 +16,10 @@ class PostAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
         }),
     ] + meta_data
 
-    readonly_fields     = ['updated', 'view_image']
-    list_display        = ['pk', 'title', 'view_image', 'on_site',]
-    list_display_links  = ['pk', 'title',]
-    list_select_related = ['post_category']
+    readonly_fields     = ['updated', 'view_image', 'view_image_a']
+    list_display        = ['pk', 'title', 'view_image_a', 'on_site']
+    list_display_links  = ['pk', 'title', 'view_image_a']
+    list_select_related = ['category']
     view_on_site        = True
 
 
@@ -36,12 +36,11 @@ class PostCategoryAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
         }),
     ] + meta_data
     
-    readonly_fields     = ['updated', 'view_image',]
-    list_display        = ['pk', 'title', 'view_image', 'on_site']
-    list_display_links  = ['pk', 'title',]
+    readonly_fields     = ['updated', 'view_image', 'view_image_a']
+    list_display        = ['pk', 'title', 'view_image_a', 'on_site']
+    list_display_links  = ['pk', 'title', 'view_image_a']
     view_on_site        = True
+
 
 admin.site.register(PostCategory, PostCategoryAdmin)
 admin.site.register(Post, PostAdmin)
-
-

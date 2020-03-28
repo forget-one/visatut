@@ -156,13 +156,13 @@
 							{{ test }}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
-						<div data-scheme="{{ country.category.pk }}" class="nav_name nav_name_link">
-							{{country.category.title|truncatechars_html:30}}
+						<div data-scheme="{{ service.country.category.pk }}" class="nav_name nav_name_link">
+							{{ service.country.category.title|truncatechars_html:30 }}
 						</div>
 						<img src="/static/img/nav.svg" alt="">
 						<div class="nav_name">
-							<a href="{% url 'services' country.pk %}">
-								{{ country.title|truncatechars_html:30 }}
+							<a href="{% url 'services' service.country.pk %}">
+								{{ service.country.title|truncatechars_html:30 }}
 							</a>
 						</div>
 						<img src="/static/img/nav.svg" alt="">

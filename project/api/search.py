@@ -20,3 +20,4 @@ def search_service(request):
     page, created = Page.objects.get_or_create(
         slug    = f"{request.build_absolute_uri()}")
     return render(request, 'search_service.html', locals())
+    
