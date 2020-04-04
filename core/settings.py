@@ -118,13 +118,14 @@ EMAIL_HOST = "mail.jcbservice.com.ua"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
-STATIC_PAGES_SITEMAP = [
+STATIC_SITEMAP_PAGES = [
     'index',
     'franchise',
     'partner_europe',
     'partner_potential',
     'partner_usa',
     'search_service',
+    'blog_all'
 ]
 
 

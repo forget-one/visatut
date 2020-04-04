@@ -14,3 +14,4 @@ def tell_us(request):
         fail_silently=False
     )
     return JsonResponse({'status': 'OK'})
+    

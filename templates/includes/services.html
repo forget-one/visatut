@@ -61,13 +61,12 @@
                         </div>
                     </div>
                     <div class="countries-block">
-                        {{service_category.countries}}
-                        {% for country in service_category.countries.objects.all  %}
+                        {% for country in service_category.country.all  %}
                         <div data-subInfo="sub{{ country }}" class="countries_profile">
-                            <a class="countries_img-wrap" href="{% url 'services' service_category.pk %}">
+                            <a class="countries_img-wrap" href="{% url 'services' country.pk %}">
                                 <img class="countries_img" src="{{ country.get_image_url }}" alt="{{ country.img_alt }}">
                             </a>
-                            <a href="{% url 'services' service_category.pk %}">
+                            <a href="{% url 'services' country.pk %}">
                                 <div class="countries_text">
                                     {{ country.title }}
                                 </div>

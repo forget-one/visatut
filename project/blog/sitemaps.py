@@ -6,7 +6,6 @@ class PostSitemap(Sitemap):
     changefreq = 'weekly'
     priority = 1
     protocol = 'https'
-    i18n = True 
 
     def items(self):
         return Post.objects.all()
@@ -19,10 +18,10 @@ class PostCategorySitemap(Sitemap):
     changefreq = 'weekly'
     priority = 1
     protocol = 'https'
-    i18n = True
 
     def items(self):
         return PostCategory.objects.all()
 
     def lastmod(self, obj):
         return obj.updated
+        
