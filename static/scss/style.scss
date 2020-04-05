@@ -98,3 +98,10 @@ body {
     overflow: auto;
     
 }
+
+@media (max-width: 731px) {
+
+    .default-image img {
+        object-position: unset;
+    }
+}

@@ -3,6 +3,8 @@
 }
 .default-image {
     height: 100vh;
+    position: relative;
+    z-index: -1;
    
 }
 .info_top-prof {
@@ -18,19 +20,44 @@
     }
 }
 .default-image-1 {
-    background: url('../img/bg-2.jpg') no-repeat center top / cover;
+    img {
+            width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    // background: url('../img/bg-2.jpg') no-repeat center top / cover;
 }
 .default-image-2 {
-    background: url('../img/bg-3.jpg') no-repeat center top / cover;
+    img {
+            width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    // background: url('../img/bg-3.jpg') no-repeat center top / cover;
 }
 .default-image-3 {
-    background: url('../img/bg-4.jpg') no-repeat center top / cover;
+    img {
+            width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    // background: url('../img/bg-4.jpg') no-repeat center top / cover;
 }
 .default-image-4 {
-    background: url('../img/bg-5.jpg') no-repeat center top / cover;
+    img {
+            width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    // background: url('../img/bg-5.jpg') no-repeat center top / cover;
 }
 .default-image-5 {
-    background: url('../img/bg-6.jpg') no-repeat center top / cover;
+    img {
+            width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    // background: url('../img/bg-6.jpg') no-repeat center top / cover;
 }
 .default-image-6 {
     background: black;
@@ -123,6 +150,7 @@ body {
 }
 .main {
     position: relative;
+
 }
 .div_slider-prof {
     height: 100%;
@@ -130,7 +158,7 @@ body {
     background: black;
 }
 .bg_slider {
-    opacity: 0.4;
+    opacity: 0.4 !important;
 }
 .abs_block_header {
     position: absolute;
@@ -458,6 +486,7 @@ body {
 
 
 @media (max-width: 996px) {
+
     .title_name {
         margin-top: -35px !important;
     }
@@ -503,7 +532,14 @@ body {
         transition: all .4s;
     }
     .default-image-1 {
-        background: url('../img/bg-2.jpg') no-repeat center top -390px / cover;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
     }
     .sociate-block {
         display: none;
@@ -643,6 +679,8 @@ body {
     }
 }
 @media (max-width: 731px) {
+
+    
     .main_title-slider {
         font-size: 20px;
     }

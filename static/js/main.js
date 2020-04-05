@@ -52,7 +52,7 @@ $('.one-time').slick({
   slidesToShow: 1,
   adaptiveHeight: true,
   // autoplay: true,
-  lazyLoad: "string",
+  lazyLoad: "ondemand",
 });
 
 
