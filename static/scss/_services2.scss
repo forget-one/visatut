@@ -256,6 +256,17 @@
         }
     }
 }
+@media (max-width: 516px) {
+    .services-prof:hover .more-but {
+        visibility: visible;
+        top: 5px;
+    }
+}
+@media (max-width: 494px) {
+    .services2 .blog-text {
+        width: 100%;
+    }
+}
 @media (max-width: 438px) {
     .services_fixed {
         .mini-navigation-block img {
