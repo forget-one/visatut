@@ -64,7 +64,7 @@
                         {% for country in service_category.country.all  %}
                         <div data-subInfo="sub{{ country }}" class="countries_profile">
                             <a class="countries_img-wrap" href="{% url 'services' country.pk %}">
-                                <img class="countries_img" src="{{ country.get_image_url }}" alt="{{ country.img_alt }}">
+                                <img class="countries_img" data-src="{{ country.get_image_url }}" alt="{{ country.img_alt }}">
                             </a>
                             <a href="{% url 'services' country.pk %}">
                                 <div class="countries_text">
