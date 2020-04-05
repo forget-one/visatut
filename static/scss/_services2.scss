@@ -19,7 +19,7 @@
         width: 85%;
     }
     .blog-img {
-        width: 15%;
+        width: 200px;
     }
     .blog-img_for_link {
         width: 300px;
@@ -49,8 +49,19 @@
         text-decoration: none;
         
     }
+
+
+    
   
 
+}
+@media (max-width: 1177px) {
+    .services2 {
+        .blog-img {
+            width: 200px;
+        }
+    }
+   
 }
 .services_fixed {
     .blog-block {

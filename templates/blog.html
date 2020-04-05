@@ -165,7 +165,7 @@
 						<a href="{% url 'post' post.pk  %}" class="a_link_blog">
 							<div class="blog-prof">
 								<div class="blog-img">
-									<img src="{{ post.get_image_url }}" alt="{{ post.img_alt }}">
+									<img data-src="{{ post.get_image_url }}" alt="{{ post.img_alt }}">
 								</div>
 								<div class="blog-text">
 									<div class="blog__title">
@@ -193,6 +193,8 @@
 					</div>
 				</div>
 				<div class="default-image default-image-1">
+					<img data-src="/static/img/bg-6.jpg" alt="">
+
 				</div>
 			</div>
 				
