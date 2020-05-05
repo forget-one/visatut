@@ -432,12 +432,28 @@ transition: all .4s;
     background: transparent;
     margin-top: 20px;
 }
+
 .dop-content-service {
     height: 70%;
     display: flex;
     flex-direction: column;
     width: 90%;
     margin: 0 auto;
+    h1, h2 {
+        font-family: 'Open Sans', sans-serif !important;
+
+        font-size: 27px !important;
+        color: #6c6a67 !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+    }
+     ul, ol, p, span {
+        font-family: 'Open Sans', sans-serif !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        line-height: 1.42857143 !important;
+        color: #333 !important;    
+     }
 }
 .main_service_title {
     color: #4088c9;
