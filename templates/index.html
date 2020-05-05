@@ -10,7 +10,11 @@
 	<link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="/static/css/style.css?v=3">
 	<link rel="icon" type="image/x-icon" href="/static/img/visatut-logo.png">
-	{% include 'includes/meta_og.html' %}
+	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% elif post_category %}{% if post_category.meta_title %}{{ post_category.meta_title }}{% else %}{{ post_category.title }}{% endif %}{% elif post %}{% if post.meta_title %}{{ post.meta_title }}{% else %}{{ post.title }}{% endif %}{% elif service %}{% if service.meta_title %}{{ service.meta_title }}{% else %}{{ service.title }}{% endif %}{% elif country %}{% if country.meta_title %}{{ country.meta_title }}{% else %}{{ country.title }}{% endif %}{% endif %}">
+	<meta property="og:type" content="visatut">
+	<meta property="og:url" content="{{ request.build_absolute_uri }}">
+	<meta property="og:image" content="/static/img/photo_2020-03-23_18-18-49.jpg">
+	<meta property="og:description" content="{% if page.meta_descr %}{{ page.meta_descr }}{% endif %}">
 </head>
 <body>
 

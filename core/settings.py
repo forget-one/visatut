@@ -26,7 +26,6 @@ INSTALLED_APPS = [
     'project.service',
     'project.vacancy',
     'tinymce',
-
 ]
 
 MIDDLEWARE = [

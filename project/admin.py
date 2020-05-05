@@ -9,7 +9,6 @@ class PageAdmin(admin.ModelAdmin):
     on_site.short_description = "Дивитись на сайті"
 
     exclude = ['']
-    readonly_fields = ['slug']
     list_display = ['title', 'slug', 'on_site']
     list_display_links = ['title', 'slug']
 
