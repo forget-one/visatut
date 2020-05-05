@@ -1,4 +1,5 @@
 <form method="POST" action="{% url 'tell_us' %}" class="post_forms" id="form_cons" style="display:none;">
+{% csrf_token %}
    <div class="cons_text">
       Для безкоштовної консультації заповніть форму і ми зв'яжемося з Вами протягом 10хв
    </div>
