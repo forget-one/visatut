@@ -5,8 +5,8 @@ from project.models import MetaData
 
 class StaticService(models.Model):
     class Meta:
-        verbose_name = "Послугу(без країн)" 
-        verbose_name_plural = "Послуги(без країн)"  
+        verbose_name = "Послугу без привязки до країни" 
+        verbose_name_plural = "Послуги без привязки до країн"  
 
     title           = models.CharField(verbose_name='Заголовок', max_length=255, blank=True, null=True)
     text            = HTMLField(verbose_name='Підзаголовок', blank=True, null=True)
@@ -24,11 +24,10 @@ class StaticService(models.Model):
 
 class Service(MetaData):
     class Meta:
-        verbose_name = 'Послугу країн' 
-        verbose_name_plural = 'Послуги країн' 
+        verbose_name = 'Послугу по країні' 
+        verbose_name_plural = 'Послуги по країнах' 
 
     title           = models.CharField(verbose_name='Заголовок', max_length=255, blank=True, null=True,)
-    destiny         = models.CharField(verbose_name='Варіант', blank=True, null=True, max_length=50)
     country         = models.ForeignKey(verbose_name='Країна', to="service.Country", on_delete=models.CASCADE, related_name='services', blank=True, null=True)
     header          = models.TextField(verbose_name='Підзаголовок', blank=True, null=True, max_length=1000)
     advantages      = HTMLField(verbose_name='Переваги',            blank=True, null=True)
@@ -37,7 +36,7 @@ class Service(MetaData):
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
 
     def __str__(self):
-        return f'{self.title} --- {self.destiny}'
+        return f'{self.title} --- {self.country}'
 
     def get_absolute_url(self):
         return reverse("service", kwargs={"service_id": self.pk})
@@ -45,8 +44,8 @@ class Service(MetaData):
 
 class ServiceCategory(MetaData):
     class Meta:
-        verbose_name = 'Послуги(із країнами)'
-        verbose_name_plural = 'Послуги(із країнами)'
+        verbose_name = 'Послугу з привязкою до країни'
+        verbose_name_plural = 'Послуги з привязкою до країн'
 
     title           = models.CharField(verbose_name='Назва', max_length=255, blank=True, null=True)
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='service_category/')
@@ -67,13 +66,12 @@ class Country(MetaData):
         verbose_name_plural = 'Країни'
 
     title           = models.CharField(verbose_name='Назва', max_length=255, blank=True, null=True,)
-    destiny         = models.CharField(verbose_name='Варіант', blank=True, null=True, max_length=50)
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='country/')
     category        = models.ForeignKey(verbose_name='Категорія послуг', to='service.ServiceCategory', on_delete=models.CASCADE, related_name='country', blank=True, null=True)
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)
 
     def __str__(self):
-        return f'{self.title} --- {self.destiny}'
+        return f'{self.title} --- {self.category}'
 
     def get_absolute_url(self):
         return reverse("services", kwargs={"country_pk": self.pk})

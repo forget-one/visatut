@@ -26,7 +26,6 @@ INSTALLED_APPS = [
     'project.service',
     'project.vacancy',
     'tinymce',
-
 ]
 
 MIDDLEWARE = [
@@ -128,6 +127,7 @@ STATIC_SITEMAP_PAGES = [
     'partner_potential',
     'partner_usa',
     'search_service',
+    'blog_all'
 ]
 
 
@@ -164,3 +164,16 @@ TINYMCE_DEFAULT_CONFIG = {
   'inline': False,
 
 }
+
+#django-toolbar
+INSTALLED_APPS += [
+    'debug_toolbar',
+]
+
+MIDDLEWARE += [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+]

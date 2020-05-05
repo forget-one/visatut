@@ -9,11 +9,11 @@ from project.sitemaps import StaticSitemap
 from .views import robots_txt
 
 sitemaps = {
-  'posts':      PostSitemap,
-  'post_categories': PostCategorySitemap,
-  'countries':      CountrySitemap, 
-  'services':     ServiceSitemap,
-  'static':     StaticSitemap,
+  'posts':            PostSitemap,
+  'post_categories':  PostCategorySitemap,
+  'countries':        CountrySitemap, 
+  'services':         ServiceSitemap,
+  'static':           StaticSitemap,
 }
 
 urlpatterns = [
@@ -49,3 +49,10 @@ urlpatterns += [
   path('test_mail/', test_mail, name='test_mail'),
 
 ]
+
+
+#debug
+import debug_toolbar
+urlpatterns = [
+    path('__debug__/', include(debug_toolbar.urls)),
+] + urlpatterns

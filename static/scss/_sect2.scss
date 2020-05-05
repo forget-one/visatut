@@ -639,8 +639,10 @@ transition: all .4s;
         height: 180px;
         transition: all .4s;
     }
-    .default-image-1 {
-        background: url('../img/bg-2.jpg') no-repeat center top -84px / cover;
+    .default-image {
+        img {
+            object-position: 0px -400px;
+        }
     }
     .fran_block {
         height: 100% !important;

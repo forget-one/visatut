@@ -9,7 +9,7 @@ class CountryInline(ViewImageMixin, admin.StackedInline):
     fieldsets = [
         (None, {
             'fields': [
-                ('title', 'destiny'),
+                'title',
                 ('image', 'view_image'),
             ],
             'classes': 'wide'
@@ -25,7 +25,7 @@ class ServiceInline(admin.StackedInline):
     fieldsets = [
         (None, {
             'fields': [
-                ('title', 'destiny'),
+                'title',
                 'header',
             ],
             'classes': 'wide'
@@ -67,7 +67,7 @@ class CountryAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
-                ('title', 'destiny'),
+                'title',
                 ('image', 'view_image'),
                 'category',
             ],
@@ -77,8 +77,8 @@ class CountryAdmin(ViewOnSiteMixin, ViewImageMixin, admin.ModelAdmin):
 
     save_as             = True
     readonly_fields     = ['view_image', 'view_image_a']
-    list_display        = ['id', 'title', 'view_image_a', 'on_site']
-    list_display_links  = ['id', 'title', 'view_image_a']
+    list_display        = ['id', 'title', 'category', 'view_image_a', 'on_site']
+    list_display_links  = ['id', 'title', 'category', 'view_image_a']
     inlines             = [ServiceInline]
 
 
@@ -86,7 +86,7 @@ class ServiceAdmin(ViewOnSiteMixin, admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': [
-                ('title', 'destiny'),
+                'title',
                 'header',
                 'country',
             ],
@@ -102,8 +102,8 @@ class ServiceAdmin(ViewOnSiteMixin, admin.ModelAdmin):
     ] + meta_data
 
     save_as             = True
-    list_display        = [ 'id', 'title', 'on_site'] 
-    list_display_links  = [ 'id', 'title']
+    list_display        = [ 'id', 'title', 'country', 'on_site'] 
+    list_display_links  = [ 'id', 'title', 'country']
 
 
 class StaticServiceAdmin(ViewImageMixin, admin.ModelAdmin):

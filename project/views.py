@@ -28,12 +28,16 @@ class PartnerUsa(DefaultPageMixin, View):
 
 def index(request):
     service_categories  = ServiceCategory.objects.all()
+    country             = Country.objects.select_related('category')
+    countries           = list(set(country.values_list('title', flat=True)))
+    for country_ in country:
+        if f'{country_.title}' not in countries:
+            countries.append(f'{country_.title}')
     static_services     = StaticService.objects.all()
     genders             = Gender.objects.all()
     work_types          = WorkType.objects.all()
     document_types      = DocumetType.objects.all()
     post_categories     = PostCategory.objects.order_by('-updated')[:3]
-
     page, created       = Page.objects.get_or_create(
                             slug = f"{request.get_full_path}")
     return render(request, 'index.html', locals())
@@ -66,7 +70,6 @@ def blog(request, slug):
 
 def blog_all(request):
     post_categories = PostCategory.objects.order_by('-updated')
-    
     page, created   = Page.objects.get_or_create(
                         slug = f"{request.build_absolute_uri()}")
     return render(request, 'blog_all.html', locals())

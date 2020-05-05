@@ -11,7 +11,7 @@
                 <div data-info="service_info{{service_category.pk}}" class="services-prof">
                     {% include '_svg_triple.html' %}
                     <div class="services-image-wrap">
-                        <img src="{{service_category.get_image_url}}" alt="{{ service_category.img_alt }}">
+                        <img data-src="{{service_category.get_image_url}}" alt="{{ service_category.img_alt }}">
                     </div>
                     <div class="services__text">
                         {{service_category.title}}
@@ -21,7 +21,7 @@
                 <div data-info="foreign_work" class="services-prof">
                     {% include '_svg_triple.html' %}
                     <div class="services-image-wrap">
-                        <img src="/static/img/services-4.jpg" alt="">
+                        <img data-src="/static/img/services-4.jpg" alt="">
                     </div>
                     <div class="services__text">
                         Робота за кордоном
@@ -31,7 +31,7 @@
                 <div data-info="static_service_info{{static_service.pk}}" class="services-prof">
                     {% include '_svg_triple.html' %}
                     <div class="services-image-wrap">
-                        <img src="{{static_service.get_image_url}}" alt="{{ static_service.img_alt }}">
+                        <img data-src="{{static_service.get_image_url}}" alt="{{ static_service.img_alt }}">
                     </div>
                     <div class="services__text">
                         {{static_service.title}}
@@ -64,7 +64,7 @@
                         {% for country in service_category.country.all  %}
                         <div data-subInfo="sub{{ country }}" class="countries_profile">
                             <a class="countries_img-wrap" href="{% url 'services' country.pk %}">
-                                <img class="countries_img" src="{{ country.get_image_url }}" alt="{{ country.img_alt }}">
+                                <img class="countries_img" data-src="{{ country.get_image_url }}" alt="{{ country.img_alt }}">
                             </a>
                             <a href="{% url 'services' country.pk %}">
                                 <div class="countries_text">
@@ -108,6 +108,7 @@
             </div>
         </div>
         <div class="default-image default-image-1">
+            <img data-src="/static/img/bg-2.jpg" alt="">
         </div>
     </div>
 </section>
