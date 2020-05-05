@@ -65,14 +65,16 @@ body {
 }
 .slick-dots li.slick-active:before {
     position: absolute;
-    top: -4.54px;
-    left: -5.2px;
+    top: 50%;
+    left: 50%;
     width: 20px;
     height: 20px;
     content: '';
     border: 2px solid #e35c72;
     border-radius: 50%;
     transition: all .4s;
+    transform: translate(-50%, -50%);
+
 }
 .slick-slide img {
     // height: 100vh;
