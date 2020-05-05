@@ -7,6 +7,7 @@ from project.blog.sitemaps import PostSitemap, PostCategorySitemap
 from project.service.sitemaps import CountrySitemap, ServiceSitemap
 from project.sitemaps import StaticSitemap
 from .views import robots_txt
+import debug_toolbar
 
 sitemaps = {
   'posts':            PostSitemap,
