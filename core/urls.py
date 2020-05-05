@@ -7,7 +7,6 @@ from project.blog.sitemaps import PostSitemap, PostCategorySitemap
 from project.service.sitemaps import CountrySitemap, ServiceSitemap
 from project.sitemaps import StaticSitemap
 from .views import robots_txt
-import debug_toolbar
 
 sitemaps = {
   'posts':            PostSitemap,
@@ -48,12 +47,4 @@ def test_mail(request):
 
 urlpatterns += [
   path('test_mail/', test_mail, name='test_mail'),
-
 ]
-
-
-#debug
-import debug_toolbar
-urlpatterns = [
-    path('__debug__/', include(debug_toolbar.urls)),
-] + urlpatterns
