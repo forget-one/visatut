@@ -450,9 +450,9 @@ transition: all .4s;
      ul, ol, p, span {
         font-family: 'Open Sans', sans-serif !important;
         font-weight: 600 !important;
-        font-size: 14px !important;
+        font-size: 16px !important;
         line-height: 1.42857143 !important;
-        color: #333 !important;    
+        color: #6c6a67 !important;    
      }
 }
 .main_service_title {
@@ -463,7 +463,7 @@ transition: all .4s;
 }
 .sub_service_text {
     color: #6c6a67;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 
@@ -609,7 +609,12 @@ transition: all .4s;
         min-width: 130px;
         width: 28%;
     }
+    .history_text {
+        font-size: 14px;
+
+    }
 }
+
 @media (max-width: 996px) {
     .mini-navigation-block {
         margin: 37px 4px;

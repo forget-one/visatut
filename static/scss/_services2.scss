@@ -232,7 +232,24 @@
     }
 }
 
+@media (max-width: 1200px) {
+    .services-image-wrap {
+        width: 100px;
+        height: 100px;
+    }
+    .partners-block .services-prof {
+        width: 100%;
 
+       
+    }
+    .services-prof:hover .more-but {
+        top: 9px;
+    }
+    .partners-block .services-prof {
+        margin-top: 12px !important;
+    }
+
+}
 @media (max-width: 996px) {
     .services_fixed .psevdo_point {
         display: none;
@@ -264,7 +281,7 @@
 @media (max-width: 516px) {
     .services-prof:hover .more-but {
         visibility: visible;
-        top: 5px;
+        top: 11px;
     }
 }
 @media (max-width: 494px) {
