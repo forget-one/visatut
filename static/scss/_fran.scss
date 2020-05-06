@@ -199,10 +199,11 @@
     font-size: 18px;
     text-align: right;
     margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
 }
+
 .contact-block {
     display: flex;
     flex-direction: column;
@@ -219,6 +220,7 @@
     text-align: left;
     transition: all .2s;
     cursor: pointer;
+    width: 80%;
 
     &:hover {
         color: #e35c72;
