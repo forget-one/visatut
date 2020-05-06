@@ -28,10 +28,11 @@ class PartnerUsa(DefaultPageMixin, View):
 
 def index(request):
     service_categories  = ServiceCategory.objects.all()
-    countries = list(set(Country.objects.all().values_list('title', flat=True)))
-    for country in Country.objects.all():
-        if f'{country.title}' not in countries:
-            countries.append(f'{country.title}')
+    country             = Country.objects.select_related('category')
+    countries           = list(set(country.values_list('title', flat=True)))
+    for country_ in country:
+        if f'{country_.title}' not in countries:
+            countries.append(f'{country_.title}')
     static_services     = StaticService.objects.all()
     genders             = Gender.objects.all()
     work_types          = WorkType.objects.all()
