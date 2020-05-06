@@ -397,9 +397,10 @@ body {
   }
   
   .load_spin_active {
-      
+        top: 0;
+        left: 0;
     position: fixed;
-    z-index: 10000000;
+    z-index: 1000000000;
     width: 100vw;
     height: 100vh;
     background-color: rgba(#4d5359, 0.7);
