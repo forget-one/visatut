@@ -47,5 +47,4 @@ def test_mail(request):
 
 urlpatterns += [
   path('test_mail/', test_mail, name='test_mail'),
-
 ]

@@ -20,12 +20,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
+    'django.contrib.sites',
     'project',
     'project.blog',
     'project.service',
     'project.vacancy',
+    'project.feedback',
     'tinymce',
-    'feedback',
 ]
 
 MIDDLEWARE = [
@@ -109,12 +110,18 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR,  "media")
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
-EMAIL_USE_TLS   = True
-EMAIL_PORT   = 587
-EMAIL_HOST_USER = "admin@jcbservice.com.ua"
-EMAIL_HOST_PASSWORD = "jcb69018"
-EMAIL_HOST = "mail.jcbservice.com.ua"
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+
+EMAIL_USE_TLS          = True
+EMAIL_USE_SSL          = False
+EMAIL_PORT             = 587
+EMAIL_HOST             = "mail.starwayua.com"
+EMAIL_HOST_USER        = "dev@starwayua.com"
+EMAIL_HOST_PASSWORD    = "dev69018"
+DEFAULT_FROM_EMAIL     = EMAIL_HOST_USER
+
+
 
 
 STATIC_SITEMAP_PAGES = [
@@ -161,3 +168,5 @@ TINYMCE_DEFAULT_CONFIG = {
   'inline': False,
 
 }
+
+#django-toolbar
