@@ -332,10 +332,12 @@ body {
 }
 #fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span {
     height: 25px;
+    margin: 0;
     width: 25px;
-    left: 29%;
     background: #fff;
-    top: 29%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
 }
 #fp-nav ul li a, .fp-slidesNav ul li a {
@@ -479,7 +481,6 @@ body {
     #fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span {
         height: 12px !important;
         width: 12px !important;
-        margin: -2px 0 0 -2px;
     }
   
 }
