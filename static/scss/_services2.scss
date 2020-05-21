@@ -28,7 +28,7 @@
     }
     
     .blog-block {
-        padding-bottom: 150px;
+        // padding-bottom: 150px;
     }
     .blog-prof {
         width: 95%;
@@ -50,10 +50,16 @@
         
     }
 
-
+   
     
   
 
+}
+.button_nav_name {
+    width: 150px;
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
 }
 @media (max-width: 1177px) {
     .services2 {
