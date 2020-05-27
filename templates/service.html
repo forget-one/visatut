@@ -177,10 +177,10 @@
 							{{ service.title }}
 						</div>
 						<div class="sub_service_text">
-							{{ service.header }}
+							{{ service.header|safe }}
 						</div>
 
-
+						{% if service.advantages %}
 						<div class="services_flex-block">
 							{% include '_svg_service.html' %}
 							<div class="content_num-block">
@@ -192,7 +192,9 @@
 								</div>
 							</div>
 						</div>
+						{% endif %}
 
+						{% if service.procedure %}
 						<div class="services_flex-block">
 							{% include '_svg_service.html' %}
 							<div class="content_num-block">
@@ -204,7 +206,9 @@
 								</div>
 							</div>
 						</div>
+						{% endif %}
 
+						{% if service.addition %}
 						<div class="services_flex-block">
 							{% include '_svg_service.html' %}
 							<div class="content_num-block">
@@ -216,6 +220,7 @@
 								</div>
 							</div>
 						</div>
+						{% endif %}
 
 					</div>
 
@@ -240,7 +245,6 @@
 				</div>
 			</div>
 
-			
 		</section>
 	</div>
 		{% include 'includes/form.html' %}
