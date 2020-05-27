@@ -31,7 +31,7 @@ function valide_form(id_form, error_inp_wrap, check_request) {
             error_text.email = 'Поле має містити email';
             break;
             case 'ru':
-            error_text.required = 'Поле обязательно для заполнения';
+            error_text.required = 'Поле об\'язательно для заполнения';
             error_text.email = 'Поле должно содержать email';
             break;
             case 'en':

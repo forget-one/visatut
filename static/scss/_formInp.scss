@@ -1,6 +1,6 @@
 .post_forms {
     width: 500px;
-
+    padding-top: 28px;
     .inp-vak-wrap {
         margin-top: 10px;
         position: relative;
@@ -94,12 +94,19 @@
     .cons_text {
         text-align: center;
         color: #de4166;
-        line-height: 1;
+        line-height: 1.4;
         font-weight: 700;
         font-size: 15px;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     
     }
+}
+.partner_text {
+  a {
+    text-decoration: none;
+    color: #6c6a67;
+
+  }
 }
 .error {
     color: red;
