@@ -9,7 +9,12 @@ $(document).ready(function() {
   });
   
   
-  
+  if ($('.main_blog-block').length >= 1) {
+    let length_prof = $('.main_blog-block .blog-prof').length;
+    if (length_prof > 3) {
+      $('.main_blog-block').addClass('normalScroll');
+    }
+  }
   
   
   
@@ -247,6 +252,25 @@ $(document).ready(function() {
       add_visible_content();
   });
   
+
+  if (localStorage.vakancy == true) {
+    
+    if (window.matchMedia("(max-width: 996px)").matches) {
+      function linkTime() {
+        let destination = $('#sect' + 2).offset().top;
+        $('html, body').animate({ scrollTop: destination }, 600);
+        return false;
+      }
+      setTimeout(linkTime, 500);
+      } else {
+        fullpage_api . moveTo (2);
+      }
+  
+      add_visible_content();
+    localStorage.vakancy = false;
+
+  }
+  localStorage.setItem('vakancy', false);
   
   
   
