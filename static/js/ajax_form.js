@@ -122,6 +122,11 @@ function valide_form(id_form, error_inp_wrap, check_request) {
                         $.fancybox.open({
                             src: '#modal-form_true',
                         });
+                        setTimeout(() => {
+                            $.fancybox.close({
+                                src: '#modal-form_true',
+                            });
+                        }, 2000);
                         var form_inputs = $(form)[0].querySelectorAll('input');
 
                         if (form_inputs.length > 0) {
