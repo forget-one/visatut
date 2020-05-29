@@ -29,7 +29,7 @@ jQuery.validator.addMethod("alphanumeric", function(value, element) {
 }, "Letters, numbers, spaces or underscores only please");  
 
 jQuery.validator.addMethod("lettersonly", function(value, element) {
-	return this.optional(element) || /^[a-z]+$/i.test(value);
+	return this.optional(element) || /[^0-9]+$/i.test(value);
 }, "Ім'я повинно містити лише букви"); 
 
 jQuery.validator.addMethod("nowhitespace", function(value, element) {
