@@ -439,7 +439,7 @@ transition: all .4s;
 
 
 .dop-content-service {
-    height: 76%;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -791,7 +791,7 @@ transition: all .4s;
 }
 @media (max-width: 563px) {
     .button_nav_name {
-        width: 105px !important;
+        width: 120px !important;
         bottom: 10px !important;
         right: 10px !important;
     }
