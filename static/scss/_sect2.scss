@@ -354,8 +354,8 @@ transition: all .4s;
     
     input[type="radio"]:checked + label:after, 
     input[type="radio"]:not(:checked) + label:after {
-        left: 4.16px;
-    top: 4.2px;
+        left: 3%;
+        top: 18%;
     width: 14px;
     height: 14px;
         border-radius: 100%;
@@ -605,7 +605,7 @@ transition: all .4s;
    
 }
 .search_result-block {
-    height: 87% !important;
+    height: 80% !important;
 }
 .characteristic-wrap {
     display: flex;
@@ -796,7 +796,11 @@ transition: all .4s;
     .header-btn.form_consultation {
         margin: 0;
         margin-left: 10px;
-
+        
+    }
+    .info-content {
+        position: absolute;
+        bottom: 12px;
     }
 }
 @media (max-width: 549px) {
@@ -841,6 +845,9 @@ transition: all .4s;
    
 }
 @media (max-width: 441px) {
+    .cons_search {
+        margin-left: 20px;
+    }
     .nav_name {
         font-size: 13px;
     }
