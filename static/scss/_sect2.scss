@@ -799,8 +799,11 @@ transition: all .4s;
         
     }
     .info-content {
-        position: absolute;
-        bottom: 12px;
+        .header-btn.form_consultation {
+            position: absolute;
+            bottom: 12px;
+        }
+        
     }
 }
 @media (max-width: 549px) {
