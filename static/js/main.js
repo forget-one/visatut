@@ -489,7 +489,6 @@ $(document).ready(function() {
   
         
           if (form_input1[0].outerText == '') {
-            console.log(form_input1[0].outerText);
           
             $('.services_form').find('.select__input1').find('.visual_label').removeClass('visual_label_active');
             $('.select__input1').removeClass('select__input_activate');
@@ -584,54 +583,50 @@ $(document).ready(function() {
   
      
             $('.services_form').on("submit", function(event) {
-              var services_input =  $('.form_select');
               
-              for (var current_number = 0; current_number < services_input.length; current_number++) {
-                var current_input = services_input[current_number];
-                if (current_input.value == 0) {
                   event.preventDefault();
-                  if (current_input.value == 0) {
-                    // console.log( $(this).serialize() );
-                    // let current_wrap = $(current_input).parents('.select__input').parents('.select');
-                    // if (current_wrap[0].childElementCount == 2) {
-                    //   current_wrap.append('<div class="add_error">Це поле обов\'язкове для заповнення</div>');
-                    // }
-                    // else{
                       showValues();
-                      // alert('1');
-                      // // showValues();
-                      // $(this).submit();
-                    // }
-                  }
-                } 
-              }
           });
   
                 var serviceFinder = $('.services_form').attr('action');
                 console.log('serviceFinder: ', serviceFinder);
   
                 function showValues(){
-                  let data = $(".services_form").serializeArray();
-                console.log('data: ', data);
-  
-                var obj = {};
-                $.each(x, function(i, field){
-                  if(field.value.trim() != ""){
-                    if(obj[field.name] != undefined){
-                      var val = obj[field.name];
-                      if(!Array.isArray(val)){
-                         arr = [val];
-                      }
-                      arr.push(field.value.trim());
-                      obj[field.name] = arr;
-                    }else{
-                      obj[field.name] = field.value;
-                    }
-                    }
-                });
+                  let vallue_vant5 = true;
+                  // $('#rd1').val();
+                  if ($("#rd1").is(":checked")) {
+                    vallue_vant5 = true;
+                  } else {
+                    vallue_vant5 = false;
+                  }
+                  // console.log('$(', $('#rd1').val());
+                  // let data = $(".services_form").serializeArray();
+                // console.log('data: ', data);
+                  let form_input = {
+                    vant1: $('.form_select_1').val(),
+                    vant2: $('.form_select_2').val(),
+                    vant3: $('.form_select_3').val(),
+                    vant4: $('.form_select_4').val(),
+                    vant5: vallue_vant5,
+                  }
+                // var obj = {};
+                // $.each(x, function(i, field){
+                //   if(field.value.trim() != ""){
+                //     if(obj[field.name] != undefined){
+                //       var val = obj[field.name];
+                //       if(!Array.isArray(val)){
+                //          arr = [val];
+                //       }
+                //       arr.push(field.value.trim());
+                //       obj[field.name] = arr;
+                //     }else{
+                //       obj[field.name] = field.value;
+                //     }
+                //     }
+                // });
                       fetch(serviceFinder, {
                         method: 'POST',
-                        body: body
+                        body: JSON.stringify(form_input)
                       })
                       .then(data => {
                         return data.json();
@@ -640,21 +635,6 @@ $(document).ready(function() {
   
   
   
-                
-                  // for (var key in data) {
-                  //   obj[data[key][0]] = data[key][1];
-                  //   console.log('obj: ', obj);
-                  // }
-                  //   Array.from(data);
-                  //   var body = new URLSearchParams($.param(obj));
-                  //   console.log(body)
-                  //     fetch(serviceFinder, {
-                  //       method: 'POST',
-                  //       body: body
-                  //     })
-                  //     .then(data => {
-                  //       return data.json();
-                  //     })
                 }
   
   
