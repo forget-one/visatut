@@ -540,9 +540,9 @@ $(document).ready(function() {
       $(field).text(text);
       $(input_select).val(id);
       
-      if ($(input_select).val() != "") {
-        $(this).parents('.select').find('.add_error').remove();
-      }
+      // if ($(input_select).val() != "") {
+      //   $(this).parents('.select').find('.add_error').remove();
+      // }
   
       field.attr('data-countries', id)
      
@@ -583,30 +583,29 @@ $(document).ready(function() {
   
   
      
-    $('.services_form').on("submit", function(event) {
-      var services_input =  $('.form_select');
-      
-      for (var current_number = 0; current_number < services_input.length; current_number++) {
-        var current_input = services_input[current_number];
-        if (current_input.value == 0) {
-          event.preventDefault();
-          if (current_input.value == 0) {
-            // console.log( $(this).serialize() );
-            let current_wrap = $(current_input).parents('.select__input').parents('.select');
-            if (current_wrap[0].childElementCount == 2) {
-              current_wrap.append('<div class="add_error">Це поле обов\'язкове для заповнення</div>');
-            }
-            
-            else{
-              showValues();
-              // alert('1');
-              // // showValues();
-              // $(this).submit();
-            }
-          }
-        } 
-      }
-  });
+            $('.services_form').on("submit", function(event) {
+              var services_input =  $('.form_select');
+              
+              for (var current_number = 0; current_number < services_input.length; current_number++) {
+                var current_input = services_input[current_number];
+                if (current_input.value == 0) {
+                  event.preventDefault();
+                  if (current_input.value == 0) {
+                    // console.log( $(this).serialize() );
+                    // let current_wrap = $(current_input).parents('.select__input').parents('.select');
+                    // if (current_wrap[0].childElementCount == 2) {
+                    //   current_wrap.append('<div class="add_error">Це поле обов\'язкове для заповнення</div>');
+                    // }
+                    // else{
+                      showValues();
+                      // alert('1');
+                      // // showValues();
+                      // $(this).submit();
+                    // }
+                  }
+                } 
+              }
+          });
   
                 var serviceFinder = $('.services_form').attr('action');
                 console.log('serviceFinder: ', serviceFinder);
