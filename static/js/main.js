@@ -609,6 +609,7 @@ $(document).ready(function() {
                     vant4: $('.form_select_4').val(),
                     vant5: vallue_vant5,
                   }
+                  
                 // var obj = {};
                 // $.each(x, function(i, field){
                 //   if(field.value.trim() != ""){

@@ -10,7 +10,7 @@ def search_service(request):
     def vant5(value):
         if value == 'True': return True
         return False 
-    vacancies = vacancies.objects.all()
+    vacancies = Vacancy.objects.all()
     country__title      = data.get('vant1')
     gender__human_type  = data.get('vant2')
     work_type__work_type= data.get('vant3')
