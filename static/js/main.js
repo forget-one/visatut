@@ -584,8 +584,8 @@ $(document).ready(function() {
      
             $('.services_form').on("submit", function(event) {
               
-                  event.preventDefault();
-                      showValues();
+                  // event.preventDefault();
+                  //     showValues();
           });
   
                 var serviceFinder = $('.services_form').attr('action');
@@ -609,7 +609,7 @@ $(document).ready(function() {
                     vant4: $('.form_select_4').val(),
                     vant5: vallue_vant5,
                   }
-                  
+
                 // var obj = {};
                 // $.each(x, function(i, field){
                 //   if(field.value.trim() != ""){
@@ -632,8 +632,6 @@ $(document).ready(function() {
                       .then(data => {
                         return data.json();
                       })
-  
-  
   
   
                 }
