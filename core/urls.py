@@ -7,6 +7,8 @@ from project.blog.sitemaps import PostSitemap, PostCategorySitemap
 from project.service.sitemaps import CountrySitemap, ServiceSitemap
 from project.sitemaps import StaticSitemap
 from .views import robots_txt
+from django.conf.urls import handler404, handler403, handler400, handler500
+from .views import *
 
 sitemaps = {
   'posts':            PostSitemap,
@@ -48,3 +50,8 @@ def test_mail(request):
 urlpatterns += [
   path('test_mail/', test_mail, name='test_mail'),
 ]
+
+handler404 = 'core.views.view_404'
+handler404 = 'core.views.view_403'
+handler404 = 'core.views.view_400'
+handler404 = 'core.views.view_500'
