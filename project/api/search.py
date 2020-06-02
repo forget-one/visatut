@@ -21,10 +21,8 @@ def search_service(request):
     if gender != '0': vacancies = vacancies.filter(gender__human_type=gender)
     if work_type != '0': vacancies = vacancies.filter(work_type__work_type=work_type)
     if document != '0': vacancies = vacancies.filter(document__doc_type=document)
-    if actual != '0': vacancies = vacancies.filter(actual=actual)
+    vacancies = vacancies.filter(actual=actual)
     page, created = Page.objects.get_or_create(
         slug    = f"{request.build_absolute_uri()}")
-    return render(request, 'search_service.html', {
-        'vacancies': vacancies,
-    })
+    return render(request, 'search_service.html', {'vacancies': vacancies,})
     
