@@ -61,6 +61,8 @@
 }
 .default-image-6 {
     background: black;
+    position: relative;
+    z-index: 99999999999;
     iframe {
         opacity: 0.7;
     }
@@ -494,6 +496,7 @@ body {
     }
     .normalScroll {
         overflow: auto !important;
+        overflow-x: hidden !important;
     }
     #fp-nav {
         display: none;

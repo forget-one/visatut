@@ -472,28 +472,28 @@ $(document).ready(function() {
             $('.services_form').find('.select__input1').find('.visual_label').removeClass('visual_label_active');
             $('.select__input1').removeClass('select__input_activate');
             } else if (form_input1[0].outerText != '') {
-              $('.services_form').find('.select__input1').addClass('visual_label_active');
+              $('.services_form').find('.select__input1').find('.visual_label').addClass('visual_label_active');
               $('.select__input1').addClass('select__input_activate');
             }
           if (form_input2[0].outerText == '') {
             $('.services_form').find('.select__input2').find('.visual_label').removeClass('visual_label_active');
             $('.select__input2').removeClass('select__input_activate');
             } else if (form_input2[0].outerText != '') {
-              $('.services_form').find('.select__input2').addClass('visual_label_active');
+              $('.services_form').find('.select__input2').find('.visual_label').addClass('visual_label_active');
               $('.select__input2').addClass('select__input_activate');
             }
           if (form_input3[0].outerText == '') {
             $('.services_form').find('.select__input3').find('.visual_label').removeClass('visual_label_active');
             $('.select__input3').removeClass('select__input_activate');
             } else if (form_input3[0].outerText != '') {
-              $('.services_form').find('.select__input3').addClass('visual_label_active');
+              $('.services_form').find('.select__input3').find('.visual_label').addClass('visual_label_active');
               $('.select__input3').addClass('select__input_activate');
             }
           if (form_input4[0].outerText == '') {
             $('.services_form').find('.select__input4').find('.visual_label').removeClass('visual_label_active');
             $('.select__input4').removeClass('select__input_activate');
             } else if (form_input4[0].outerText != '') {
-              $('.services_form').find('.select__input4').addClass('visual_label_active');
+              $('.services_form').find('.select__input4').find('.visual_label').addClass('visual_label_active');
               $('.select__input4').addClass('select__input_activate');
             }
            
@@ -572,7 +572,7 @@ $(document).ready(function() {
             // console.log( $(this).serialize() );
             let current_wrap = $(current_input).parents('.select__input').parents('.select');
             if (current_wrap[0].childElementCount == 2) {
-              current_wrap.append('<div class="add_error">Це поле обовязкове для заповнення</div>');
+              current_wrap.append('<div class="add_error">Це поле обов\'язкове для заповнення</div>');
             }
             
             else{

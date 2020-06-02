@@ -1,37 +1,72 @@
 server{
-
-    server_name kleikoks.fun;
-
-
+    server_name visatut.in.ua;
     location /media {
-        alias /home/kleikoks/projects/visatut/src/media;
+        alias /home/jurgeon/projects/visatut/src/media;
     }
-
     location /static {
-        alias /home/kleikoks/projects/visatut/src/static_root;
+        alias /home/jurgeon/projects/visatut/src/static_root;
     }
-
     location / {
-        uwsgi_pass unix:/home/kleikoks/projects/visatut/src/config/visatut.sock;
+        uwsgi_pass unix:/home/jurgeon/projects/visatut/src/config/visatut.sock;
         include /etc/nginx/uwsgi_params;
     }
 
-
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/kleikoks.fun/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/kleikoks.fun/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/visatut.in.ua/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/visatut.in.ua/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
+
+
+
 server{
-    if ($host = kleikoks.fun) {
+    server_name www.visatut.in.ua;
+    return 301 https://visatut.in.ua;
+    location /media {
+        alias /home/jurgeon/projects/visatut/src/media;
+    }
+    location /static {
+        alias /home/jurgeon/projects/visatut/src/static_root;
+    }
+    location / {
+        uwsgi_pass unix:/home/jurgeon/projects/visatut/src/config/visatut.sock;
+        include /etc/nginx/uwsgi_params;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/www.visatut.in.ua/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/www.visatut.in.ua/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+server{
+    if ($host = visatut.in.ua) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
 
+    server_name visatut.in.ua;
+    listen 80;
+    return 404; # managed by Certbot
 
-    server_name kleikoks.fun;
+
+}
+
+
+
+server{
+    if ($host = www.visatut.in.ua) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name www.visatut.in.ua;
     listen 80;
     return 404; # managed by Certbot
 

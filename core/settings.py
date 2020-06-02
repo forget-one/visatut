@@ -168,5 +168,9 @@ TINYMCE_DEFAULT_CONFIG = {
   'inline': False,
 
 }
+<<<<<<< HEAD
+=======
+SITE_ID = 1 
+>>>>>>> 8a87271a86548b7f48ea3f216697ab922af75e43
 #django-toolbar
 

@@ -100,7 +100,7 @@ color: #727271;
  
 }
 .field_text {
-  
+position: absolute;
   
   font-size: 15px;
   font-weight: normal;
@@ -134,5 +134,10 @@ color: #727271;
 .usd-select {
     .select__wrap_item {
         text-transform: uppercase;
+    }
+}
+@media (max-width: 563px) {
+    .select {
+        width: 100% !important;
     }
 }

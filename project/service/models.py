@@ -5,8 +5,8 @@ from project.models import MetaData
 
 class StaticService(models.Model):
     class Meta:
-        verbose_name = "Послугу без привязки до країни" 
-        verbose_name_plural = "Послуги без привязки до країн"  
+        verbose_name = "Послугу без прив'язки до країни" 
+        verbose_name_plural = "Послуги без прив'язки до країн"  
 
     title           = models.CharField(verbose_name='Заголовок', max_length=255, blank=True, null=True)
     text            = HTMLField(verbose_name='Підзаголовок', blank=True, null=True)
@@ -24,8 +24,8 @@ class StaticService(models.Model):
 
 class Service(MetaData):
     class Meta:
-        verbose_name = 'Послугу по країні' 
-        verbose_name_plural = 'Послуги по країнах' 
+        verbose_name = 'Сервіс' 
+        verbose_name_plural = 'Сервіси' 
 
     title           = models.CharField(verbose_name='Заголовок', max_length=255, blank=True, null=True,)
     country         = models.ForeignKey(verbose_name='Країна', to="service.Country", on_delete=models.CASCADE, related_name='services', blank=True, null=True)
@@ -44,8 +44,8 @@ class Service(MetaData):
 
 class ServiceCategory(MetaData):
     class Meta:
-        verbose_name = 'Послугу з привязкою до країни'
-        verbose_name_plural = 'Послуги з привязкою до країн'
+        verbose_name = 'Категорію сервісу'
+        verbose_name_plural = 'Категорії сервісів'
 
     title           = models.CharField(verbose_name='Назва', max_length=255, blank=True, null=True)
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='service_category/')
