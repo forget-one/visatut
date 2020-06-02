@@ -168,6 +168,5 @@ TINYMCE_DEFAULT_CONFIG = {
   'inline': False,
 
 }
-SITE = 1 
 #django-toolbar
 
