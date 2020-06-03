@@ -16,7 +16,7 @@ def search_service(request):
     work_type   = data.get('vant3')
     document    = data.get('vant4')
     actual      = vant5(data.get('actual'))
-    print(data)
+    print(data, 'data')
     if country != '0': vacancies = vacancies.filter(country__title=country)
     if gender != '0': vacancies = vacancies.filter(gender__human_type=gender)
     if work_type != '0': vacancies = vacancies.filter(work_type__work_type=work_type)

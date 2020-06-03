@@ -59,13 +59,23 @@ class ServiceCategory(MetaData):
         if self.image: url = self.image.url
         return url
 
+class CountryName(models.Model):
+    class Meta:
+        verbose_name = 'Назву країни'
+        verbose_name_plural = 'Назви країн'
+    
+    title       = models.CharField(verbose_name='Назва', max_length=255, unique=True)
+    
+    def __str__(self):
+        return f'{self.title}'
+
 
 class Country(MetaData):
     class Meta:
         verbose_name = 'Країну' 
         verbose_name_plural = 'Країни'
 
-    title           = models.CharField(verbose_name='Назва', max_length=255, blank=True, null=True,)
+    title           = models.ForeignKey(to='service.CountryName', verbose_name='Назва', blank=True, null=True, on_delete=models.CASCADE, related_name='countries')
     image           = models.ImageField(verbose_name='Зображення', blank=True, null=True, upload_to='country/')
     category        = models.ForeignKey(verbose_name='Категорія послуг', to='service.ServiceCategory', on_delete=models.CASCADE, related_name='country', blank=True, null=True)
     updated         = models.DateTimeField(verbose_name='Змінено', auto_now=True)

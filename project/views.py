@@ -28,11 +28,8 @@ class PartnerUsa(DefaultPageMixin, View):
 
 def index(request):
     service_categories  = ServiceCategory.objects.all()
-    country             = Country.objects.select_related('category')
-    countries           = list(set(country.values_list('title', flat=True)))
-    for country_ in country:
-        if f'{country_.title}' not in countries:
-            countries.append(f'{country_.title}')
+    country             = CountryName.objects.all()
+    countries           = set(list(country.values_list('title', flat=True)))
     try: 
         countries.remove('Паспорт ЄC')
     except:
