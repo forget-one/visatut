@@ -10,14 +10,19 @@ def search_service(request):
     def vant5(value):
         if value == 'True': return True
         return False 
-    vacancies = Vacancy.objects.filter(
-        country__title      = data.get('vant1'),
-        gender__human_type  = data.get('vant2'),
-        work_type__work_type= data.get('vant3'),
-        document__doc_type  = data.get('vant4'),
-        actual              = vant5(data.get('actual'))
-    ).select_related('country', 'gender', 'document', 'work_type',)
+    vacancies   = Vacancy.objects.all()
+    country     = data.get('vant1')
+    gender      = data.get('vant2')
+    work_type   = data.get('vant3')
+    document    = data.get('vant4')
+    actual      = vant5(data.get('actual'))
+    print(data)
+    if country != '0': vacancies = vacancies.filter(country__title=country)
+    if gender != '0': vacancies = vacancies.filter(gender__human_type=gender)
+    if work_type != '0': vacancies = vacancies.filter(work_type__work_type=work_type)
+    if document != '0': vacancies = vacancies.filter(document__doc_type=document)
+    vacancies = vacancies.filter(actual=actual)
     page, created = Page.objects.get_or_create(
         slug    = f"{request.build_absolute_uri()}")
-    return render(request, 'search_service.html', locals())
+    return render(request, 'search_service.html', {'vacancies': vacancies,})
     
