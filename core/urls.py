@@ -51,7 +51,7 @@ urlpatterns += [
   path('test_mail/', test_mail, name='test_mail'),
 ]
 
+handler400 = 'core.views.view_400'
+handler403 = 'core.views.view_403'
 handler404 = 'core.views.view_404'
-handler404 = 'core.views.view_403'
-handler404 = 'core.views.view_400'
-handler404 = 'core.views.view_500'
+handler500 = 'core.views.view_500'
