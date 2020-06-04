@@ -29,9 +29,9 @@ class PartnerUsa(DefaultPageMixin, View):
 def index(request):
     service_categories  = ServiceCategory.objects.all()
     country             = CountryName.objects.all()
-    countries           = set(list(country.values_list('title', flat=True)))
+    countries           = list(set(country.values_list('title', flat=True)))
     try: 
-        countries.remove('Паспорт ЄC')
+        countries.remove('Паспорт ЄС')
     except:
         pass
     static_services     = StaticService.objects.all()

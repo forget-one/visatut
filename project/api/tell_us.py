@@ -29,7 +29,7 @@ def tell_us(request):
     f"{name}, {phone}",
     link,
     settings.EMAIL_HOST_USER,
-    ['easyebengrad@gmail.com', 'tutvisatut@gmail.com'],
+    ['tutvisatut@gmail.com',],
     fail_silently=True
     )
     return JsonResponse({'status': 'OK'})
