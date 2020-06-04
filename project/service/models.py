@@ -58,6 +58,7 @@ class ServiceCategory(MetaData):
         url = ''
         if self.image: url = self.image.url
         return url
+        
 
 class CountryName(models.Model):
     class Meta:
