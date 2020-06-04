@@ -28,12 +28,7 @@ class PartnerUsa(DefaultPageMixin, View):
 
 def index(request):
     service_categories  = ServiceCategory.objects.all()
-    country             = CountryName.objects.all()
-    countries           = list(set(country.values_list('title', flat=True)))
-    try: 
-        countries.remove('Паспорт ЄС')
-    except:
-        pass
+    countries           = CountryName.objects.all()
     static_services     = StaticService.objects.all()
     genders             = Gender.objects.all()
     work_types          = WorkType.objects.all()
