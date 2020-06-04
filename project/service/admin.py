@@ -122,22 +122,10 @@ class StaticServiceAdmin(ViewImageMixin, admin.ModelAdmin):
     list_display_links  = ['id', 'title', 'view_image_a']
 
 
-class CountryNameAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None, {
-            'fields': [
-                'title',
-            ],
-            'classes': 'wide'
-        }),
-    ]
-    list_display        = ['id', 'title']
-    list_display_links  = ['id', 'title']
 
 
 admin.site.register(ServiceCategory, ServiceCategoryAdmin)
 admin.site.register(Country, CountryAdmin)
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(StaticService, StaticServiceAdmin)
-admin.site.register(CountryName, CountryNameAdmin)
 

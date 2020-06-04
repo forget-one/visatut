@@ -4,7 +4,7 @@ from project.models import MetaData
 
 class Vacancy(models.Model):
     name            = models.CharField(verbose_name='Назва роботи', max_length=150, blank=True, null=True)
-    country         = models.ForeignKey(to='service.CountryName', verbose_name='Назва', blank=True, null=True, on_delete=models.CASCADE, related_name='vacancies')
+    country         = models.ForeignKey(to='CountryName', verbose_name='Країна',  blank=True, null=True, on_delete=models.CASCADE)
     gender          = models.ForeignKey(to='Gender', verbose_name='Робота для',  blank=True, null=True, on_delete=models.CASCADE)
     document        = models.ForeignKey(to='DocumetType', verbose_name='Необхідні документи', blank=True, on_delete=models.CASCADE, null=True, related_name='documents')
     work_type       = models.ForeignKey(to='WorkType', verbose_name='Тип роботи', on_delete=models.CASCADE, blank=True, null=True, related_name='work_types')
@@ -53,3 +53,15 @@ class WorkType(models.Model):
     class Meta:
         verbose_name = 'Тип роботи'
         verbose_name_plural = 'Типи робіт'
+    
+
+class CountryName(models.Model):
+    class Meta:
+        verbose_name = 'Назву країни'
+        verbose_name_plural = 'Назви країн'
+    
+    title       = models.CharField(verbose_name='Назва', max_length=255, unique=True)
+    
+    def __str__(self):
+        return f'{self.title}'
+    
