@@ -169,7 +169,7 @@
 						{% for vacancy in vacancies %}
 						<div class="search_result-wrap">
 							<div class="content_num">
-								{{vacancy.name}}
+								{{vacancy.name|safe}}
 							</div>
 							<div class="characteristic-wrap">
 								<div class="search_result-prof">
@@ -195,7 +195,7 @@
 											Робота для:
 										</div>
 										<div class="sub_srch">
-											{{vacancy.gender}}
+											{{vacancy.gender|safe}}
 										</div>
 									</div>
 								</div>
@@ -214,7 +214,7 @@
 											Місце роботи:
 										</div>
 										<div class="sub_srch">
-											{{vacancy.work_position}}
+											{{vacancy.work_position|safe}}
 										</div>
 									</div>
 								</div>
@@ -237,7 +237,7 @@
 											Компанія надає:
 										</div>
 										<div class="sub_srch">
-											{{vacancy.our_duties}}
+											{{vacancy.our_duties|safe}}
 										</div>
 									</div>
 								</div>
@@ -256,7 +256,7 @@
 											Необхідні документи:
 										</div>
 										<div class="sub_srch">
-											{{vacancy.document.description}}
+											{{vacancy.document.description|safe}}
 										</div>
 									</div>
 								</div>
@@ -277,7 +277,7 @@
 											Графік роботи:
 										</div>
 										<div class="sub_srch">
-											{{vacancy.work_day}}
+											{{vacancy.work_day|safe}}
 										</div>
 									</div>
 								</div>
@@ -295,7 +295,7 @@
 											Обов'язки:
 										</div>
 										<div class="sub_srch">
-											{{vacancy.duties}}
+											{{vacancy.duties|safe}}
 										</div>
 									</div>
 								</div>
@@ -313,7 +313,7 @@
 											Вимоги:
 										</div>
 										<div class="sub_srch">
-											{{vacancy.requirements}}
+											{{vacancy.requirements|safe}}
 										</div>
 									</div>
 								</div>
@@ -333,7 +333,7 @@
 											Витрати працівників:
 										</div>
 										<div class="sub_srch">
-											{{vacancy.your_duties}}
+											{{vacancy.your_duties|safe}}
 										</div>
 									</div>
 								</div>
