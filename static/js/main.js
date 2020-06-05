@@ -626,7 +626,7 @@ $(document).ready(function() {
                 //     }
                 // });
                       fetch(serviceFinder, {
-                        method: 'POST',
+                        method: 'GET',
                         body: JSON.stringify(form_input)
                       })
                       .then(data => {
