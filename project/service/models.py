@@ -58,7 +58,7 @@ class ServiceCategory(MetaData):
         url = ''
         if self.image: url = self.image.url
         return url
-
+    
 
 class Country(MetaData):
     class Meta:

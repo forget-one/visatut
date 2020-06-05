@@ -17,19 +17,19 @@ def tell_us(request):
         phone   = phone,
         email   = email,
     )
-    # admin_url   = 'https://visatut.in.ua' + reverse(f'admin:{client._meta.app_label}_{client._meta.model_name}_change', args=(client.pk,))
-    # context = {
-    #     'admin_url': admin_url,
-    #     'name': name,
-    #     'phone': phone,
-    #     'email': email
-    # }
-    # link = render_to_string('tell_us.html', context)
-    # send_mail(
-    # f"{name}, {phone}",
-    # link,
-    # settings.EMAIL_HOST_USER,
-    # ['easyebengrad@gmail.com'],
-    # fail_silently=True
-    # )
+    admin_url   = 'https://visatut.in.ua' + reverse(f'admin:{client._meta.app_label}_{client._meta.model_name}_change', args=(client.pk,))
+    context = {
+        'admin_url': admin_url,
+        'name': name,
+        'phone': phone,
+        'email': email
+    }
+    link = render_to_string('tell_us.html', context)
+    send_mail(
+    f"{name}, {phone}",
+    link,
+    settings.EMAIL_HOST_USER,
+    ['tutvisatut@gmail.com',],
+    fail_silently=True
+    )
     return JsonResponse({'status': 'OK'})

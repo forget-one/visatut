@@ -28,11 +28,7 @@ class PartnerUsa(DefaultPageMixin, View):
 
 def index(request):
     service_categories  = ServiceCategory.objects.all()
-    country             = Country.objects.select_related('category')
-    countries           = list(set(country.values_list('title', flat=True)))
-    for country_ in country:
-        if f'{country_.title}' not in countries:
-            countries.append(f'{country_.title}')
+    countries           = CountryName.objects.all()
     static_services     = StaticService.objects.all()
     genders             = Gender.objects.all()
     work_types          = WorkType.objects.all()
@@ -53,7 +49,7 @@ def services(request, country_pk):
 def service(request, service_id ):
     service             = Service.objects.select_related('country').get(pk=service_id)
     return render(request, 'service.html', locals())
-       
+
 
 def blog(request, slug):
     post_category   = PostCategory.objects.get(slug=slug)

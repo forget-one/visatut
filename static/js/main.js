@@ -588,27 +588,27 @@ $(document).ready(function() {
                   //     showValues();
           });
   
-                var serviceFinder = $('.services_form').attr('action');
-                console.log('serviceFinder: ', serviceFinder);
+                // var serviceFinder = $('.services_form').attr('action');
+                // console.log('serviceFinder: ', serviceFinder);
   
-                function showValues(){
-                  let vallue_vant5 = true;
+                // function showValues(){
+                //   let vallue_vant5 = true;
                   // $('#rd1').val();
-                  if ($("#rd1").is(":checked")) {
-                    vallue_vant5 = true;
-                  } else {
-                    vallue_vant5 = false;
-                  }
+                  // if ($("#rd1").is(":checked")) {
+                  //   vallue_vant5 = true;
+                  // } else {
+                  //   vallue_vant5 = false;
+                  // }
                   // console.log('$(', $('#rd1').val());
                   // let data = $(".services_form").serializeArray();
                 // console.log('data: ', data);
-                  let form_input = {
-                    vant1: $('.form_select_1').val(),
-                    vant2: $('.form_select_2').val(),
-                    vant3: $('.form_select_3').val(),
-                    vant4: $('.form_select_4').val(),
-                    vant5: vallue_vant5,
-                  }
+                  // let form_input = {
+                  //   vant1: $('.form_select_1').val(),
+                  //   vant2: $('.form_select_2').val(),
+                  //   vant3: $('.form_select_3').val(),
+                  //   vant4: $('.form_select_4').val(),
+                  //   vant5: vallue_vant5,
+                  // }
 
                 // var obj = {};
                 // $.each(x, function(i, field){
@@ -625,6 +625,7 @@ $(document).ready(function() {
                 //     }
                 //     }
                 // });
+<<<<<<< HEAD
                       fetch(serviceFinder, {
                         method: 'GET',
                         body: JSON.stringify(form_input)
@@ -632,9 +633,18 @@ $(document).ready(function() {
                       .then(data => {
                         return data.json();
                       })
+=======
+                //       fetch(serviceFinder, {
+                //         method: 'POST',
+                //         body: JSON.stringify(form_input)
+                //       })
+                //       .then(data => {
+                //         return data.json();
+                //       })
+>>>>>>> c3b215748065f1f12e3bd17f865bac56c8352f85
   
   
-                }
+                // }
   
   
   

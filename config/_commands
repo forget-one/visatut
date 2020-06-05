@@ -1,5 +1,5 @@
-sudo ln -s /home/jurgeon/projects/visatut/src/config/visatut                    /etc/nginx/sites-enabled/
-sudo ln -s /home/jurgeon/projects/visatut/src/config/visatut.service            /etc/systemd/system/
+sudo ln -s /home/kleikoks/projects/visatut/src/config/visatut                    /etc/nginx/sites-enabled/
+sudo ln -s /home/kleikoks/projects/visatut/src/config/visatut.service            /etc/systemd/system/
 
 
 sudo systemctl enable nginx

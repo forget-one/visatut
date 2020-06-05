@@ -1,11 +1,12 @@
 import os
 import posixpath
+from decouple import config
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-SECRET_KEY = '4lgz6q*fodnrd05^(91h48)ra#z=sc#6j_b4ml5t_994y(6=4%'
+SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = [
     '*',
@@ -60,15 +61,25 @@ TEMPLATES = [
 WSGI_APPLICATION = 'core.wsgi.application'
 
 
-
-DATABASES = {
+if DEBUG == True:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
-
-
+if DEBUG == False:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('NAME'),
+        'USER': config('USER'),
+        'PASSWORD': config('PASSWORD'),
+        'HOST': config('HOST'),
+        'PORT': '5432'
+        }
+    }
+    
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -118,7 +129,7 @@ EMAIL_USE_SSL          = False
 EMAIL_PORT             = 587
 EMAIL_HOST             = "mail.starwayua.com"
 EMAIL_HOST_USER        = "dev@starwayua.com"
-EMAIL_HOST_PASSWORD    = "dev69018"
+EMAIL_HOST_PASSWORD    = config('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL     = EMAIL_HOST_USER
 
 
@@ -170,4 +181,5 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 SITE_ID = 1 
 #django-toolbar
+
 

@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="{{page.meta_key}}">
+	<meta name="description" content="{{page.meta_descr}}">
+	<title>{{page.title}}</title>
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="/static/css/style.css?v=2">
+	<link rel="icon" type="image/x-icon" href="/static/img/visatut-logo.png">
+</head>
+<body class="services_fixed">
+	<div class="main_nav_bar_for_mobile">
+		
+		<div class="sociate-block sociate-block_mobile">
+			<a href="https://www.instagram.com/visatut.in.ua/" class="sociate-prof">
+				<svg class="svg_soc" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+			</a>
+			<a href="https://www.facebook.com/visatut.in.ua/" class="sociate-prof">
+				<svg class="svg_soc" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" class="svg-inline--fa fa-facebook-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg>
+			</a>
+		
+		</div>
+		<div class="info_top-block info_top-block_desktopNone">
+			<div class="info_top-prof">
+				<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
+				<a href="mailto:tutvisatut@gmail.com">
+					tutvisatut@gmail.com
+				</a>
+			</div>
+			<div class="info_top-prof info_top-prof_tell">
+				<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone-square-alt" class="svg-inline--fa fa-phone-square-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48zm-16.39 307.37l-15 65A15 15 0 0 1 354 416C194 416 64 286.29 64 126a15.7 15.7 0 0 1 11.63-14.61l65-15A18.23 18.23 0 0 1 144 96a16.27 16.27 0 0 1 13.79 9.09l30 70A17.9 17.9 0 0 1 189 181a17 17 0 0 1-5.5 11.61l-37.89 31a231.91 231.91 0 0 0 110.78 110.78l31-37.89A17 17 0 0 1 299 291a17.85 17.85 0 0 1 5.91 1.21l70 30A16.25 16.25 0 0 1 384 336a17.41 17.41 0 0 1-.39 3.37z"></path></svg>
+				<a href="tel: +380975666624">
+					+38(097)566-66-24
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="nav-bar">
+		<a class="logo_link" href="/">
+			<div class="logo-wrap">
+				<img src="/static/img/logo.png" alt="">
+			</div>
+		</a>
+		<div class="header-btn header-btn_mobile">
+			Консультація
+		</div>
+		<div class="hidden_nav-bar">
+			<div class="hidden_name super_hidden_name">
+				<a href="#">
+					Головна
+				</a>
+			</div>
+			<div data-index="2" data-menuanchor="secondPage" class="hidden_name slide psevdo_link">
+				<div class="psevdo_point">
+					<div class="psevdo_sub-point">
+
+					</div>
+				</div>
+				<a href="#secondPage">
+					Послуги
+				</a>
+				
+			</div>
+			<div data-index="3" data-menuanchor="3thPage" class="hidden_name slide psevdo_link">
+				<div class="psevdo_point">
+					<div class="psevdo_sub-point">
+
+					</div>
+				</div>
+				<a href="#3thPage">
+					Про нас
+				</a>
+			</div>
+			<div data-index="4" data-menuanchor="4thpage" class="hidden_name slide psevdo_link">
+				<div class="psevdo_point">
+					<div class="psevdo_sub-point">
+
+					</div>
+				</div>
+				<a href="#4thpage">
+					Франшиза
+				</a>
+			</div>
+			<div data-index="5" data-menuanchor="5thpage" class="hidden_name slide psevdo_link">
+				<div class="psevdo_point">
+					<div class="psevdo_sub-point">
+
+					</div>
+				</div>
+				<a href="#5thpage">
+					Партнери
+				</a>
+			</div>
+			<div data-index="6" data-menuanchor="6thpage" class="hidden_name slide psevdo_link">
+				<div class="psevdo_point">
+					<div class="psevdo_sub-point">
+
+					</div>
+				</div>
+				<a href="#6thpage">
+					Блог
+				</a>
+			</div>
+			<div data-index="7" data-menuanchor="7thpage" class="hidden_name slide psevdo_link">
+				<div class="psevdo_point">
+					<div class="psevdo_sub-point">
+
+					</div>
+				</div>
+				<a href="#7thpage">
+					Контакти
+				</a>
+			</div>
+		</div>
+		<svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+			<path
+				  class="line top"
+				  d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+			<path
+				  class="line middle"
+				  d="m 30,50 h 40" />
+			<path
+				  class="line bottom"
+				  d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+		  </svg>
+		  <div class="sociate-block">
+			<a href="https://www.instagram.com/visatut.in.ua/" class="sociate-prof">
+				<svg class="svg_soc" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+			</a>
+			<a href="https://www.facebook.com/visatut.in.ua/" class="sociate-prof">
+				<svg class="svg_soc" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" class="svg-inline--fa fa-facebook-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg>
+			</a>
+		
+		</div>
+		
+	</div>
+
+		<section id="sect2" class="sect_name section sect2 services2">
+			<div class="default-block">
+				<div class="default-content">
+					<div class="main__title">
+						<h1 class="title_name">
+							400
+						</h1>
+					</div>
+					<div class="search_result-block blog-block normalScroll">
+						<div class="search_result-wrap">
+							<div style="text-align: center;" class="content_num content_fix">
+								400
+							</div>
+						</div>
+					</div>
+					
+					<!-- cons_search -->
+				</div>
+				<div class="default-image default-image-1">
+					<img data-src="/static/img/bg-2.jpg" alt="">
+
+				</div>
+			</div>
+		
+		</section>
+		
+	</div>
+	{% include 'includes/form.html' %}
+	{% include '_scripts.html' %}
+</body>
+</html>

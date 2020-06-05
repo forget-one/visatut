@@ -4,7 +4,7 @@ from project.models import MetaData
 
 class Vacancy(models.Model):
     name            = models.CharField(verbose_name='Назва роботи', max_length=150, blank=True, null=True)
-    country         = models.ForeignKey(to='service.Country', verbose_name='Країна', on_delete=models.CASCADE, blank=True, null=True, related_name='country')
+    country         = models.ForeignKey(to='CountryName', verbose_name='Країна',  blank=True, null=True, on_delete=models.CASCADE)
     gender          = models.ForeignKey(to='Gender', verbose_name='Робота для',  blank=True, null=True, on_delete=models.CASCADE)
     document        = models.ForeignKey(to='DocumetType', verbose_name='Необхідні документи', blank=True, on_delete=models.CASCADE, null=True, related_name='documents')
     work_type       = models.ForeignKey(to='WorkType', verbose_name='Тип роботи', on_delete=models.CASCADE, blank=True, null=True, related_name='work_types')
@@ -19,7 +19,7 @@ class Vacancy(models.Model):
         return f'{self.name}'
 
     class Meta:
-        verbose_name = 'Вакансії'
+        verbose_name = 'Вакансію'
         verbose_name_plural = 'Вакансії'
     
 class Gender(models.Model):
@@ -29,8 +29,8 @@ class Gender(models.Model):
         return f'{self.human_type}'
 
     class Meta:
-        verbose_name = "Стать"
-        verbose_name_plural = "Стать"
+        verbose_name = "Роботу для"
+        verbose_name_plural = "Робота для"
     
 class DocumetType(models.Model):
     doc_type    = models.CharField(verbose_name="Необхідні документи", max_length=50, blank=True, null=True)
@@ -40,8 +40,8 @@ class DocumetType(models.Model):
         return f'{self.doc_type}'
 
     class Meta:
-        verbose_name = "Необхідні документи"
-        verbose_name_plural = "Необхідні документи"
+        verbose_name = "Тип документу"
+        verbose_name_plural = "Типи документів"
 
 
 class WorkType(models.Model):
@@ -51,5 +51,17 @@ class WorkType(models.Model):
         return f'{self.work_type}'
 
     class Meta:
-        verbose_name = 'Типи робіт'
+        verbose_name = 'Тип роботи'
         verbose_name_plural = 'Типи робіт'
+    
+
+class CountryName(models.Model):
+    class Meta:
+        verbose_name = 'Назву країни'
+        verbose_name_plural = 'Назви країн'
+    
+    title       = models.CharField(verbose_name='Назва', max_length=255, unique=True)
+    
+    def __str__(self):
+        return f'{self.title}'
+    

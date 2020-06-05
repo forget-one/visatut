@@ -30,8 +30,24 @@ class DocumetTypeAdmin(admin.ModelAdmin):
 
 class WorkTypeAdmin(admin.ModelAdmin):
     exclude = ['']
+    
+
+
+class CountryNameAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {
+            'fields': [
+                'title',
+            ],
+            'classes': 'wide'
+        }),
+    ]
+    list_display        = ['id', 'title']
+    list_display_links  = ['id', 'title']
+    
 
 admin.site.register(WorkType, WorkTypeAdmin)
 admin.site.register(Vacancy, VacancyAdmin)
 admin.site.register(Gender, GenderAdmin)
 admin.site.register(DocumetType, DocumetTypeAdmin)
+admin.site.register(CountryName, CountryNameAdmin)
