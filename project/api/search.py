@@ -6,7 +6,7 @@ from project.models import Page
 
 @csrf_exempt
 def search_service(request):
-    data = request.POST
+    data = request.GET
     def vant5(value):
         if value == 'True': return True
         return False 
