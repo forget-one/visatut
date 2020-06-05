@@ -625,6 +625,15 @@ $(document).ready(function() {
                 //     }
                 //     }
                 // });
+<<<<<<< HEAD
+                      fetch(serviceFinder, {
+                        method: 'GET',
+                        body: JSON.stringify(form_input)
+                      })
+                      .then(data => {
+                        return data.json();
+                      })
+=======
                 //       fetch(serviceFinder, {
                 //         method: 'POST',
                 //         body: JSON.stringify(form_input)
@@ -632,6 +641,7 @@ $(document).ready(function() {
                 //       .then(data => {
                 //         return data.json();
                 //       })
+>>>>>>> c3b215748065f1f12e3bd17f865bac56c8352f85
   
   
                 // }
